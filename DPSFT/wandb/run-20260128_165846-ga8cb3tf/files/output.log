@@ -1,0 +1,122 @@
+/u/pkq2ps/anaconda3/envs/syn/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4807: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user.
+  warnings.warn(  # warn only once
+processed_text_dataset Dataset({
+    features: ['instruction', 'answer'],
+    num_rows: 28846
+})
+example {'instruction': ['<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"captures_the_broad_biological_sub-field_addressed_by_the_paper.":"Cell Biology","identifies_the_primary_organism_or_system_used_for_the_study.":"*In Vitro/Cell Line*","categorizes_the_primary_type_of_methodology_employed.":"Other Experimental Methods","distinguishes_between_papers_focusing_on_*how*_a_process_works_(mechanistic_depth)_versus_papers_focused_on_*mapping*_a_system_or_phenotype.":"Disease Modeling/Therapeutic Strategy","a_general_feature_assessing_the_writing_style_and_structure,_often_indicative_of_the_paper\'s_type_(e.g.,_methods_vs._hypothesis-driven).":"Highly Formal/Structured (Clear Background/Methods/Results/Conclusion sections)","focuses_on_the_level_of_resolution_where_the_main_discovery_occurs.":"Tissue/Organ Level","separates_studies_performed_in_a_living_organism_from_those_performed_in_controlled,_simplified_systems.":"Ex Vivo (Tissue/Primary Culture)","a_feature_specifically_targeting_crucial_cross-cutting_themes_often_present_in_biorxiv,_particularly_relating_to_disease_or_environment.":"Not Applicable."}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"captures_the_broad_biological_sub-field_addressed_by_the_paper.":"Biochemistry/Molecular Biology","identifies_the_primary_organism_or_system_used_for_the_study.":"*In Vitro/Cell Line*","categorizes_the_primary_type_of_methodology_employed.":"Proteomics/Biophysics","distinguishes_between_papers_focusing_on_*how*_a_process_works_(mechanistic_depth)_versus_papers_focused_on_*mapping*_a_system_or_phenotype.":"Mechanistic Discovery (e.g.|signaling pathway|molecular interaction)","a_general_feature_assessing_the_writing_style_and_structure,_often_indicative_of_the_paper\'s_type_(e.g.,_methods_vs._hypothesis-driven).":"Highly Formal/Structured (Clear Background/Methods/Results/Conclusion sections)","focuses_on_the_level_of_resolution_where_the_main_discovery_occurs.":"Molecular/Protein Level","separates_studies_performed_in_a_living_organism_from_those_performed_in_controlled,_simplified_systems.":"In Vitro (Cell Culture/Biochemical Assay)","a_feature_specifically_targeting_crucial_cross-cutting_themes_often_present_in_biorxiv,_particularly_relating_to_disease_or_environment.":"Antibiotic Resistance/Pathogen Virulence"}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"captures_the_broad_biological_sub-field_addressed_by_the_paper.":"Biochemistry/Molecular Biology","identifies_the_primary_organism_or_system_used_for_the_study.":"In Silico/Computational Model","categorizes_the_primary_type_of_methodology_employed.":"Computational/Modeling","distinguishes_between_papers_focusing_on_*how*_a_process_works_(mechanistic_depth)_versus_papers_focused_on_*mapping*_a_system_or_phenotype.":"Mechanistic Discovery (e.g.|signaling pathway|molecular interaction)","a_general_feature_assessing_the_writing_style_and_structure,_often_indicative_of_the_paper\'s_type_(e.g.,_methods_vs._hypothesis-driven).":"Computational Focus (High math/algorithm mention)","focuses_on_the_level_of_resolution_where_the_main_discovery_occurs.":"Molecular/Protein Level","separates_studies_performed_in_a_living_organism_from_those_performed_in_controlled,_simplified_systems.":"Computational/Theoretical Only","a_feature_specifically_targeting_crucial_cross-cutting_themes_often_present_in_biorxiv,_particularly_relating_to_disease_or_environment.":"Not Applicable"}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"captures_the_broad_biological_sub-field_addressed_by_the_paper.":"Biochemistry/Molecular Biology","identifies_the_prima
+Map (num_proc=4): 100%|██████████| 28846/28846 [00:21<00:00, 1343.01 examples/s]
+processed_text_dataset Dataset({
+    features: ['instruction', 'answer'],
+    num_rows: 3000
+})
+example {'instruction': ['<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"captures_the_broad_biological_sub-field_addressed_by_the_paper.":"Biochemistry/Molecular Biology","identifies_the_primary_organism_or_system_used_for_the_study.":"*Mammalian (e.g.|Mouse|Human)*","categorizes_the_primary_type_of_methodology_employed.":"Proteomics/Biophysics","distinguishes_between_papers_focusing_on_*how*_a_process_works_(mechanistic_depth)_versus_papers_focused_on_*mapping*_a_system_or_phenotype.":"Mechanistic Discovery (e.g.|signaling pathway|molecular interaction)","a_general_feature_assessing_the_writing_style_and_structure,_often_indicative_of_the_paper\'s_type_(e.g.,_methods_vs._hypothesis-driven).":"Highly Formal/Structured (Clear Background/Methods/Results/Conclusion sections)","focuses_on_the_level_of_resolution_where_the_main_discovery_occurs.":"Whole Cell/Single Cell Behavior","separates_studies_performed_in_a_living_organism_from_those_performed_in_controlled,_simplified_systems.":"In Vivo (Organismal/Animal)","a_feature_specifically_targeting_crucial_cross-cutting_themes_often_present_in_biorxiv,_particularly_relating_to_disease_or_environment.":"Not Applicable."}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"captures_the_broad_biological_sub-field_addressed_by_the_paper.":"Biochemistry/Molecular Biology","identifies_the_primary_organism_or_system_used_for_the_study.":"*In Vitro/Cell Line*","categorizes_the_primary_type_of_methodology_employed.":"Computational/Modeling","distinguishes_between_papers_focusing_on_*how*_a_process_works_(mechanistic_depth)_versus_papers_focused_on_*mapping*_a_system_or_phenotype.":"Mechanistic Discovery (e.g.|signaling pathway|molecular interaction)","a_general_feature_assessing_the_writing_style_and_structure,_often_indicative_of_the_paper\'s_type_(e.g.,_methods_vs._hypothesis-driven).":"Computational Focus (High math/algorithm mention)","focuses_on_the_level_of_resolution_where_the_main_discovery_occurs.":"Whole Cell/Single Cell Behavior","separates_studies_performed_in_a_living_organism_from_those_performed_in_controlled,_simplified_systems.":"In Vitro (Cell Culture/Biochemical Assay)","a_feature_specifically_targeting_crucial_cross-cutting_themes_often_present_in_biorxiv,_particularly_relating_to_disease_or_environment.":"Not Applicable."}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"captures_the_broad_biological_sub-field_addressed_by_the_paper.":"Neuroscience","identifies_the_primary_organism_or_system_used_for_the_study.":"*Mammalian (e.g.|Mouse|Human)*","categorizes_the_primary_type_of_methodology_employed.":"Imaging/Microscopy","distinguishes_between_papers_focusing_on_*how*_a_process_works_(mechanistic_depth)_versus_papers_focused_on_*mapping*_a_system_or_phenotype.":"System Mapping/Characterization (e.g.|whole-genome assembly|connectome)","a_general_feature_assessing_the_writing_style_and_structure,_often_indicative_of_the_paper\'s_type_(e.g.,_methods_vs._hypothesis-driven).":"Highly Formal/Structured (Clear Background/Methods/Results/Conclusion sections)","focuses_on_the_level_of_resolution_where_the_main_discovery_occurs.":"Tissue/Organ Level","separates_studies_performed_in_a_living_organism_from_those_performed_in_controlled,_simplified_systems.":"In Vivo (Organismal/Animal)","a_feature_specifically_targeting_crucial_cross-cutting_themes_often_present_in_biorxiv,_particularly_relating_to_disease_or_environment.":"Not Applicable."}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"captures_the_broad_biological_sub-field_addressed_by_the_paper.":"Neuroscience","identifies_the_pr
+Map (num_proc=4): 100%|██████████| 3000/3000 [00:04<00:00, 742.39 examples/s] 
+  0%|          | 0/1120 [00:00<?, ?it/s]It is strongly recommended to train Gemma3 models with the `eager` attention implementation instead of `sdpa`. Use `eager` with `AutoModelForCausalLM.from_pretrained('<path-to-checkpoint>', attn_implementation='eager')`.
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+/u/pkq2ps/anaconda3/envs/syn/lib/python3.10/site-packages/torch/nn/modules/module.py:1864: FutureWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  self._maybe_warn_non_full_backward_hook(args, result, grad_fn)
+  4%|▍         | 42/1120 [1:38:10<41:13:19, 137.66s/it]
+epoch 0, completed steps 5, train loss 2.7645022869110107, current lr 0.001
+epoch 0, completed steps 10, train loss 2.728156089782715, current lr 0.001
+epoch 0, eval progress 0.00%, eval time 0.05s
+epoch 0, eval progress 13.33%, eval time 7.58s
+epoch 0, eval progress 26.67%, eval time 15.10s
+epoch 0, eval progress 40.00%, eval time 22.67s
+epoch 0, eval progress 53.33%, eval time 30.23s
+epoch 0, eval progress 66.67%, eval time 37.99s
+epoch 0, eval progress 80.00%, eval time 45.47s
+epoch 0, eval progress 93.33%, eval time 53.16s
+At epoch 0 end, eval loss 2.6909
+perplexity 14.7450
+epoch 1, completed steps 15, train loss 2.7002344131469727, current lr 0.001
+epoch 1, completed steps 20, train loss 2.688150644302368, current lr 0.001
+epoch 1, completed steps 25, train loss 2.67741060256958, current lr 0.001
+epoch 1, eval progress 0.00%, eval time 0.05s
+epoch 1, eval progress 13.33%, eval time 7.60s
+epoch 1, eval progress 26.67%, eval time 15.12s
+epoch 1, eval progress 40.00%, eval time 22.70s
+epoch 1, eval progress 53.33%, eval time 30.26s
+epoch 1, eval progress 66.67%, eval time 38.14s
+epoch 1, eval progress 80.00%, eval time 45.62s
+epoch 1, eval progress 93.33%, eval time 53.28s
+At epoch 1 end, eval loss 2.6650
+perplexity 14.3675
+epoch 2, completed steps 30, train loss 2.680039882659912, current lr 0.001
+epoch 2, completed steps 35, train loss 2.666577100753784, current lr 0.001
+epoch 2, completed steps 40, train loss 2.6678555011749268, current lr 0.001
+epoch 2, eval progress 0.00%, eval time 0.05s
+epoch 2, eval progress 13.33%, eval time 7.59s
+epoch 2, eval progress 26.67%, eval time 15.11s
+epoch 2, eval progress 40.00%, eval time 22.67s
+epoch 2, eval progress 53.33%, eval time 30.22s
+epoch 2, eval progress 66.67%, eval time 37.96s
+epoch 2, eval progress 80.00%, eval time 45.57s
+epoch 2, eval progress 93.33%, eval time 53.22s
+At epoch 2 end, eval loss 2.6524
+perplexity 14.1884
+epoch 3, completed steps 45, train loss 2.6606905460357666, current lr 0.001
+epoch 3, completed steps 50, train loss 2.6551058292388916, current lr 0.001
+epoch 3, completed steps 55, train loss 2.6550674438476562, current lr 0.001
+epoch 3, eval progress 0.00%, eval time 0.05s
+epoch 3, eval progress 13.33%, eval time 7.59s
+epoch 3, eval progress 26.67%, eval time 15.11s
+epoch 3, eval progress 40.00%, eval time 22.68s
+epoch 3, eval progress 53.33%, eval time 30.23s
+epoch 3, eval progress 66.67%, eval time 37.97s
+epoch 3, eval progress 80.00%, eval time 45.45s
+epoch 3, eval progress 93.33%, eval time 53.12s
+At epoch 3 end, eval loss 2.6448
+perplexity 14.0808
+epoch 4, completed steps 60, train loss 2.6523630619049072, current lr 0.001
+epoch 4, completed steps 65, train loss 2.6476943492889404, current lr 0.001
+epoch 4, completed steps 70, train loss 2.6545350551605225, current lr 0.001
+epoch 4, eval progress 0.00%, eval time 0.05s
+epoch 4, eval progress 13.33%, eval time 7.58s
+epoch 4, eval progress 26.67%, eval time 15.10s
+epoch 4, eval progress 40.00%, eval time 22.67s
+epoch 4, eval progress 53.33%, eval time 30.21s
+epoch 4, eval progress 66.67%, eval time 37.95s
+epoch 4, eval progress 80.00%, eval time 45.42s
+epoch 4, eval progress 93.33%, eval time 53.08s
+At epoch 4 end, eval loss 2.6387
+perplexity 13.9945
+epoch 5, completed steps 75, train loss 2.640408992767334, current lr 0.001
+epoch 5, completed steps 80, train loss 2.645136833190918, current lr 0.001
+epoch 5, eval progress 0.00%, eval time 0.05s
+epoch 5, eval progress 13.33%, eval time 7.72s
+epoch 5, eval progress 26.67%, eval time 15.23s
+epoch 5, eval progress 40.00%, eval time 22.79s
+epoch 5, eval progress 53.33%, eval time 30.33s
+epoch 5, eval progress 66.67%, eval time 38.06s
+epoch 5, eval progress 80.00%, eval time 45.53s
+epoch 5, eval progress 93.33%, eval time 53.18s
+At epoch 5 end, eval loss 2.6337
+perplexity 13.9250
+epoch 6, completed steps 85, train loss 2.635633707046509, current lr 0.001
+epoch 6, completed steps 90, train loss 2.6304264068603516, current lr 0.001
+epoch 6, completed steps 95, train loss 2.6458332538604736, current lr 0.001
+epoch 6, eval progress 0.00%, eval time 0.05s
+epoch 6, eval progress 13.33%, eval time 7.59s
+epoch 6, eval progress 26.67%, eval time 15.11s
+epoch 6, eval progress 40.00%, eval time 22.67s
+epoch 6, eval progress 53.33%, eval time 30.22s
+epoch 6, eval progress 66.67%, eval time 38.10s
+epoch 6, eval progress 80.00%, eval time 45.58s
+epoch 6, eval progress 93.33%, eval time 53.23s
+At epoch 6 end, eval loss 2.6294
+perplexity 13.8650
+epoch 7, completed steps 100, train loss 2.6297719478607178, current lr 0.001
+epoch 7, completed steps 105, train loss 2.6455979347229004, current lr 0.001
+epoch 7, completed steps 110, train loss 2.635307788848877, current lr 0.001
+epoch 7, eval progress 0.00%, eval time 0.05s
+epoch 7, eval progress 13.33%, eval time 7.59s
+epoch 7, eval progress 26.67%, eval time 15.13s
+epoch 7, eval progress 40.00%, eval time 22.72s
+epoch 7, eval progress 53.33%, eval time 30.27s
+epoch 7, eval progress 66.67%, eval time 38.01s
+epoch 7, eval progress 80.00%, eval time 45.63s
+epoch 7, eval progress 93.33%, eval time 53.29s
+At epoch 7 end, eval loss 2.6257
+perplexity 13.8145
+epoch 8, completed steps 115, train loss 2.6393043994903564, current lr 0.001

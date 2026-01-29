@@ -1,0 +1,432 @@
+/u/pkq2ps/anaconda3/envs/syn/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4807: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user.
+  warnings.warn(  # warn only once
+processed_text_dataset Dataset({
+    features: ['instruction', 'answer'],
+    num_rows: 28846
+})
+example {'instruction': ['<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"primary_biological_domain":"Cell Biology","experimental_approach_focus":"*In Vitro* Assays (e.g.|ELISA|Western Blot)","key_molecular_target_class":"Not Applicable (e.g.|purely behavioral study)","level_of_abstraction_(system_scale)":"Tissue/Organismal","research_type/contribution_category":"Methodological Advance","level_of_technical_formality_(text_complexity_proxy)":"Standard Scientific Prose","disease_relevance_flag":"Yes (Human Disease Implied/Studied)","bioinformatics_tool_mentioned_(conditional)":"No (Standard analysis or no computation involved)"}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"primary_biological_domain":"Cell Biology","experimental_approach_focus":"*In Vitro* Assays (e.g.|ELISA|Western Blot)","key_molecular_target_class":"Lipid/Metabolism","level_of_abstraction_(system_scale)":"Sub-cellular/Molecular","research_type/contribution_category":"Novel Mechanism Discovery","level_of_technical_formality_(text_complexity_proxy)":"Highly Technical/Jargon-Dense","disease_relevance_flag":"Infectious Disease Specific","bioinformatics_tool_mentioned_(conditional)":"No (Standard analysis or no computation involved)"}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"primary_biological_domain":"Bioinformatics/Computational Biology","experimental_approach_focus":"*In Silico*/Modeling","key_molecular_target_class":"DNA/RNA/Epigenetics","level_of_abstraction_(system_scale)":"Sub-cellular/Molecular","research_type/contribution_category":"Methodological Advance","level_of_technical_formality_(text_complexity_proxy)":"Highly Technical/Jargon-Dense","disease_relevance_flag":"No (Pure Basic Science/Model Organism Focus)","bioinformatics_tool_mentioned_(conditional)":"Yes (Specific pipeline/software library mentioned)"}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"primary_biological_domain":"Molecular Biology","experimental_approach_focus":"*In Silico*/Modeling","key_molecular_target_class":"Protein/Enzyme Function","level_of_abstraction_(system_scale)":"Sub-cellular/Molecular","research_type/contribution_category":"Methodological Advance","level_of_technical_formality_(text_complexity_proxy)":"Highly Technical/Jargon-Dense","disease_relevance_flag":"No (Pure Basic Science/Model Organism Focus)","bioinformatics_tool_mentioned_(conditional)":"Yes (Specific pipeline/software library mentioned)"}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"primary_biological_domain":"Microbiology/Infectious Disease","experimental_approach_focus":"Other","key_molecular_target_class":"DNA/RNA/Epigenetics","level_of_abstraction_(system_scale)":"Population/Ecology","research_type/contribution_category":"Foundational Observation","level_of_technical_formality_(text_complexity_proxy)":"Standard Scientific Prose","disease_relevance_flag":"Infectious Disease Specific","bioinformatics_tool_mentioned_(conditional)":"No (Standard analysis or no computation involved)"}\n<end_of_turn>\n<start_of_turn>model\n'], 'answer': ['The glomerulus is the functional unit of the kidney, where urine is filtered from blood. This process happens through the glomerular filtration barrier (GFB) which is composed of glomerular endothelial cells, podocytes, and glomerular basement membrane (GBM). Damage to any component of GFB results in failure of the barriers function, causing proteinuria that can lead to end-stage kidney failure. There is a high need for reliab
+Map (num_proc=4): 100%|██████████| 28846/28846 [00:13<00:00, 2087.36 examples/s]
+processed_text_dataset Dataset({
+    features: ['instruction', 'answer'],
+    num_rows: 3000
+})
+example {'instruction': ['<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"primary_biological_domain":"Cell Biology","experimental_approach_focus":"*In Vitro* Assays (e.g.|ELISA|Western Blot)","key_molecular_target_class":"Protein/Enzyme Function","level_of_abstraction_(system_scale)":"Sub-cellular/Molecular","research_type/contribution_category":"Foundational Observation","level_of_technical_formality_(text_complexity_proxy)":"Highly Technical/Jargon-Dense","disease_relevance_flag":"No (Pure Basic Science/Model Organism Focus)","bioinformatics_tool_mentioned_(conditional)":"No (Standard analysis or no computation involved)"}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"primary_biological_domain":"Molecular Biology","experimental_approach_focus":"*In Silico*/Modeling","key_molecular_target_class":"DNA/RNA/Epigenetics","level_of_abstraction_(system_scale)":"Cellular","research_type/contribution_category":"Therapeutic Target Identification","level_of_technical_formality_(text_complexity_proxy)":"Standard Scientific Prose","disease_relevance_flag":"No (Pure Basic Science/Model Organism Focus)","bioinformatics_tool_mentioned_(conditional)":"Yes (Specific pipeline/software library mentioned)"}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"primary_biological_domain":"Neuroscience","experimental_approach_focus":"Human/Clinical Study","key_molecular_target_class":"Not Applicable (e.g.|purely behavioral study)","level_of_abstraction_(system_scale)":"Tissue/Organismal","research_type/contribution_category":"Methodological Advance","level_of_technical_formality_(text_complexity_proxy)":"Standard Scientific Prose","disease_relevance_flag":"Other Human Condition (e.g.|Aging|Neurological Disorder)","bioinformatics_tool_mentioned_(conditional)":"No (Standard analysis or no computation involved)"}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"primary_biological_domain":"Neuroscience","experimental_approach_focus":"Human/Clinical Study","key_molecular_target_class":"Not Applicable (e.g.|purely behavioral study)","level_of_abstraction_(system_scale)":"Tissue/Organismal","research_type/contribution_category":"Novel Mechanism Discovery","level_of_technical_formality_(text_complexity_proxy)":"Standard Scientific Prose","disease_relevance_flag":"Other Human Condition (e.g.|Aging|Neurological Disorder)","bioinformatics_tool_mentioned_(conditional)":"No (Standard analysis or no computation involved)"}\n<end_of_turn>\n<start_of_turn>model\n', '<start_of_turn>user\nPlease generate a synthetic scientific abstract that belongs to the below category, in the style of a bioRxiv paper.\n\n{"primary_biological_domain":"Genomics/Proteomics","experimental_approach_focus":"Human/Clinical Study","key_molecular_target_class":"Protein/Enzyme Function","level_of_abstraction_(system_scale)":"Population/Ecology","research_type/contribution_category":"Therapeutic Target Identification","level_of_technical_formality_(text_complexity_proxy)":"Standard Scientific Prose","disease_relevance_flag":"Yes (Human Disease Implied/Studied)","bioinformatics_tool_mentioned_(conditional)":"No (Standard analysis or no computation involved)"}\n<end_of_turn>\n<start_of_turn>model\n'], 'answer': ['In this second of three papers, we examine red blood cell (RBC) morphometry and RBC-membrane proteomics from our laboratory mouse strain (C57BL/6Case). In paper #1, using stopped-flow absorbance spectroscopy to ascertain the rate constant for oxyhemoglobin (HbO2) deoxygenation (kHbO2), we find substantial kHbO2 reductions with (1) membrane-protein inhibitors p-chloromercuribenzenesulfon
+Map (num_proc=4): 100%|██████████| 3000/3000 [00:03<00:00, 959.08 examples/s] 
+  0%|          | 0/1120 [00:00<?, ?it/s]It is strongly recommended to train Gemma3 models with the `eager` attention implementation instead of `sdpa`. Use `eager` with `AutoModelForCausalLM.from_pretrained('<path-to-checkpoint>', attn_implementation='eager')`.
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+/u/pkq2ps/anaconda3/envs/syn/lib/python3.10/site-packages/torch/nn/modules/module.py:1864: FutureWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  self._maybe_warn_non_full_backward_hook(args, result, grad_fn)
+  4%|▍         | 42/1120 [44:17<18:31:39, 61.87s/it]
+epoch 0, completed steps 5, train loss 2.6830484867095947, current lr 0.001
+epoch 0, completed steps 10, train loss 2.6632888317108154, current lr 0.001
+epoch 0, eval progress 0.00%, eval time 0.03s
+epoch 0, eval progress 13.33%, eval time 4.25s
+epoch 0, eval progress 26.67%, eval time 8.50s
+epoch 0, eval progress 40.00%, eval time 12.75s
+epoch 0, eval progress 53.33%, eval time 17.13s
+epoch 0, eval progress 66.67%, eval time 21.44s
+epoch 0, eval progress 80.00%, eval time 25.62s
+epoch 0, eval progress 93.33%, eval time 29.90s
+At epoch 0 end, eval loss 2.6391
+perplexity 14.0005
+epoch 1, completed steps 15, train loss 2.6481919288635254, current lr 0.001
+epoch 1, completed steps 20, train loss 2.6399285793304443, current lr 0.001
+epoch 1, completed steps 25, train loss 2.633481025695801, current lr 0.001
+epoch 1, eval progress 0.00%, eval time 0.03s
+epoch 1, eval progress 13.33%, eval time 4.25s
+epoch 1, eval progress 26.67%, eval time 8.51s
+epoch 1, eval progress 40.00%, eval time 12.76s
+epoch 1, eval progress 53.33%, eval time 17.01s
+epoch 1, eval progress 66.67%, eval time 21.33s
+epoch 1, eval progress 80.00%, eval time 25.53s
+epoch 1, eval progress 93.33%, eval time 29.81s
+At epoch 1 end, eval loss 2.6249
+perplexity 13.8032
+epoch 2, completed steps 30, train loss 2.6398534774780273, current lr 0.001
+epoch 2, completed steps 35, train loss 2.628302574157715, current lr 0.001
+epoch 2, completed steps 40, train loss 2.6322102546691895, current lr 0.001
+epoch 2, eval progress 0.00%, eval time 0.03s
+epoch 2, eval progress 13.33%, eval time 4.27s
+epoch 2, eval progress 26.67%, eval time 8.56s
+epoch 2, eval progress 40.00%, eval time 12.84s
+epoch 2, eval progress 53.33%, eval time 17.12s
+epoch 2, eval progress 66.67%, eval time 21.47s
+epoch 2, eval progress 80.00%, eval time 25.69s
+epoch 2, eval progress 93.33%, eval time 29.99s
+At epoch 2 end, eval loss 2.6186
+perplexity 13.7166
+epoch 3, completed steps 45, train loss 2.6273083686828613, current lr 0.001
+epoch 3, completed steps 50, train loss 2.6235618591308594, current lr 0.001
+epoch 3, completed steps 55, train loss 2.6249022483825684, current lr 0.001
+epoch 3, eval progress 0.00%, eval time 0.03s
+epoch 3, eval progress 13.33%, eval time 4.29s
+epoch 3, eval progress 26.67%, eval time 8.56s
+epoch 3, eval progress 40.00%, eval time 12.86s
+epoch 3, eval progress 53.33%, eval time 17.14s
+epoch 3, eval progress 66.67%, eval time 21.61s
+epoch 3, eval progress 80.00%, eval time 25.82s
+epoch 3, eval progress 93.33%, eval time 30.11s
+At epoch 3 end, eval loss 2.6153
+perplexity 13.6719
+epoch 4, completed steps 60, train loss 2.622849225997925, current lr 0.001
+epoch 4, completed steps 65, train loss 2.620119333267212, current lr 0.001
+epoch 4, completed steps 70, train loss 2.6289076805114746, current lr 0.001
+epoch 4, eval progress 0.00%, eval time 0.03s
+epoch 4, eval progress 13.33%, eval time 4.30s
+epoch 4, eval progress 26.67%, eval time 8.55s
+epoch 4, eval progress 40.00%, eval time 12.81s
+epoch 4, eval progress 53.33%, eval time 17.06s
+epoch 4, eval progress 66.67%, eval time 21.38s
+epoch 4, eval progress 80.00%, eval time 25.57s
+epoch 4, eval progress 93.33%, eval time 29.86s
+At epoch 4 end, eval loss 2.6125
+perplexity 13.6333
+epoch 5, completed steps 75, train loss 2.614809274673462, current lr 0.001
+epoch 5, completed steps 80, train loss 2.6209943294525146, current lr 0.001
+epoch 5, eval progress 0.00%, eval time 0.03s
+epoch 5, eval progress 13.33%, eval time 4.24s
+epoch 5, eval progress 26.67%, eval time 8.49s
+epoch 5, eval progress 40.00%, eval time 12.74s
+epoch 5, eval progress 53.33%, eval time 16.98s
+epoch 5, eval progress 66.67%, eval time 21.30s
+epoch 5, eval progress 80.00%, eval time 25.49s
+epoch 5, eval progress 93.33%, eval time 29.77s
+At epoch 5 end, eval loss 2.6105
+perplexity 13.6055
+epoch 6, completed steps 85, train loss 2.612727165222168, current lr 0.001
+epoch 6, completed steps 90, train loss 2.609097719192505, current lr 0.001
+epoch 6, completed steps 95, train loss 2.6245815753936768, current lr 0.001
+epoch 6, eval progress 0.00%, eval time 0.03s
+epoch 6, eval progress 13.33%, eval time 4.14s
+epoch 6, eval progress 26.67%, eval time 8.28s
+epoch 6, eval progress 40.00%, eval time 12.43s
+epoch 6, eval progress 53.33%, eval time 16.56s
+epoch 6, eval progress 66.67%, eval time 20.77s
+epoch 6, eval progress 80.00%, eval time 24.95s
+epoch 6, eval progress 93.33%, eval time 29.12s
+At epoch 6 end, eval loss 2.6087
+perplexity 13.5818
+epoch 7, completed steps 100, train loss 2.609246253967285, current lr 0.001
+epoch 7, completed steps 105, train loss 2.6262104511260986, current lr 0.001
+epoch 7, completed steps 110, train loss 2.616534471511841, current lr 0.001
+epoch 7, eval progress 0.00%, eval time 0.03s
+epoch 7, eval progress 13.33%, eval time 4.12s
+epoch 7, eval progress 26.67%, eval time 8.26s
+epoch 7, eval progress 40.00%, eval time 12.39s
+epoch 7, eval progress 53.33%, eval time 16.51s
+epoch 7, eval progress 66.67%, eval time 20.71s
+epoch 7, eval progress 80.00%, eval time 24.76s
+epoch 7, eval progress 93.33%, eval time 28.92s
+At epoch 7 end, eval loss 2.6072
+perplexity 13.5611
+epoch 8, completed steps 115, train loss 2.621854066848755, current lr 0.001
+epoch 8, completed steps 120, train loss 2.617058277130127, current lr 0.001
+epoch 8, completed steps 125, train loss 2.6066696643829346, current lr 0.001
+epoch 8, eval progress 0.00%, eval time 0.03s
+epoch 8, eval progress 13.33%, eval time 4.24s
+epoch 8, eval progress 26.67%, eval time 8.38s
+epoch 8, eval progress 40.00%, eval time 12.52s
+epoch 8, eval progress 53.33%, eval time 16.66s
+epoch 8, eval progress 66.67%, eval time 20.86s
+epoch 8, eval progress 80.00%, eval time 24.92s
+epoch 8, eval progress 93.33%, eval time 29.08s
+At epoch 8 end, eval loss 2.6060
+perplexity 13.5451
+epoch 9, completed steps 130, train loss 2.6038994789123535, current lr 0.001
+epoch 9, completed steps 135, train loss 2.610243558883667, current lr 0.001
+epoch 9, completed steps 140, train loss 2.6145880222320557, current lr 0.001
+epoch 9, eval progress 0.00%, eval time 0.03s
+epoch 9, eval progress 13.33%, eval time 4.23s
+epoch 9, eval progress 26.67%, eval time 8.46s
+epoch 9, eval progress 40.00%, eval time 12.68s
+epoch 9, eval progress 53.33%, eval time 16.91s
+epoch 9, eval progress 66.67%, eval time 21.21s
+epoch 9, eval progress 80.00%, eval time 25.38s
+epoch 9, eval progress 93.33%, eval time 29.64s
+At epoch 9 end, eval loss 2.6049
+perplexity 13.5302
+epoch 10, completed steps 145, train loss 2.608572006225586, current lr 0.001
+epoch 10, completed steps 150, train loss 2.6080501079559326, current lr 0.001
+epoch 10, eval progress 0.00%, eval time 0.03s
+epoch 10, eval progress 13.33%, eval time 4.27s
+epoch 10, eval progress 26.67%, eval time 8.55s
+epoch 10, eval progress 40.00%, eval time 12.84s
+epoch 10, eval progress 53.33%, eval time 17.11s
+epoch 10, eval progress 66.67%, eval time 21.46s
+epoch 10, eval progress 80.00%, eval time 25.70s
+epoch 10, eval progress 93.33%, eval time 30.00s
+At epoch 10 end, eval loss 2.6042
+perplexity 13.5209
+epoch 11, completed steps 155, train loss 2.618579626083374, current lr 0.001
+epoch 11, completed steps 160, train loss 2.606204032897949, current lr 0.001
+epoch 11, completed steps 165, train loss 2.60742449760437, current lr 0.001
+epoch 11, eval progress 0.00%, eval time 0.03s
+epoch 11, eval progress 13.33%, eval time 4.28s
+epoch 11, eval progress 26.67%, eval time 8.56s
+epoch 11, eval progress 40.00%, eval time 12.85s
+epoch 11, eval progress 53.33%, eval time 17.12s
+epoch 11, eval progress 66.67%, eval time 21.46s
+epoch 11, eval progress 80.00%, eval time 25.68s
+epoch 11, eval progress 93.33%, eval time 29.98s
+At epoch 11 end, eval loss 2.6034
+perplexity 13.5093
+epoch 12, completed steps 170, train loss 2.611208438873291, current lr 0.001
+epoch 12, completed steps 175, train loss 2.6115782260894775, current lr 0.001
+epoch 12, completed steps 180, train loss 2.6022610664367676, current lr 0.001
+epoch 12, eval progress 0.00%, eval time 0.03s
+epoch 12, eval progress 13.33%, eval time 4.24s
+epoch 12, eval progress 26.67%, eval time 8.48s
+epoch 12, eval progress 40.00%, eval time 12.74s
+epoch 12, eval progress 53.33%, eval time 16.98s
+epoch 12, eval progress 66.67%, eval time 21.29s
+epoch 12, eval progress 80.00%, eval time 25.47s
+epoch 12, eval progress 93.33%, eval time 29.75s
+At epoch 12 end, eval loss 2.6024
+perplexity 13.4959
+epoch 13, completed steps 185, train loss 2.611428737640381, current lr 0.001
+epoch 13, completed steps 190, train loss 2.613123893737793, current lr 0.001
+epoch 13, completed steps 195, train loss 2.604717969894409, current lr 0.001
+epoch 13, eval progress 0.00%, eval time 0.03s
+epoch 13, eval progress 13.33%, eval time 4.24s
+epoch 13, eval progress 26.67%, eval time 8.49s
+epoch 13, eval progress 40.00%, eval time 12.73s
+epoch 13, eval progress 53.33%, eval time 16.97s
+epoch 13, eval progress 66.67%, eval time 21.41s
+epoch 13, eval progress 80.00%, eval time 25.59s
+epoch 13, eval progress 93.33%, eval time 29.87s
+At epoch 13 end, eval loss 2.6015
+perplexity 13.4837
+epoch 14, completed steps 200, train loss 2.620291233062744, current lr 0.001
+epoch 14, completed steps 205, train loss 2.601776361465454, current lr 0.001
+epoch 14, completed steps 210, train loss 2.5984110832214355, current lr 0.001
+epoch 14, eval progress 0.00%, eval time 0.03s
+epoch 14, eval progress 13.33%, eval time 4.24s
+epoch 14, eval progress 26.67%, eval time 8.48s
+epoch 14, eval progress 40.00%, eval time 12.72s
+epoch 14, eval progress 53.33%, eval time 16.94s
+epoch 14, eval progress 66.67%, eval time 21.25s
+epoch 14, eval progress 80.00%, eval time 25.42s
+epoch 14, eval progress 93.33%, eval time 29.69s
+At epoch 14 end, eval loss 2.6007
+perplexity 13.4734
+epoch 15, completed steps 215, train loss 2.609616279602051, current lr 0.001
+epoch 15, completed steps 220, train loss 2.6056041717529297, current lr 0.001
+epoch 15, eval progress 0.00%, eval time 0.03s
+epoch 15, eval progress 13.33%, eval time 4.21s
+epoch 15, eval progress 26.67%, eval time 8.42s
+epoch 15, eval progress 40.00%, eval time 12.65s
+epoch 15, eval progress 53.33%, eval time 16.86s
+epoch 15, eval progress 66.67%, eval time 21.15s
+epoch 15, eval progress 80.00%, eval time 25.31s
+epoch 15, eval progress 93.33%, eval time 29.56s
+At epoch 15 end, eval loss 2.5997
+perplexity 13.4594
+epoch 16, completed steps 225, train loss 2.615295171737671, current lr 0.001
+epoch 16, completed steps 230, train loss 2.6059207916259766, current lr 0.001
+epoch 16, completed steps 235, train loss 2.60929536819458, current lr 0.001
+epoch 16, eval progress 0.00%, eval time 0.03s
+epoch 16, eval progress 13.33%, eval time 4.25s
+epoch 16, eval progress 26.67%, eval time 8.49s
+epoch 16, eval progress 40.00%, eval time 12.73s
+epoch 16, eval progress 53.33%, eval time 16.96s
+epoch 16, eval progress 66.67%, eval time 21.39s
+epoch 16, eval progress 80.00%, eval time 25.55s
+epoch 16, eval progress 93.33%, eval time 29.82s
+At epoch 16 end, eval loss 2.5985
+perplexity 13.4438
+epoch 17, completed steps 240, train loss 2.605328321456909, current lr 0.001
+epoch 17, completed steps 245, train loss 2.6037938594818115, current lr 0.001
+epoch 17, completed steps 250, train loss 2.6063878536224365, current lr 0.001
+epoch 17, eval progress 0.00%, eval time 0.03s
+epoch 17, eval progress 13.33%, eval time 4.21s
+epoch 17, eval progress 26.67%, eval time 8.42s
+epoch 17, eval progress 40.00%, eval time 12.64s
+epoch 17, eval progress 53.33%, eval time 16.85s
+epoch 17, eval progress 66.67%, eval time 21.13s
+epoch 17, eval progress 80.00%, eval time 25.29s
+epoch 17, eval progress 93.33%, eval time 29.53s
+At epoch 17 end, eval loss 2.5976
+perplexity 13.4314
+epoch 18, completed steps 255, train loss 2.612985610961914, current lr 0.001
+epoch 18, completed steps 260, train loss 2.6031405925750732, current lr 0.001
+epoch 18, completed steps 265, train loss 2.602489948272705, current lr 0.001
+epoch 18, eval progress 0.00%, eval time 0.03s
+epoch 18, eval progress 13.33%, eval time 4.23s
+epoch 18, eval progress 26.67%, eval time 8.45s
+epoch 18, eval progress 40.00%, eval time 12.69s
+epoch 18, eval progress 53.33%, eval time 16.92s
+epoch 18, eval progress 66.67%, eval time 21.22s
+epoch 18, eval progress 80.00%, eval time 25.39s
+epoch 18, eval progress 93.33%, eval time 29.66s
+At epoch 18 end, eval loss 2.5966
+perplexity 13.4182
+epoch 19, completed steps 270, train loss 2.6083168983459473, current lr 0.001
+epoch 19, completed steps 275, train loss 2.5960195064544678, current lr 0.001
+epoch 19, completed steps 280, train loss 2.602104902267456, current lr 0.001
+epoch 19, eval progress 0.00%, eval time 0.03s
+epoch 19, eval progress 13.33%, eval time 4.24s
+epoch 19, eval progress 26.67%, eval time 8.48s
+epoch 19, eval progress 40.00%, eval time 12.71s
+epoch 19, eval progress 53.33%, eval time 16.94s
+epoch 19, eval progress 66.67%, eval time 21.38s
+epoch 19, eval progress 80.00%, eval time 25.55s
+epoch 19, eval progress 93.33%, eval time 29.82s
+At epoch 19 end, eval loss 2.5953
+perplexity 13.4010
+epoch 20, completed steps 285, train loss 2.602362632751465, current lr 0.001
+epoch 20, completed steps 290, train loss 2.607280969619751, current lr 0.001
+epoch 20, eval progress 0.00%, eval time 0.03s
+epoch 20, eval progress 13.33%, eval time 4.32s
+epoch 20, eval progress 26.67%, eval time 8.58s
+epoch 20, eval progress 40.00%, eval time 12.83s
+epoch 20, eval progress 53.33%, eval time 17.07s
+epoch 20, eval progress 66.67%, eval time 21.38s
+epoch 20, eval progress 80.00%, eval time 25.57s
+epoch 20, eval progress 93.33%, eval time 29.84s
+At epoch 20 end, eval loss 2.5941
+perplexity 13.3845
+Model config Gemma3TextConfig {
+  "_sliding_window_pattern": 6,
+  "architectures": [
+    "Gemma3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "attn_logit_softcapping": null,
+  "bos_token_id": 2,
+  "cache_implementation": "hybrid",
+  "dtype": "bfloat16",
+  "eos_token_id": 1,
+  "final_logit_softcapping": null,
+  "head_dim": 256,
+  "hidden_activation": "gelu_pytorch_tanh",
+  "hidden_size": 1152,
+  "initializer_range": 0.02,
+  "intermediate_size": 6912,
+  "layer_types": [
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "full_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "full_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "full_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "sliding_attention",
+    "full_attention",
+    "sliding_attention",
+    "sliding_attention"
+  ],
+  "max_position_embeddings": 32768,
+  "model_type": "gemma3_text",
+  "num_attention_heads": 4,
+  "num_hidden_layers": 26,
+  "num_key_value_heads": 1,
+  "pad_token_id": 0,
+  "query_pre_attn_scalar": 256,
+  "rms_norm_eps": 1e-06,
+  "rope_local_base_freq": 10000,
+  "rope_scaling": null,
+  "rope_theta": 1000000,
+  "sliding_window": 512,
+  "transformers_version": "4.56.1",
+  "use_cache": true,
+  "vocab_size": 262144
+}
+
+Configuration saved in results//outputs/gemma-3-1b_biorxiv_noexample_nondp_bs-2048_step-1120_lr-1e-3-constant_seed-42_biorxiv_noexample_noredacted_modelgemma-3-1b-pt_eps4.0_delta3.38e-06_bs2048_maxseq300-512_epoch3_lr0.001_clip1.0_np4.3_gpus2/fullmodel_epoch20/config.json
+Configuration saved in results//outputs/gemma-3-1b_biorxiv_noexample_nondp_bs-2048_step-1120_lr-1e-3-constant_seed-42_biorxiv_noexample_noredacted_modelgemma-3-1b-pt_eps4.0_delta3.38e-06_bs2048_maxseq300-512_epoch3_lr0.001_clip1.0_np4.3_gpus2/fullmodel_epoch20/generation_config.json
+Model weights saved in results//outputs/gemma-3-1b_biorxiv_noexample_nondp_bs-2048_step-1120_lr-1e-3-constant_seed-42_biorxiv_noexample_noredacted_modelgemma-3-1b-pt_eps4.0_delta3.38e-06_bs2048_maxseq300-512_epoch3_lr0.001_clip1.0_np4.3_gpus2/fullmodel_epoch20/model.safetensors
+ 30%|███       | 336/1120 [5:58:18<13:25:43, 61.66s/it]
+epoch 21, completed steps 295, train loss 2.5911307334899902, current lr 0.001
+epoch 21, completed steps 300, train loss 2.606072187423706, current lr 0.001
+epoch 21, completed steps 305, train loss 2.598188877105713, current lr 0.001
+epoch 21, eval progress 0.00%, eval time 0.03s
+epoch 21, eval progress 13.33%, eval time 4.26s
+epoch 21, eval progress 26.67%, eval time 8.51s
+epoch 21, eval progress 40.00%, eval time 12.76s
+epoch 21, eval progress 53.33%, eval time 17.01s
+epoch 21, eval progress 66.67%, eval time 21.33s
+epoch 21, eval progress 80.00%, eval time 25.54s
+epoch 21, eval progress 93.33%, eval time 29.83s
+At epoch 21 end, eval loss 2.5926
+perplexity 13.3650
+epoch 22, completed steps 310, train loss 2.6051180362701416, current lr 0.001
+epoch 22, completed steps 315, train loss 2.6019861698150635, current lr 0.001
+epoch 22, completed steps 320, train loss 2.5964999198913574, current lr 0.001
+epoch 22, eval progress 0.00%, eval time 0.03s
+epoch 22, eval progress 13.33%, eval time 4.26s
+epoch 22, eval progress 26.67%, eval time 8.52s
+epoch 22, eval progress 40.00%, eval time 12.83s
+epoch 22, eval progress 53.33%, eval time 17.07s
+epoch 22, eval progress 66.67%, eval time 21.38s
+epoch 22, eval progress 80.00%, eval time 25.68s
+epoch 22, eval progress 93.33%, eval time 29.95s
+At epoch 22 end, eval loss 2.5915
+perplexity 13.3494
+epoch 23, completed steps 325, train loss 2.6037192344665527, current lr 0.001
+epoch 23, completed steps 330, train loss 2.6008410453796387, current lr 0.001
+epoch 23, completed steps 335, train loss 2.5939717292785645, current lr 0.001
+epoch 23, eval progress 0.00%, eval time 0.03s
+epoch 23, eval progress 13.33%, eval time 4.24s
+epoch 23, eval progress 26.67%, eval time 8.48s
+epoch 23, eval progress 40.00%, eval time 12.72s
+epoch 23, eval progress 53.33%, eval time 16.95s
+epoch 23, eval progress 66.67%, eval time 21.26s
+epoch 23, eval progress 80.00%, eval time 25.43s
+epoch 23, eval progress 93.33%, eval time 29.70s
+At epoch 23 end, eval loss 2.5907
+perplexity 13.3391
+epoch 24, completed steps 340, train loss 2.588129758834839, current lr 0.001
+epoch 24, completed steps 345, train loss 2.59588885307312, current lr 0.001
+epoch 24, completed steps 350, train loss 2.5985305309295654, current lr 0.001
+epoch 24, eval progress 0.00%, eval time 0.03s
+epoch 24, eval progress 13.33%, eval time 4.28s
+epoch 24, eval progress 26.67%, eval time 8.57s
+epoch 24, eval progress 40.00%, eval time 12.86s
+epoch 24, eval progress 53.33%, eval time 17.14s
+epoch 24, eval progress 66.67%, eval time 21.49s
+epoch 24, eval progress 80.00%, eval time 25.72s
+epoch 24, eval progress 93.33%, eval time 30.03s
+At epoch 24 end, eval loss 2.5898
+perplexity 13.3272
+epoch 25, completed steps 355, train loss 2.5990822315216064, current lr 0.001
+epoch 25, completed steps 360, train loss 2.5931236743927, current lr 0.001
+epoch 25, eval progress 0.00%, eval time 0.03s
+epoch 25, eval progress 13.33%, eval time 4.30s
+epoch 25, eval progress 26.67%, eval time 8.59s
+epoch 25, eval progress 40.00%, eval time 12.88s
+epoch 25, eval progress 53.33%, eval time 17.17s
+epoch 25, eval progress 66.67%, eval time 21.53s
+epoch 25, eval progress 80.00%, eval time 25.89s
+epoch 25, eval progress 93.33%, eval time 30.20s
+At epoch 25 end, eval loss 2.5889
+perplexity 13.3155
+epoch 26, completed steps 365, train loss 2.6025350093841553, current lr 0.001
+epoch 26, completed steps 370, train loss 2.5871338844299316, current lr 0.001
+epoch 26, completed steps 375, train loss 2.5964341163635254, current lr 0.001
+epoch 26, eval progress 0.00%, eval time 0.03s
+epoch 26, eval progress 13.33%, eval time 4.24s
+epoch 26, eval progress 26.67%, eval time 8.49s
+epoch 26, eval progress 40.00%, eval time 12.73s
+epoch 26, eval progress 53.33%, eval time 16.96s
+epoch 26, eval progress 66.67%, eval time 21.26s
+epoch 26, eval progress 80.00%, eval time 25.43s
+epoch 26, eval progress 93.33%, eval time 29.70s
+At epoch 26 end, eval loss 2.5884
+perplexity 13.3080
+epoch 27, completed steps 380, train loss 2.590785264968872, current lr 0.001

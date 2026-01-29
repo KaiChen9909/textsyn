@@ -1,0 +1,19 @@
+2026-01-28 14:51:37,370 INFO    MainThread:849699 [wandb_setup.py:_flush():81] Current SDK version is 0.24.0
+2026-01-28 14:51:37,370 INFO    MainThread:849699 [wandb_setup.py:_flush():81] Configure stats pid to 849699
+2026-01-28 14:51:37,370 INFO    MainThread:849699 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-01-28 14:51:37,370 INFO    MainThread:849699 [wandb_init.py:setup_run_log_directory():717] Logging user logs to /p/pkq2psproject/textsyn/DPSFT/wandb/run-20260128_145137-ug0pw5jl/logs/debug.log
+2026-01-28 14:51:37,370 INFO    MainThread:849699 [wandb_init.py:setup_run_log_directory():718] Logging internal logs to /p/pkq2psproject/textsyn/DPSFT/wandb/run-20260128_145137-ug0pw5jl/logs/debug-internal.log
+2026-01-28 14:51:37,370 INFO    MainThread:849699 [wandb_init.py:init():844] calling init triggers
+2026-01-28 14:51:37,370 INFO    MainThread:849699 [wandb_init.py:init():849] wandb.init called with sweep_config: {}
+config: {'dataset_name': 'biorxiv_noexample', 'dataset_path': '', 'prompt_style': 'biorxiv_noexample_generation', 'model_name_or_path': 'google/gemma-3-1b-pt', 'per_device_train_batch_size': 4, 'learning_rate': 0.001, 'weight_decay': 0.0, 'num_train_epochs': 3, 'num_train_steps': 1120, 'gradient_accumulation_steps': 256, 'lr_scheduler_type': <SchedulerType.CONSTANT: 'constant'>, 'num_warmup_steps': 30, 'output_dir': 'results//outputs/gemma-3-1b_biorxiv_noexample_nondp_bs-2048_step-1120_lr-1e-3-constant_seed-42_biorxiv_noexample_noredacted_modelgemma-3-1b-pt_eps4.0_delta3.38e-06_bs2048_maxseq300-512_epoch3_lr0.001_clip1.0_np4.3_gpus2', 'seed': 42, 'block_size': 1024, 'max_instruction_length': 300, 'max_answer_length': 512, 'log_freq': 5, 'access_token': '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', 'gradient_ckpt': True, 'no_eval_at_start': True, 'eval_only': False, 'next_token_prediction_acc': False, 'lora_r': 8, 'lora_alpha': 16, 'qbits': 16, 'delta': 3.38e-06, 'clip_norm': 1.0, 'noise_multiplier': 4.3, 'logical_batch_size': 2048, '_wandb': {}}
+2026-01-28 14:51:37,370 INFO    MainThread:849699 [wandb_init.py:init():892] starting backend
+2026-01-28 14:51:37,708 INFO    MainThread:849699 [wandb_init.py:init():895] sending inform_init request
+2026-01-28 14:51:37,754 INFO    MainThread:849699 [wandb_init.py:init():903] backend started and connected
+2026-01-28 14:51:37,756 INFO    MainThread:849699 [wandb_init.py:init():973] updated telemetry
+2026-01-28 14:51:37,757 INFO    MainThread:849699 [wandb_init.py:init():997] communicating run to backend with 90.0 second timeout
+2026-01-28 14:51:38,331 INFO    MainThread:849699 [wandb_init.py:init():1044] starting run threads in backend
+2026-01-28 14:51:38,614 INFO    MainThread:849699 [wandb_run.py:_console_start():2529] atexit reg
+2026-01-28 14:51:38,614 INFO    MainThread:849699 [wandb_run.py:_redirect():2377] redirect: wrap_raw
+2026-01-28 14:51:38,614 INFO    MainThread:849699 [wandb_run.py:_redirect():2446] Wrapping output streams.
+2026-01-28 14:51:38,615 INFO    MainThread:849699 [wandb_run.py:_redirect():2469] Redirects installed.
+2026-01-28 14:51:38,620 INFO    MainThread:849699 [wandb_init.py:init():1084] run started, returning control to user process
