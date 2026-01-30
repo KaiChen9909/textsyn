@@ -1,4 +1,7 @@
 DPSFT/results/
+DPSFT/wandb/
+DPSFT/logs/
+
 .claude/
 .vscode/
 
