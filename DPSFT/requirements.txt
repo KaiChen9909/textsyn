@@ -11,3 +11,4 @@ tqdm==4.67.1
 transformers==4.50.0
 wandb
 sentencepiece==0.2.0
+dotenv
