@@ -2,6 +2,10 @@ DPSFT/results/
 DPSFT/wandb/
 DPSFT/logs/
 
+evaluation/mauve/logs/
+evaluation/feature_divergence/logs/
+evaluation/classification/logs/
+
 .claude/
 .vscode/
 
