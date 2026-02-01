@@ -1,3 +1,6 @@
+AIM/logs/
+AIM/results/
+
 DPSFT/results/
 DPSFT/wandb/
 DPSFT/logs/
