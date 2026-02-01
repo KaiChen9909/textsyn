@@ -1,3 +1,0 @@
-{{
-  "": "<Basic Science/Discovery|Translational Research (Pre-clinical)|Clinical/Applied (Direct Patient Relevance)|Technical Development/Resource Creation>" // Indicates the proximity of the research to clinical application or direct resource generation.
-}}

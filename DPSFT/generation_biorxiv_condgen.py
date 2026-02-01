@@ -105,7 +105,7 @@ def main():
   tokenizer.padding_side = 'left'
 
   out_folder = (
-      f'generations_{args.output_dir}' if args.output_dir else 'generations'
+      f'results/synthetic/generations_{args.output_dir}' if args.output_dir else 'generations'
   )
   os.makedirs(out_folder, exist_ok=True)
 
@@ -154,7 +154,7 @@ def main():
       bs_cur = min(bs, n_gen - i)
 
       cur_input_texts = input_texts[i : i + bs_cur]
-      cur_prompts = [prompt.format(summary=text) for text in cur_input_texts]
+      cur_prompts = [prompt.format(feature=text) for text in cur_input_texts]
       batch = tokenizer(
           cur_prompts,
           return_tensors='pt',

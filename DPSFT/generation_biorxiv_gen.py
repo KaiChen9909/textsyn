@@ -99,7 +99,7 @@ def main():
 
   # --- Output Directory Setup ---
   out_folder = (
-      f'generations_{args.output_dir}' if args.output_dir else 'generations'
+      f'results/synthetic/generations_{args.output_dir}' if args.output_dir else 'generations'
   )
   os.makedirs(out_folder, exist_ok=True)
 
