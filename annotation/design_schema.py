@@ -16,11 +16,13 @@ def parse_response_to_schema(response_text: str) -> str:
   for line in lines:
     line = line.strip()
 
-    feature_match = re.match(r'^\d+\.\s*\*\*[^*]+\*\*:\s*(.+)', line)
+    feature_match = re.match(r'^\d+\.\s*\*\*([^*]+)\*\*:?\s*(.*)', line)
     if feature_match:
       if current_feature:
         features.append(current_feature)
-      current_feature = {'name': feature_match.group(1).strip()}
+      name_in_bold = feature_match.group(1).strip()
+      name_after_colon = feature_match.group(2).strip()
+      current_feature = {'name': name_after_colon if name_after_colon else name_in_bold}
       continue
 
     values_match = re.match(r'^-?\s*\*\*Possible Values\*\*:\s*(.+)', line)
@@ -65,6 +67,12 @@ if __name__ == "__main__":
       required=True,
       help='Output file name (without .txt extension). Will be saved to annotation/schema/{output_name}.txt',
   )
+  parser.add_argument(
+      '--num_features',
+      type=int,
+      default=8,
+      help='Number of features to generate in the schema.',
+  )
   args = parser.parse_args()
 
   load_dotenv()
@@ -83,7 +91,7 @@ if __name__ == "__main__":
       "Help feature the category and main idea of the paper, for the purpose of"
       " e.g. assigning a reviewer."
   )
-  num_features = 8
+  num_features = args.num_features
 
   prompt_template = open("prompts/schema_design_prompt.txt").read()
   input_prompt = prompt_template.format(

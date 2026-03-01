@@ -1,0 +1,106 @@
+#!/bin/bash
+
+# ==========================================
+# SLURM 资源配置 (针对 2 块 H100)
+# ==========================================
+#SBATCH --job-name=biorxiv_train
+#SBATCH --account=NAIRR250463-ai
+#SBATCH --partition=ai
+#SBATCH --nodes=1
+#SBATCH --gpus-per-node=4
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=32
+#SBATCH --mem=48G
+#SBATCH --time=27:00:00
+#SBATCH --output=logs/%j_train_stdout.txt
+
+# ==========================================
+# 环境准备
+# ==========================================
+mkdir -p logs
+
+# load anaconda and activate env
+module load anaconda
+source activate syn
+
+export HF_HOME="/anvil/scratch/x-kchen28/.cache/huggingface"
+cd $SLURM_SUBMIT_DIR
+
+# ==========================================
+# 运行你的 Bash 脚本任务
+# ==========================================
+echo "Job started at: $(date)"
+echo "Running on node: $SLURM_NODELIST"
+echo "Allocated GPUs: $CUDA_VISIBLE_DEVICES"
+
+
+DATASET_NAME=${1:? "Missing argument: dataset name"}
+ALGO=${2:?         "Missing argument: algorithm name"}
+EPS=${3:-4.0}
+USE_DP=${4:-1}
+GPU_NUM=${5:-2}
+MODEL_NAME=${6:-gemma}
+PORT_ID=${7:-29500}
+
+if [ "${MODEL_NAME}" = "gemma" ]; then 
+  GEN_MODEL="google/gemma-3-1b-pt"
+  MODEL_STR="gemma-3-1b"
+else 
+  echo "Unknown model" >&2
+  exit 1
+fi
+
+if [ "${DATASET_NAME}" = "biorxiv" ]; then
+  BS="2048"
+  STEP="1120"
+  LR="1e-3"
+  PORT="${PORT_ID}"
+  SEQLEN="512"
+  GPUS="${GPU_NUM}"
+
+  if [ "${EPS}" = "4.0" ]; then
+    if [[ "${ALGO}" = "condgen"* ]]; then
+      NP="4.3"
+      MAX_INST_LEN=300
+    elif [ "${ALGO}" = "dpft" ]; then
+      NP="3.013"
+      # NP="3.15" # for dpft_filter
+    else
+      echo "Error: Unknown algo '${ALGO}'" >&2
+      exit 1
+    fi
+  elif [ "${EPS}" = "1.0" ]; then 
+    if [[ "${ALGO}" = "condgen"* ]]; then
+      NP="13.8" 
+      MAX_INST_LEN=300
+    elif [ "${ALGO}" = "dpft" ]; then
+      NP="10.26"
+    else
+      echo "Error: Unknown algo '${ALGO}'" >&2
+      exit 1
+    fi
+  fi
+else
+  echo "Error: Unknown dataset '${DATASET_NAME}'" >&2
+  exit 1
+fi
+
+
+if [ "${USE_DP}" = "1" ]; then
+  DEVICE_BS="4"
+  if [ "${ALGO}" = "dpft" ]; then
+    bash scripts/train/run_biorxiv_ft_dp.sh ${BS} ${STEP} ${LR} ${PORT} ${EPS} ${NP} ${SEQLEN} ${DEVICE_BS} ${GPUS} ${DATASET_NAME} cosine ${GEN_MODEL} ${MODEL_STR}
+  else
+    bash scripts/train/run_biorxiv-condgen_ft_dp.sh ${BS} ${STEP} ${LR} ${PORT} ${EPS} ${NP} ${SEQLEN} ${DEVICE_BS} ${GPUS} ${DATASET_NAME}_${ALGO} ${MAX_INST_LEN} constant ${GEN_MODEL} ${MODEL_STR}
+  fi
+else 
+  DEVICE_BS="16"
+  if [ "${ALGO}" = "dpft" ]; then
+    bash scripts/train/run_biorxiv_ft_nondp.sh ${BS} ${STEP} ${LR} ${PORT} ${SEQLEN} ${DEVICE_BS} ${GPUS} ${DATASET_NAME} cosine ${GEN_MODEL} ${MODEL_STR}
+  else
+    bash scripts/train/run_biorxiv-condgen_ft_nondp.sh ${BS} ${STEP} ${LR} ${PORT} ${SEQLEN} ${DEVICE_BS} ${GPUS} ${DATASET_NAME}_${ALGO} ${MAX_INST_LEN} constant ${GEN_MODEL} ${MODEL_STR}
+  fi
+fi
+
+
+echo "Job finished at: $(date)"

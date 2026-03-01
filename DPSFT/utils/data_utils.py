@@ -332,47 +332,7 @@ def preprocess_text_dataset(
         split=split,
         column='abstract',
     )
-  elif dataset_name == 'biorxiv-conditions':
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        column='selected_schema',
-    )
-  elif dataset_name == 'biorxiv-complex8-conditions':
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        column='schema',
-    )
-  elif dataset_name == 'biorxiv-complex8et-conditions':
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        column='schema',
-    )
-  elif dataset_name == 'biorxiv-category-conditions':
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        column='category',
-    )
-  elif dataset_name == 'biorxiv-condgen':
-    return _preprocess_text_dataset_conditional_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        feature_name='selected_schema',
-        text_name='abstract',
-    )
-  elif dataset_name == 'biorxiv-nl3-condgen':
-    return _preprocess_text_dataset_biorxiv_nl3_condgen_instructions(
-        text_dataset, prompt_dict=get_prompt_dict(prompt_template), split=split
-    )
-  elif dataset_name == 'biorxiv-complex8-condgen':
+  elif dataset_name == 'biorxiv_condgen_filter':
     return _preprocess_text_dataset_conditional_prompt_instructions(
         text_dataset,
         prompt_dict=get_prompt_dict(prompt_template),
@@ -380,7 +340,14 @@ def preprocess_text_dataset(
         feature_name='schema',
         text_name='abstract',
     )
-  elif dataset_name == 'biorxiv-complex8et-condgen':
+  elif dataset_name.endswith('_filter') or dataset_name.endswith('-filter'):
+    return _preprocess_text_dataset_fixed_prompt_instructions(
+        text_dataset,
+        prompt_dict=get_prompt_dict(prompt_template),
+        split=split,
+        column='abstract',
+    )
+  elif dataset_name.startswith('biorxiv_condgen'):
     return _preprocess_text_dataset_conditional_prompt_instructions(
         text_dataset,
         prompt_dict=get_prompt_dict(prompt_template),
@@ -388,23 +355,7 @@ def preprocess_text_dataset(
         feature_name='schema',
         text_name='abstract',
     )
-  elif dataset_name == 'biorxiv-category-condgen':
-    return _preprocess_text_dataset_conditional_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        feature_name='category',
-        text_name='abstract',
-    )
-  elif dataset_name in ['biorxiv_noexample', 'biorxiv_example50']:
-    return _preprocess_text_dataset_conditional_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        feature_name='schema',
-        text_name='abstract',
-    )
-  elif dataset_name in ['biorxiv-generated']:
+  elif dataset_name in ['biorxiv-generated', 'biorxiv-filtered']:
     return _preprocess_text_dataset_fixed_prompt_instructions(
         text_dataset,
         prompt_dict=get_prompt_dict(prompt_template),
@@ -562,103 +513,37 @@ def get_prompt_dict(prompt_template):
             instruction=instruction
         ),
     }
-  elif prompt_template == 'biorxiv-conditions_generation':
+  elif prompt_template == 'biorxiv_dpft_generation':
     instruction = (
-        'Please generate a structured JSON summary of a scientific abstract,'
-        ' including the following fields: token_counts, category, title.'
+        'Generate a synthetic scientific abstract in the style of a bioRxiv'
+        ' paper.'
     )
     PROMPT_DICT = {
-        'type': 'biorxiv-conditions',
+        'type': 'biorxiv_dpft',
         'prompt': '<start_of_turn>user\n{instruction}\n<end_of_turn>\n<start_of_turn>model\n'.format(
             instruction=instruction
         ),
     }
-  elif prompt_template == 'biorxiv-complex8-conditions_generation':
+  elif prompt_template == 'biorxiv_condgen_generation':
+    prompt_type = '_'.join(prompt_template.split('_')[:-1])
     instruction = (
-        'Please generate a structured JSON summary of a scientific abstract,'
-        ' including the following fields: token_counts, primary_research_area,'
-        ' model_organism, experimental_approach, dominant_data_type,'
-        ' research_focus_scale, disease_mention, sample_size, research_goal.'
-    )
-    PROMPT_DICT = {
-        'type': 'biorxiv-complex8-conditions',
-        'prompt': '<start_of_turn>user\n{instruction}\n<end_of_turn>\n<start_of_turn>model\n'.format(
-            instruction=instruction
-        ),
-    }
-  elif prompt_template == 'biorxiv-complex8et-conditions_generation':
-    instruction = (
-        'Please generate a structured JSON summary of a scientific abstract,'
-        ' including the following fields: primary_research_area,'
-        ' model_organism, experimental_approach, dominant_data_type,'
-        ' research_focus_scale, disease_mention, sample_size, research_goal.'
-    )
-    PROMPT_DICT = {
-        'type': 'biorxiv-complex8et-conditions',
-        'prompt': '<start_of_turn>user\n{instruction}\n<end_of_turn>\n<start_of_turn>model\n'.format(
-            instruction=instruction
-        ),
-    }
-  elif prompt_template == 'biorxiv-nl3-condgen_generation':
-    instruction = (
-        'Write a scientific abstract in the style of a bioRxiv paper, in the'
-        ' {category} category, with a target token count of {token_counts}'
-        ' tokens.\n\nTitle: {title}\n\nAbstract: '
-    )
-    PROMPT_DICT = {
-        'type': 'biorxiv-nl3-condgen',
-        'prompt': '<start_of_turn>user\n{instruction}\n<end_of_turn>\n<start_of_turn>model\n'.format(
-            instruction=instruction
-        ),
-    }
-  elif prompt_template == 'biorxiv-category-conditions_generation':
-    instruction = 'Please generate a category of a scientific paper on bioRxiv.'
-    PROMPT_DICT = {
-        'type': 'biorxiv-category-conditions',
-        'prompt': '<start_of_turn>user\n{instruction}\n<end_of_turn>\n<start_of_turn>model\n'.format(
-            instruction=instruction
-        ),
-    }
-  elif prompt_template == 'biorxiv-condgen_generation':
-    instruction = (
-        'Please generate a synthetic scientific abstract that matches the below'
+        'Please generate a synthetic scientific abstract that belongs to the'
         ' JSON summary, in the style of a bioRxiv paper.'
     )
     PROMPT_DICT = {
-        'type': 'biorxiv-condgen',
+        'type': prompt_type,
         'prompt': '<start_of_turn>user\n{instruction}\n\n{{feature}}\n<end_of_turn>\n<start_of_turn>model\n'.format(
             instruction=instruction
         ),
     }
-  elif prompt_template == 'biorxiv-category-condgen_generation':
+  elif prompt_template == 'biorxiv_condgen_filter_generation':
+    prompt_type = '_'.join(prompt_template.split('_')[:-1])
     instruction = (
         'Please generate a synthetic scientific abstract that belongs to the'
-        ' below category, in the style of a bioRxiv paper.'
+        ' JSON summary, in the style of a bioRxiv paper.'
     )
     PROMPT_DICT = {
-        'type': 'biorxiv-category-condgen',
-        'prompt': '<start_of_turn>user\n{instruction}\n\n{{feature}}\n<end_of_turn>\n<start_of_turn>model\n'.format(
-            instruction=instruction
-        ),
-    }
-  elif prompt_template == 'biorxiv_noexample_generation':
-    instruction = (
-        'Please generate a synthetic scientific abstract that belongs to the'
-        ' below category, in the style of a bioRxiv paper.'
-    )
-    PROMPT_DICT = {
-        'type': 'biorxiv_noexample',
-        'prompt': '<start_of_turn>user\n{instruction}\n\n{{feature}}\n<end_of_turn>\n<start_of_turn>model\n'.format(
-            instruction=instruction
-        ),
-    }
-  elif prompt_template == 'biorxiv_example50_generation':
-    instruction = (
-        'Please generate a synthetic scientific abstract that belongs to the'
-        ' below category, in the style of a bioRxiv paper.'
-    )
-    PROMPT_DICT = {
-        'type': 'biorxiv_example50',
+        'type': prompt_type,
         'prompt': '<start_of_turn>user\n{instruction}\n\n{{feature}}\n<end_of_turn>\n<start_of_turn>model\n'.format(
             instruction=instruction
         ),
@@ -742,22 +627,24 @@ class TokenizedSupervisedInstructDataset(Dataset):
                 ),
             },
         )
-      elif dataset_name == 'biorxiv_noexample': # test case 1 (no example provided cond-gen)
+      elif dataset_name.startswith('biorxiv_noexample') or dataset_name == 'biorxiv_condgen':
         data_dir = '../data/biorxiv'
+        file_str = '_'.join(dataset_name.split('_')[1:])
         text_dataset = load_dataset(
             'csv',
             data_files={
-                'train': osp.join(data_dir, 'clean_biorxiv_schema_noexample_train.csv'),
-                'validation': osp.join(data_dir, 'clean_biorxiv_schema_noexample_valid.csv'),
+                'train': osp.join(data_dir, f'clean_biorxiv_schema_{file_str}_train.csv'),
+                'validation': osp.join(data_dir, f'clean_biorxiv_schema_{file_str}_valid.csv'),
             },
         )
-      elif dataset_name == 'biorxiv_example50': # test case 2 (50 examples provided cond-gen)
+      elif dataset_name.startswith('biorxiv_condgen_pretrain'):
         data_dir = '../data/biorxiv'
+        file_str = 'condgen_pretrain'
         text_dataset = load_dataset(
             'csv',
             data_files={
-                'train': osp.join(data_dir, 'clean_biorxiv_schema_example50_train.csv'),
-                'validation': osp.join(data_dir, 'clean_biorxiv_schema_example50_valid.csv'),
+                'train': osp.join(data_dir, f'clean_biorxiv_schema_{file_str}_train.csv'),
+                'validation': osp.join(data_dir, f'clean_biorxiv_schema_{file_str}_valid.csv'),
             },
         )
       elif dataset_name == 'pubmed_openreview_mixture':
@@ -931,6 +818,65 @@ class TokenizedSupervisedInstructDataset(Dataset):
         ])
 
         # Prepare together into one DatasetDict
+        text_dataset = DatasetDict({
+            'train': train_dataset,
+            'validation': valid_dataset,
+        })
+      elif dataset_name == 'biorxiv_condgen_filter':
+        # condgen_filter: keep both schema and abstract
+        data_dir = '../data/biorxiv'
+        if dataset_path.endswith('.csv'):
+          train_dataset = load_dataset(
+              'csv',
+              data_files={'train': dataset_path},
+          )['train'].rename_column('generated_text', 'abstract').rename_column('input_text', 'schema')
+        elif dataset_path.endswith('.jsonl'):
+          train_dataset = load_dataset(
+              'json',
+              data_files={'train': dataset_path},
+          )['train'].rename_column('generated_text', 'abstract').rename_column('input_text', 'schema')
+        else:
+          raise ValueError(
+              f'Unsupported dataset path {dataset_path} for filter dataset'
+              f' {dataset_name}.'
+          )
+
+        valid_dataset = load_dataset(
+            'csv',
+            data_files={'validation': osp.join(data_dir, 'clean_biorxiv_schema_condgen_valid.csv')},
+        )['validation']
+
+        text_dataset = DatasetDict({
+            'train': train_dataset,
+            'validation': valid_dataset,
+        })
+      elif dataset_name.endswith('_filter') or dataset_name.endswith('-filter'):
+        # Regular filter: fixed prompt, only abstract
+        data_dir = '../data/biorxiv'
+        if dataset_path.endswith('.csv'):
+          train_dataset = load_dataset(
+              'csv',
+              data_files={'train': dataset_path},
+          )['train'].rename_column('generated_text', 'abstract')
+        elif dataset_path.endswith('.jsonl'):
+          train_dataset = load_dataset(
+              'json',
+              data_files={'train': dataset_path},
+          )['train'].rename_column('generated_text', 'abstract')
+        else:
+          raise ValueError(
+              f'Unsupported dataset path {dataset_path} for filter dataset'
+              f' {dataset_name}.'
+          )
+
+        valid_dataset_full = load_dataset(
+            'csv',
+            data_files={'validation': osp.join(data_dir, 'validation.csv')},
+        )['validation']
+        valid_dataset = valid_dataset_full.remove_columns([
+            col for col in valid_dataset_full.column_names if col != 'abstract'
+        ])
+
         text_dataset = DatasetDict({
             'train': train_dataset,
             'validation': valid_dataset,

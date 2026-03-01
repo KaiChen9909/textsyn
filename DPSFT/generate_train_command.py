@@ -126,11 +126,19 @@ parser.add_argument(
     type=str,
     default='',
 )
+parser.add_argument(
+    '--dataset_size',
+    type=int,
+    default=None,
+    help='Override NUM_TRAIN_SAMPLES for custom dataset sizes',
+)
 
 args = parser.parse_args()
 
-
-if args.dataset_name == 'movie-json':
+# 允许通过 --dataset_size 直接指定训练样本数
+if args.dataset_size is not None:
+  NUM_TRAIN_SAMPLES = args.dataset_size
+elif args.dataset_name == 'movie-json':
   NUM_TRAIN_SAMPLES = 26963
 elif args.dataset_name == 'pubmed_openreview_mixture':
   NUM_TRAIN_SAMPLES = 76069
@@ -165,10 +173,11 @@ elif args.dataset_name in [
     'biorxiv-complex8et-condgen',
     'biorxiv_noexample',
     'biorxiv_example50'
-]:
+] or args.dataset_name.startswith('biorxiv'):
   NUM_TRAIN_SAMPLES = 28846
 elif args.dataset_name in [
     'biorxiv-generated',
+    'biorxiv_condgen_filter',
 ]:
   NUM_TRAIN_SAMPLES = 5000
 else:
@@ -269,7 +278,12 @@ prompt_style_dict = {
     'biorxiv_noexample': 'biorxiv_noexample_generation',
     'biorxiv_example50': 'biorxiv_example50_generation',
     'biorxiv-generated': 'biorxiv_evaluation',
+    'biorxiv_noexample_4attr': 'biorxiv_noexample_4attr_generation',
+    'biorxiv_noexample_16attr': 'biorxiv_noexample_16attr_generation',
+    'biorxiv_noexample_24attr': 'biorxiv_noexample_24attr_generation',
 }
+if dataset_name not in prompt_style_dict:
+  prompt_style_dict[dataset_name] = f'{dataset_name}_generation'
 
 if dataset_name in prompt_style_dict:
   assert prompt_style == prompt_style_dict[dataset_name], (

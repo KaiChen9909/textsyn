@@ -1,0 +1,8 @@
+{
+  "self_bleu": 0.18046800250401526,
+  "self_bleu_std": 0.05007433429564899,
+  "num_sentences": 1000,
+  "n_gram": 4,
+  "input_path": "/anvil/scratch/x-kchen28/textsyn/DPSFT/results/synthetic/generations_biorxiv_noexample_4attr/generated_biorxiv_noexample_4attr_model-gemma-3-1b-pt_dp-eps-1000000000.0-np-0-lr-1e-3_seqlen-300-512_temp-1.0_tp-0.95_tk-0_eval_n-5000.jsonl",
+  "text_column_name": "generated_text"
+}

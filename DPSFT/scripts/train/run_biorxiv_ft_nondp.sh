@@ -10,9 +10,9 @@ python generate_train_command.py \
   --dataset_name ${dataset_name} \
   --model_name ${model_name} \
   --job_sess ${model_str}_biorxiv_nondpft_bs-$1_step-$2_lr-$3-${lr_scheduler}_seed-42 \
-  --eps 1000000000 \
+  --eps "-1" \
   --delta 0.1 \
-  --clip 1000000000 \
+  --clip "-1" \
   --perdevice_bs ${device_bs} \
   --gpus ${gpus} \
   --max_instruction_len 32 \

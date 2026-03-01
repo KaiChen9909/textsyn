@@ -3,14 +3,13 @@ seq_len=${7:-512}
 device_bs=${8:-4}
 gpus=${9:-2}
 dataset_name=${10:-biorxiv-condgen}
-if [[ "${dataset_name}" == "biorxiv-complex8et-condgen" ]]; then
-  prompt_style="biorxiv-condgen"
-else
-  prompt_style="${dataset_name}"
-fi
-lr_scheduler=${11:-constant}
-model_name=${12:-google/gemma-3-1b-pt}
-model_str=${13:-gemma-3-1b}
+max_inst_len=${11:-300}
+lr_scheduler=${12:-constant}
+model_name=${13:-google/gemma-3-1b-pt}
+model_str=${14:-gemma-3-1b}
+
+prompt_style="${dataset_name}"
+
 python generate_train_command.py \
   --dataset_name ${dataset_name} \
   --model_name ${model_name} \
@@ -21,7 +20,7 @@ python generate_train_command.py \
   --clip 1 \
   --perdevice_bs ${device_bs} \
   --gpus ${gpus} \
-  --max_instruction_len 300 \
+  --max_instruction_len ${max_inst_len} \
   --max_answer_len ${seq_len} \
   --total_bs $1 \
   --num_steps $2 \

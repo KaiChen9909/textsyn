@@ -1,13 +1,25 @@
 AIM/logs/
 AIM/results/
 
+annotation/logs
+
 DPSFT/results/
 DPSFT/wandb/
 DPSFT/logs/
+DPSFT/scripts/unused/
 
 evaluation/mauve/logs/
+evaluation/mauve/embeddings
+
 evaluation/feature_divergence/logs/
 evaluation/classification/logs/
+
+evaluation/acc/logs
+evaluation/acc/results
+evaluation/fid/logs
+evaluation/self_bleu/logs
+
+data/
 
 .claude/
 .vscode/

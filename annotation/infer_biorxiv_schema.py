@@ -8,18 +8,23 @@ back to a new CSV file.
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 from functools import partial
+import json
 import logging
 import os
 import random
+import re
 import sys
 import time
 from google import genai
 import pandas as pd
 from tqdm import tqdm
+from dotenv import load_dotenv
 
 # --- Configuration ---
+load_dotenv()
 API_KEY = os.getenv('GOOGLE_API_KEY')
-MODEL_NAME = 'gemini-2.5-flash-lite-preview-06-17'
+# MODEL_NAME = 'gemini-2.5-flash-lite-preview-06-17'
+MODEL_NAME = 'gemini-2.5-flash-lite-preview-09-2025'
 MAX_WORKERS = 8
 MAX_RETRIES = 5
 
@@ -51,8 +56,14 @@ parser.add_argument(
 parser.add_argument(
     '--prompt_file',
     type=str,
-    default='./prompts/biorxiv_schema_extraction_prompt.txt',
+    default='./prompts/schema_extraction_prompt.txt',
     help='Path to the schema inference prompt file.',
+)
+parser.add_argument(
+    '--schema_name',
+    type=str,
+    required=True,
+    help='Schema file name (without .txt extension). Will be loaded from annotation/schema/{schema_name}.txt',
 )
 parser.add_argument(
     '--text_column',
@@ -70,6 +81,7 @@ parser.add_argument(
     ),
 )
 parser.add_argument('--output_column', type=str, default='schema')
+
 args = parser.parse_args()
 
 
@@ -131,6 +143,16 @@ def main():
     logging.error(f'Prompt template not found at {args.prompt_file}')
     sys.exit(1)
 
+  schema_path = os.path.join(os.path.dirname(__file__), 'schema', f'{args.schema_name}.txt')
+  try:
+    with open(schema_path, 'r') as f:
+      schema_content = f.read()
+  except FileNotFoundError:
+    logging.error(f'Schema file not found at {schema_path}')
+    sys.exit(1)
+
+  prompt_template = prompt_template.format(schema=schema_content, abstract_text='{abstract_text}')
+
 
   # --- Prepare the list of abstracts to process ---
   abstract_list = df[args.text_column].fillna('').tolist()
@@ -159,6 +181,37 @@ def main():
 
   logging.info(f'Saving results to: {args.output_file}')
   df.to_csv(args.output_file, index=False, encoding='utf-8')
+
+  # --- Save Clean Version (abstract + schema only) ---
+  clean_output_file = os.path.join(
+      os.path.dirname(args.output_file),
+      f'clean_{os.path.basename(args.output_file)}'
+  )
+
+  def clean_schema(val):
+    """Clean schema value: remove markdown markers and convert to compact JSON."""
+    if pd.isna(val):
+      return ''
+    val = str(val).strip()
+    # Remove markdown code block markers
+    if val.startswith('```'):
+      val = re.sub(r'^```(?:json)?\s*', '', val)
+      val = re.sub(r'\s*```$', '', val)
+    val = val.strip()
+    # Parse and re-serialize as compact JSON
+    try:
+      parsed = json.loads(val)
+      return json.dumps(parsed, ensure_ascii=False, separators=(',', ':'))
+    except json.JSONDecodeError:
+      return val
+
+  clean_df = pd.DataFrame({
+      'abstract': df[args.text_column],
+      'schema': df[f'inferred_{args.output_column}'].apply(clean_schema)
+  })
+
+  logging.info(f'Saving clean version to: {clean_output_file}')
+  clean_df.to_csv(clean_output_file, index=False, encoding='utf-8')
 
   end_time = time.time()
   logging.info(f'Processing completed in {end_time - start_time:.2f} seconds.')

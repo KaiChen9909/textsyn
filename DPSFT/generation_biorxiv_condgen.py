@@ -19,12 +19,40 @@ from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
 # --- Application-Specific Imports ---
 from utils.data_utils import get_prompt_dict
+from dotenv import load_dotenv
 
 # --- Setup Standard Logging ---
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
 )
+
+load_dotenv("../.env")
+hf_token = os.getenv("HF_LOGIN_STR")
+
+
+def load_schema_data(file_path, column_name):
+  """Load schema data from CSV or JSONL file.
+
+  Args:
+    file_path: Path to the data file (.csv or .jsonl)
+    column_name: Name of the column to read schema from
+
+  Returns:
+    List of schema texts
+  """
+  if file_path.endswith('.csv'):
+    df = pd.read_csv(file_path)
+    return df[column_name].tolist()
+  elif file_path.endswith('.jsonl'):
+    data = []
+    with open(file_path, 'r') as f:
+      for line in f:
+        item = json.loads(line.strip())
+        data.append(item[column_name])
+    return data
+  else:
+    raise ValueError(f"Unsupported file format: {file_path}. Only .csv and .jsonl are supported.")
 
 
 def main():
@@ -82,8 +110,28 @@ def main():
       default=0,
       help='begin index for input data',
   )
+  parser.add_argument(
+    '--seed',
+    '-s',
+    type=int,
+    default=42,
+    help='random seed for generation'
+  )
   parser.add_argument('--prompt_str', '-ps', type=str, default='biorxiv')
+  parser.add_argument(
+      '--schema_column',
+      '-sc',
+      type=str,
+      default='generated_text',
+      help='Column name to read schema from (default: generated_text, for condgen_filter: input_text)'
+  )
   args = parser.parse_args()
+
+  # --- random seed ---
+  seed = args.seed
+  random.seed(seed)
+  torch.manual_seed(seed)
+  torch.cuda.manual_seed_all(seed)
 
   # --- Device Setup and Model Loading ---
   device = f'cuda:{args.device}'
@@ -97,11 +145,16 @@ def main():
       torch_dtype=compute_dtype,
       low_cpu_mem_usage=True,
       attn_implementation='eager',
+      token=hf_token,
   )
   model.eval()
   model.to(device)
 
-  tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
+  tokenizer = AutoTokenizer.from_pretrained(
+    args.model_name_or_path, 
+    token=hf_token, 
+    attn_implementation="sdpa",
+  )
   tokenizer.padding_side = 'left'
 
   out_folder = (
@@ -117,7 +170,7 @@ def main():
   logging.info('-----END PROMPT-----------')
 
   # --- Input Data Preparation ---
-  input_data = pd.read_csv(args.prompt_file)['generated_text'].tolist()
+  input_data = load_schema_data(args.prompt_file, args.schema_column)
 
   n_gen = args.n_gen
 

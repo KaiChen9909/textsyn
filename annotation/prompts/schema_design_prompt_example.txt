@@ -23,7 +23,7 @@ Generate a set of {num_features} categorical features that provide a rich summar
 # Output Format:
 Provide your response as a numbered list. For each feature, you MUST include its name, possible values, a description, and a rationale for its inclusion.
 
-1.  **Feature Name**:
+1.  **Feature Name**: ...
     - **Possible Values**: ...
     - **Description**: A brief, clear explanation of what the feature captures.
     - **Rationale**: A justification for why this feature is useful for the primary goal, citing an example if helpful.

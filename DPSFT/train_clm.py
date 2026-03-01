@@ -275,6 +275,7 @@ def main():
         args.model_name_or_path,
         torch_dtype=compute_dtype,
         low_cpu_mem_usage=True,
+        attn_implementation="eager",
     )
     tokenizer = AutoTokenizer.from_pretrained(
         args.model_name_or_path, use_fast=False

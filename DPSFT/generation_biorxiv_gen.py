@@ -9,6 +9,7 @@ import csv
 import logging
 import os
 import time
+import random
 
 # --- Third-Party Library Imports ---
 import torch
@@ -64,8 +65,21 @@ def main():
       default=1.0,
       help='temperature for sampling',
   )
+  parser.add_argument(
+    '--seed',
+    '-s',
+    type=int,
+    default=42,
+    help='random seed for generation'
+  )
   parser.add_argument('--prompt_str', '-ps', type=str, default='biorxiv')
   args = parser.parse_args()
+
+  # --- random seed ---
+  seed = args.seed
+  random.seed(seed)
+  torch.manual_seed(seed)
+  torch.cuda.manual_seed_all(seed)
 
   # --- Device Setup and Model Loading ---
   device = f'cuda:{args.device}'

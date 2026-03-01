@@ -1,0 +1,33 @@
+{
+  "args": {
+    "data_path": "../data/biorxiv/clean_biorxiv_schema_noexample_4attr_train.csv",
+    "model_name_or_path": "google/gemma-3-1b-pt",
+    "text_column": "abstract",
+    "sample_size": 200,
+    "batch_size": 32,
+    "max_prompt_length": 512,
+    "max_gen_length": 512,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 0,
+    "device": "cuda:0",
+    "output_path": "eval_res/noexample_4attr.json",
+    "prompt_template": null,
+    "seed": 42,
+    "bertscore_batch_size": 32,
+    "save_generations": false
+  },
+  "bertscore": {
+    "precision_mean": 0.6934826374053955,
+    "recall_mean": 0.7569869160652161,
+    "f1_mean": 0.7230831384658813,
+    "precision_std": 0.08455774188041687,
+    "recall_std": 0.07928898930549622,
+    "f1_std": 0.07907257229089737
+  },
+  "timing": {
+    "generation_time": 98.05691599845886,
+    "bertscore_time": 4.217864513397217
+  },
+  "num_samples": 200
+}
