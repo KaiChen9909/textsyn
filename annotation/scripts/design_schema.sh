@@ -4,7 +4,7 @@
 # SLURM 资源配置
 # ==========================================
 #SBATCH --job-name=biorxiv_gen
-#SBATCH --account=NAIRR250463-ai
+#SBATCH --account=CIS260108-ai
 #SBATCH --partition=ai
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
@@ -33,14 +33,14 @@ echo "Running on node: $SLURM_NODELIST"
 echo "Allocated GPUs: $CUDA_VISIBLE_DEVICES"
 
 DATASET_NAME=${1:-biorxiv}
-SCHEMA_TYPE=${2:-noexample}
+ALGO=${2:-noexample}
 NUM_FEATURES=${3:-8}
-TEXT_COLUMN=${4:-abstract}
 
 echo "designing schema ..."
 
 python design_schema.py \
-    --output_name ${DATASET_NAME}_schema_${SCHEMA_TYPE} \
+    --dataset_name ${DATASET_NAME} \
+    --output_name ${DATASET_NAME}_schema_${ALGO} \
     --num_features ${NUM_FEATURES} 
 
 echo "design finished"

@@ -4,7 +4,7 @@
 # SLURM 资源配置
 # ==========================================
 #SBATCH --job-name=biorxiv_noexample_aim       # 任务名称
-#SBATCH --account=NAIRR250463-ai       # 你的项目账户
+#SBATCH --account=CIS260108-ai       # 你的项目账户
 #SBATCH --partition=ai                 # 必须选 ai 分区以使用 H100
 #SBATCH --nodes=1                      # 使用 1 个计算节点
 #SBATCH --gpus-per-node=1              # 关键：申请 1 块 GPU

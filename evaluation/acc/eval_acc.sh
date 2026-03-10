@@ -4,7 +4,7 @@
 # SLURM 资源配置
 # ==========================================
 #SBATCH --job-name=biorxiv_eval_acc
-#SBATCH --account=NAIRR250463-ai
+#SBATCH --account=CIS260108-ai
 #SBATCH --partition=ai
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
@@ -39,6 +39,11 @@ SAVE_PATH=${5:-"none"}
 GPU_NUM=${6:-2}
 MODEL=${7:-gemma}
 ACC_MODEL=${8:-"openai-community/gpt2"}  # fixed eval model, independent of generation model
+RHO_FILTER=${9:-0.03}
+DATA_TYPE=${10:-final}  # condgen_filter: "final" (from gen.sh) or "intermediate" (from gen_filter.sh)
+STEP=${11:-1120}
+PREV_N_GEN=${12:-5000}
+L=${13:-4}
 
 if [ "${MODEL}" = "gemma" ]; then
   MODEL_STR="gemma-3-1b"
@@ -56,7 +61,79 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
   SEQLEN="512"
   N_GEN=5000
 
-  if [ "${ALGO}" = "noexample"* ]; then
+  if [ "${ALGO}" = "condgen_filter" ]; then
+    MODE="${DATASET_NAME}_${ALGO}"
+
+    if [ "${DATA_TYPE}" = "intermediate" ]; then
+      # Intermediate filtered data from gen_filter.sh
+      MAX_INST_LEN="300"
+      FILE_TYPE="jsonl"
+
+      if [ "${USE_DP}" = "1" ]; then
+        if [ "${EPS}" = "4.0" ]; then
+          NP="4.3"
+        elif [ "${EPS}" = "1.0" ]; then
+          NP="13.8"
+        else
+          echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
+          exit 1
+        fi
+        FILE_STEM="${DATASET_NAME}_${ALGO}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}-L-${L}"
+      else
+        EPS="-1.0"
+        NP="-1"
+        FILE_STEM="${DATASET_NAME}_${ALGO}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}-L-${L}"
+      fi
+
+    elif [ "${DATA_TYPE}" = "final" ]; then
+      # Final synthetic data from gen.sh
+      MAX_INST_LEN="300"
+      FILE_TYPE="jsonl"
+
+      if [ "${USE_DP}" = "1" ]; then
+        if [ "${EPS}" = "4.0" ]; then
+          NP="4.3"
+        elif [ "${EPS}" = "1.0" ]; then
+          NP="13.8"
+        else
+          echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
+          exit 1
+        fi
+        FILE_STEM="${DATASET_NAME}_${ALGO}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}-step-${STEP}_rho-${RHO_FILTER}_n${PREV_N_GEN}_L${L}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}"
+      else
+        EPS="-1.0"
+        NP="-1"
+        FILE_STEM="${DATASET_NAME}_${ALGO}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}-step-${STEP}_rho-${RHO_FILTER}_n${PREV_N_GEN}_L${L}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}"
+      fi
+
+    else
+      echo "Error: Unknown DATA_TYPE '${DATA_TYPE}'. For condgen_filter, supported: intermediate, final" >&2
+      exit 1
+    fi
+
+  elif [ "${ALGO}" = "condgen" ]; then
+    MAX_INST_LEN="300"
+    MODE="${DATASET_NAME}_${ALGO}"
+    FILE_TYPE="jsonl"
+
+    if [ "${USE_DP}" = "1" ]; then
+      if [ "${EPS}" = "4.0" ]; then
+        NP="4.3"
+      elif [ "${EPS}" = "1.0" ]; then
+          NP="13.8"
+      else
+        echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
+        exit 1
+      fi
+      FILE_STEM="${DATASET_NAME}_${ALGO}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}-step-${STEP}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}"
+    else
+      # non-DP: overwrite EPS and NP
+      EPS="-1.0"
+      NP="-1"
+      FILE_STEM="${DATASET_NAME}_${ALGO}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}-step-${STEP}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}"
+    fi
+
+  elif [ "${ALGO}" = "noexample"* ]; then
     MAX_INST_LEN="300"
     MODE="${DATASET_NAME}_${ALGO}"
     FILE_TYPE="jsonl"
@@ -96,6 +173,35 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
       FILE_STEM="${DATASET_NAME}_${ALGO}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}"
     fi
 
+  elif [ "${ALGO}" = "dpft_filter" ]; then
+    MODE="${DATASET_NAME}_${ALGO}"
+
+    if [ "${DATA_TYPE}" = "intermediate" ]; then
+      # Intermediate filtered data from gen_filter.sh
+      MAX_INST_LEN="32"
+      FILE_TYPE="jsonl"
+
+      if [ "${USE_DP}" = "1" ]; then
+        if [ "${EPS}" = "4.0" ]; then
+          NP="3.15"
+        elif [ "${EPS}" = "1.0" ]; then
+          NP="10.26"
+        else
+          echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
+          exit 1
+        fi
+        FILE_STEM="${DATASET_NAME}_${ALGO}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}-L-${L}"
+      else
+        EPS="-1.0"
+        NP="-1"
+        FILE_STEM="${DATASET_NAME}_${ALGO}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}-L-${L}"
+      fi
+
+    else
+      echo "Error: Unknown DATA_TYPE '${DATA_TYPE}'. For dpft_filter, only 'intermediate' is currently supported." >&2
+      exit 1
+    fi
+
   elif [ "${ALGO}" = "dpft" ] || [ "${ALGO}" = "noft" ]; then
     MAX_INST_LEN="32"
     MODE="${DATASET_NAME}_${ALGO}"
@@ -104,20 +210,22 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
     if [ "${USE_DP}" = "1" ]; then
       if [ "${EPS}" = "4.0" ]; then
         NP="3.013"
+      elif [ "${EPS}" = "1.0" ]; then
+          NP="10.26"
       else
         echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
         exit 1
       fi
-      FILE_STEM="${DATASET_NAME}_${ALGO}_model-${MODEL_PT}_dp-eps-${EPS}-nm-${NP}_lr-${LR}_seqlen-${SEQLEN}_n-${N_GEN}"
+      FILE_STEM="${DATASET_NAME}_${ALGO}_model-${MODEL_PT}_dp-eps-${EPS}-nm-${NP}-step-${STEP}_lr-${LR}_seqlen-${SEQLEN}_n-${N_GEN}"
     else
       # non-DP: overwrite EPS and NP
       EPS="-1.0"
       NP="-1"
-      FILE_STEM="${DATASET_NAME}_${ALGO}_model-${MODEL_PT}_dp-eps-${EPS}-nm-${NP}_lr-${LR}_seqlen-${SEQLEN}_n-${N_GEN}"
+      FILE_STEM="${DATASET_NAME}_${ALGO}_model-${MODEL_PT}_dp-eps-${EPS}-nm-${NP}-step-${STEP}_lr-${LR}_seqlen-${SEQLEN}_n-${N_GEN}"
     fi
 
   else
-    echo "Error: Unknown algo '${ALGO}'. Supported: noexample, noexample_4attr, noexample_8outof24attr, noexample_16attr, noexample_24attr, example50, dpft, noft, noft_noexample, condgen_pretrain" >&2
+    echo "Error: Unknown algo '${ALGO}'. Supported: condgen_filter, condgen, dpft_filter, dpft, noexample, noexample_4attr, noexample_8outof24attr, noexample_16attr, noexample_24attr, example50, noft, noft_noexample, condgen_pretrain" >&2
     exit 1
   fi
 else
@@ -125,7 +233,13 @@ else
   exit 1
 fi
 
-TRAIN_FILE="../../DPSFT/results/synthetic/generations_${MODE}/generated_${FILE_STEM}.${FILE_TYPE}"
+# Determine base path for data
+BASE_PATH="synthetic"
+if [ "${DATA_TYPE}" = "intermediate" ] && { [ "${ALGO}" = "condgen_filter" ] || [ "${ALGO}" = "dpft_filter" ]; }; then
+  BASE_PATH="intermediate"
+fi
+
+TRAIN_FILE="../../DPSFT/results/${BASE_PATH}/generations_${MODE}/generated_${FILE_STEM}.${FILE_TYPE}"
 
 if [ "${SAVE_PATH}" = "none" ]; then
   OUTPUT_DIR="results/${DATASET_NAME}_acc/${FILE_STEM}"
@@ -135,6 +249,7 @@ fi
 
 echo "Mode: ${MODE}"
 echo "File stem: ${FILE_STEM}"
+echo "Base path: ${BASE_PATH}"
 echo "Train file: ${TRAIN_FILE}"
 echo "Validation file: ${VALIDATION_FILE}"
 echo "Output dir: ${OUTPUT_DIR}"

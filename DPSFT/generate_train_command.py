@@ -138,50 +138,25 @@ args = parser.parse_args()
 # 允许通过 --dataset_size 直接指定训练样本数
 if args.dataset_size is not None:
   NUM_TRAIN_SAMPLES = args.dataset_size
-elif args.dataset_name == 'movie-json':
-  NUM_TRAIN_SAMPLES = 26963
-elif args.dataset_name == 'pubmed_openreview_mixture':
-  NUM_TRAIN_SAMPLES = 76069
-elif args.dataset_name in [
-    'enron',
-    'enron-eval',
-    'enron-generated',
-    'enron-eval-generated',
-    'enron_lenfilt_200-850',
-    'enron_lenskew_5',
-    'enron_sampled_5000',
-    'enron-freeform-conditions',
-    'enron-condgen-freeform',
-    'enron-freeform-e2e',
-    'enron-schema-conditions',
-    'enron-condgen-schema',
-    'enron-condgen-topic',
-]:
-  NUM_TRAIN_SAMPLES = 33508
-elif args.dataset_name in ['PMC', 'PMC-conditions', 'PMC-condgen']:
-  NUM_TRAIN_SAMPLES = 25000
-elif args.dataset_name in [
-    'biorxiv',
-    'biorxiv-conditions',
-    'biorxiv-condgen',
-    'biorxiv-category-conditions',
-    'biorxiv-category-condgen',
-    'biorxiv-nl3-condgen',
-    'biorxiv-complex8-conditions',
-    'biorxiv-complex8-condgen',
-    'biorxiv-complex8et-conditions',
-    'biorxiv-complex8et-condgen',
-    'biorxiv_noexample',
-    'biorxiv_example50'
-] or args.dataset_name.startswith('biorxiv'):
+elif args.dataset_name.startswith('biorxiv'):
   NUM_TRAIN_SAMPLES = 28846
-elif args.dataset_name in [
+elif args.dataset_name.startswith('openreview'):
+  NUM_TRAIN_SAMPLES = 8396
+else:
+  raise NotImplementedError(f'Unknown dataset: {args.dataset_name}')
+
+if args.dataset_name in [
     'biorxiv-generated',
+    'biorxiv_dpft_filter',
     'biorxiv_condgen_filter',
 ]:
   NUM_TRAIN_SAMPLES = 5000
-else:
-  raise NotImplementedError(f'Unknown dataset: {args.dataset_name}')
+elif args.dataset_name in [
+    'openreview-generated',
+    'openreview_dpft_filter',
+    'openreview_condgen_filter',
+]:
+  NUM_TRAIN_SAMPLES = 5000
 
 prefix = 'results/'
 
@@ -243,47 +218,7 @@ else:
 
 model_name_in_file = model_name.split('/')[-1]
 
-prompt_style_dict = {
-    # --- movie json dataset ---
-    'movie-json': 'moviejson-gen',
-    # --- mixture of pubmed and openreview ---
-    'pubmed_openreview_mixture': 'pubmed_openreview_mixture_generation',
-    # --- enron dataset ---
-    'enron': 'enron_generation',
-    'enron_lenfilt_200-850': 'enron_generation',
-    'enron_lenskew_5': 'enron_generation',
-    'enron_sampled_5000': 'enron_generation',
-    'enron-freeform-conditions': 'enron-freeform-conditions_generation',
-    'enron-condgen-freeform': 'enron-condgen-freeform_generation',
-    'enron-freeform-e2e': 'enron-freeform-e2e_generation',
-    'enron-schema-conditions': 'enron-schema-conditions_generation',
-    'enron-condgen-schema': 'enron-condgen-schema_generation',
-    'enron-generated': 'enron_evaluation',
-    'enron-condgen-topic': 'enron-condgen-topic_generation',
-    # --- PMC dataset ---
-    'PMC': 'PMC_generation',
-    'PMC-conditions': 'PMC-conditions_generation',
-    'PMC-condgen': 'PMC-condgen_generation',
-    # --- biorxiv dataset ---
-    'biorxiv': 'biorxiv_generation',
-    'biorxiv-conditions': 'biorxiv-conditions_generation',
-    'biorxiv-category-conditions': 'biorxiv-category-conditions_generation',
-    'biorxiv-category-condgen': 'biorxiv-category-condgen_generation',
-    'biorxiv-condgen': 'biorxiv-condgen_generation',
-    'biorxiv-nl3-condgen': 'biorxiv-nl3-condgen_generation',
-    'biorxiv-complex8-conditions': 'biorxiv-complex8-conditions_generation',
-    'biorxiv-complex8-condgen': 'biorxiv-condgen_generation',
-    'biorxiv-complex8et-conditions': 'biorxiv-complex8et-conditions_generation',
-    'biorxiv-complex8et-condgen': 'biorxiv-condgen_generation',
-    'biorxiv_noexample': 'biorxiv_noexample_generation',
-    'biorxiv_example50': 'biorxiv_example50_generation',
-    'biorxiv-generated': 'biorxiv_evaluation',
-    'biorxiv_noexample_4attr': 'biorxiv_noexample_4attr_generation',
-    'biorxiv_noexample_16attr': 'biorxiv_noexample_16attr_generation',
-    'biorxiv_noexample_24attr': 'biorxiv_noexample_24attr_generation',
-}
-if dataset_name not in prompt_style_dict:
-  prompt_style_dict[dataset_name] = f'{dataset_name}_generation'
+prompt_style_dict = {dataset_name: f'{dataset_name}_generation'}
 
 if dataset_name in prompt_style_dict:
   assert prompt_style == prompt_style_dict[dataset_name], (

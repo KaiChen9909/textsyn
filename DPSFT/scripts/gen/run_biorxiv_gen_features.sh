@@ -26,7 +26,6 @@ if [ -n "${L}" ]; then
   L_str="_L${L}"
 fi
 
-GEN_FILE='PROMPT'
 if [ "$1" = "noft" ]; then
   if [ "${model_str}" = "gemma-3-1b-pt" ]; then
     MODEL_PATH="google/gemma-3-1b-pt"
@@ -34,31 +33,14 @@ if [ "$1" = "noft" ]; then
   elif [ "${model_str}" = "gemma-3-27b-pt" ]; then
     MODEL_PATH="google/gemma-3-27b-pt"
     BS=48
-  elif [ "${model_str}" = "Qwen2.5-1.5B-Instruct" ]; then
-    MODEL_PATH="Qwen/Qwen2.5-1.5B-Instruct"
-    BS=512
-    GEN_FILE='INS'
-  elif [ "${model_str}" = "Qwen2.5-7B-Instruct" ]; then
-    MODEL_PATH="Qwen/Qwen2.5-7B-Instruct"
-    BS=64
-    GEN_FILE='INS'
   fi
 else
   BS=512
   MODEL_PATH="results/outputs/$1/model_epoch$2"
 fi
 
-
-if [ "${GEN_FILE}" = 'PROMPT' ]; then
-  python generation_biorxiv_condgen.py \
-      -m ${MODEL_PATH} \
-      -pl ${prompt_len} -sl ${seq_len} -d 0 -o ${output_str} -ps ${prompt_str} \
-      -out generated_${output_str}_model-${model_str}_dp-eps-$3-np-$4-lr-$5-step-$6${rho_str}${prev_n_gen_str}${L_str}_seqlen-${prompt_len}-${seq_len}_temp-1.0_tp-0.95_tk-0_eval_n-${n_gen}.jsonl \
-      -n_gen ${n_gen} -bs ${BS} -tp 0.95 -pf ${prompt_file} -sc ${schema_column}
-else
-  python generation_biorxiv_condgen_instruct.py \
-      -m ${MODEL_PATH} \
-      -pl ${prompt_len} -sl ${seq_len} -d 0 -o ${output_str} -ps ${prompt_str} \
-      -out generated_${output_str}_model-${model_str}_dp-eps-$3-np-$4-lr-$5-step-$6${rho_str}_seqlen-${prompt_len}-${seq_len}_temp-1.0_tp-0.95_tk-0_eval_n-${n_gen}.jsonl \
-      -n_gen ${n_gen} -bs ${BS} -tp 0.95 -pf ${prompt_file} -sc ${schema_column}
-fi
+python generation_biorxiv_condgen.py \
+    -m ${MODEL_PATH} \
+    -pl ${prompt_len} -sl ${seq_len} -d 0 -o ${output_str} -ps ${prompt_str} \
+    -out generated_${output_str}_model-${model_str}_dp-eps-$3-np-$4-lr-$5-step-$6${rho_str}${prev_n_gen_str}${L_str}_seqlen-${prompt_len}-${seq_len}_temp-1.0_tp-0.95_tk-0_eval_n-${n_gen}.jsonl \
+    -n_gen ${n_gen} -bs ${BS} -tp 0.95 -pf ${prompt_file} -sc ${schema_column}

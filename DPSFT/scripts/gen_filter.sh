@@ -4,7 +4,7 @@
 # SLURM 资源配置
 # ==========================================
 #SBATCH --job-name=biorxiv_gen_filter
-#SBATCH --account=NAIRR250463-ai
+#SBATCH --account=CIS260108-ai
 #SBATCH --partition=ai
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
@@ -36,11 +36,11 @@ echo "Allocated GPUs: $CUDA_VISIBLE_DEVICES"
 DATASET_NAME=${1:? "Missing argument: dataset name"}
 ALGO=${2:? "Missing argument: algorithm name"}
 EPS=${3:-4.0}
-L=${4:-4}
-RHO_FILTER=${5:-0.03}
-RHO_PREV=${6:-0.15}
-USE_DP=${7:-1}
-GPU_NUM=${8:-2}
+USE_DP=${4:-1}
+L=${5:-4}
+RHO_FILTER=${6:-0.03}
+RHO_PREV=${7:-0.15}
+GPU_NUM=${8:-4}
 EPOCH_ID=${9:-79}
 MODEL=${10:-gemma}
 N_GEN=${11:-5000}
@@ -64,32 +64,65 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
   SEQLEN="512"
   CLIP="1.0"
 
-  if [ "${EPS}" = "4.0" ]; then
-    NP="4.3"
+  if [ "${ALGO}" = "condgen_filter" ]; then
+    if [ "${EPS}" = "4.0" ]; then
+      NP="4.3"
+    elif [ "${EPS}" = "1.0" ]; then
+      NP="13.8"
+    else
+      echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
+      exit 1
+    fi
+
+    MAX_INST_LEN="300"
+    LR_SCHEDULER="constant"
+    PROMPT_STR="${DATASET_NAME}_condgen"
+    PROMPT_FILE="../AIM/results/synthetic_${DATASET_NAME}_condgen_et_5k_rho-${RHO_PREV}_iter-2000.csv"
+    REAL_DATA_PATH="../data/biorxiv/train.csv"
+
+    if [ "${USE_DP}" = "1" ]; then
+      JOB_SESS="${MODEL_STR}_${DATASET_NAME}_condgen_bs-${BS}_step-${STEP}_lr-${LR}-${LR_SCHEDULER}_seed-42"
+      MODEL_DIR="${JOB_SESS}_biorxiv_condgen_noredacted_model${MODEL_PT}_eps${EPS}_delta${DELTA}_bs${BS}_maxseq${MAX_INST_LEN}-${SEQLEN}_epoch${EPOCH}_lr${LR_VAL}_clip${CLIP}_np${NP}_gpus${GPUS}"
+    else
+      EPS="-1.0"
+      DELTA="0.1"
+      CLIP="-1.0"
+      NP="-1"
+      JOB_SESS="${MODEL_STR}_${DATASET_NAME}_condgen_nondp_bs-${BS}_step-${STEP}_lr-${LR}-${LR_SCHEDULER}_seed-42"
+      MODEL_DIR="${JOB_SESS}_biorxiv_condgen_noredacted_model${MODEL_PT}_eps${EPS}_delta${DELTA}_bs${BS}_maxseq${MAX_INST_LEN}-${SEQLEN}_epoch${EPOCH}_lr${LR_VAL}_clip${CLIP}_np${NP}_gpus${GPUS}"
+    fi
+
+  elif [ "${ALGO}" = "dpft_filter" ]; then
+    if [ "${EPS}" = "4.0" ]; then
+      NP="3.15"
+    elif [ "${EPS}" = "1.0" ]; then
+      NP="27.6"
+    else
+      echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
+      exit 1
+    fi
+
+    MAX_INST_LEN="32" 
+    LR_SCHEDULER="cosine" 
+    PROMPT_STR=""  # No prompt needed for dpft_filter
+    PROMPT_FILE=""  # No prompt file needed
+    REAL_DATA_PATH="../data/biorxiv/train.csv"
+
+    if [ "${USE_DP}" = "1" ]; then
+      JOB_SESS="${MODEL_STR}_${DATASET_NAME}_dpft_bs-${BS}_step-${STEP}_lr-${LR}-${LR_SCHEDULER}_seed-42"
+      MODEL_DIR="${JOB_SESS}_${DATASET_NAME}_noredacted_model${MODEL_PT}_eps${EPS}_delta${DELTA}_bs${BS}_maxseq${MAX_INST_LEN}-${SEQLEN}_epoch${EPOCH}_lr${LR_VAL}_clip${CLIP}_np${NP}_gpus${GPUS}"
+    else
+      EPS="-1.0"
+      DELTA="0.1"
+      CLIP="-1.0"
+      NP="-1"
+      JOB_SESS="${MODEL_STR}_${DATASET_NAME}_dpft_nondp_bs-${BS}_step-${STEP}_lr-${LR}-${LR_SCHEDULER}_seed-42"
+      MODEL_DIR="${JOB_SESS}_${DATASET_NAME}_noredacted_model${MODEL_PT}_eps${EPS}_delta${DELTA}_bs${BS}_maxseq${MAX_INST_LEN}-${SEQLEN}_epoch${EPOCH}_lr${LR_VAL}_clip${CLIP}_np${NP}_gpus${GPUS}"
+    fi
+
   else
-    echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
+    echo "Error: Unknown algorithm '${ALGO}'. Supported: condgen_filter, dpft_filter" >&2
     exit 1
-  fi
-
-  # use model of condgen to generate filtered data
-  MAX_INST_LEN="300"
-  LR_SCHEDULER="constant"
-  TRAIN_DATASET="${DATASET_NAME}_condgen"
-  PROMPT_STR="${DATASET_NAME}_condgen"
-  PROMPT_FILE="../AIM/results/synthetic_${DATASET_NAME}_condgen_et_5k_rho-${RHO_PREV}_iter-2000.csv"
-  REAL_DATA_PATH="../data/biorxiv/train.csv"
-
-  if [ "${USE_DP}" = "1" ]; then
-    # Use condgen model for filtering, not condgen_filter
-    JOB_SESS="${MODEL_STR}_${DATASET_NAME}_condgen_bs-${BS}_step-${STEP}_lr-${LR}-${LR_SCHEDULER}_seed-42"
-    MODEL_DIR="${JOB_SESS}_biorxiv_noexample_noredacted_model${MODEL_PT}_eps${EPS}_delta${DELTA}_bs${BS}_maxseq${MAX_INST_LEN}-${SEQLEN}_epoch${EPOCH}_lr${LR_VAL}_clip${CLIP}_np${NP}_gpus${GPUS}"
-  else
-    EPS="-1.0"
-    DELTA="0.1"
-    CLIP="-1.0"
-    NP="-1"
-    JOB_SESS="${MODEL_STR}_${DATASET_NAME}_condgen_nondp_bs-${BS}_step-${STEP}_lr-${LR}-${LR_SCHEDULER}_seed-42"
-    MODEL_DIR="${JOB_SESS}_biorxiv_noexample_noredacted_model${MODEL_PT}_eps${EPS}_delta${DELTA}_bs${BS}_maxseq${MAX_INST_LEN}-${SEQLEN}_epoch${EPOCH}_lr${LR_VAL}_clip${CLIP}_np${NP}_gpus${GPUS}"
   fi
 else
   echo "Error: Unknown dataset '${DATASET_NAME}'. Supported: biorxiv" >&2
@@ -109,14 +142,26 @@ echo "N_GEN: ${N_GEN}"
 
 set -x
 
-python generation_condgen_filter.py \
-    -m ${MODEL_PATH} \
-    -pl ${MAX_INST_LEN} -sl ${SEQLEN} -d 0 \
-    -o ${OUTPUT_STR} -ps ${PROMPT_STR} \
-    -out generated_${OUTPUT_STR}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}-L-${L}.jsonl \
-    -n_gen ${N_GEN} -L ${L} -bs 512 -tp 0.95 \
-    -pf ${PROMPT_FILE} \
-    -rd ${REAL_DATA_PATH} -tc abstract \
-    -rho ${RHO_FILTER}
+if [ "${ALGO}" = "condgen_filter" ]; then
+  python generation_condgen_filter.py \
+      -m ${MODEL_PATH} \
+      -pl ${MAX_INST_LEN} -sl ${SEQLEN} -d 0 \
+      -o ${OUTPUT_STR} -ps ${PROMPT_STR} \
+      -out generated_${OUTPUT_STR}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}-L-${L}.jsonl \
+      -n_gen ${N_GEN} -L ${L} -bs 512 -tp 0.95 \
+      -pf ${PROMPT_FILE} \
+      -rd ${REAL_DATA_PATH} -tc abstract \
+      -rho ${RHO_FILTER}
+
+elif [ "${ALGO}" = "dpft_filter" ]; then
+  python generation_gen_filter.py \
+      -m ${MODEL_PATH} \
+      -sl ${SEQLEN} -d 0 \
+      -o ${OUTPUT_STR} -ps ${DATASET_NAME} \
+      -out generated_${OUTPUT_STR}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}-L-${L}.jsonl \
+      -n_gen ${N_GEN} -L ${L} -bs 512 -tp 0.95 \
+      -rd ${REAL_DATA_PATH} -tc abstract \
+      -rho ${RHO_FILTER}
+fi
 
 echo "Job finished at: $(date)"

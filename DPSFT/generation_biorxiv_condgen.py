@@ -174,11 +174,19 @@ def main():
 
   n_gen = args.n_gen
 
-  if len(input_data) > n_gen:
+  if len(input_data) == n_gen:
+    input_texts = input_data
+    logging.info(f'Using all {len(input_data)} records (matches n_gen={n_gen})')
+  elif len(input_data) < n_gen:
+    # no enough data
+    random.seed(42)
+    input_texts = random.choices(input_data, k=n_gen)
+    logging.info(f'Randomly sampling with replacement: {len(input_data)} -> {n_gen} records')
+  else:
+    # too much data
     random.seed(42)
     input_texts = random.sample(input_data, k=n_gen)
-  else:
-    input_texts = input_data
+    logging.info(f'Randomly sampling without replacement: {len(input_data)} -> {n_gen} records')
 
   input_texts = sorted(input_texts, key=lambda x: len(tokenizer.encode(x)))
   logging.info('rearranged input_texts by increasing tokenized length')

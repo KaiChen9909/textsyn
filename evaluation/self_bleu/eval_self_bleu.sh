@@ -4,7 +4,7 @@
 # SLURM 资源配置
 # ==========================================
 #SBATCH --job-name=biorxiv_eval_self_bleu
-#SBATCH --account=NAIRR250463-ai
+#SBATCH --account=CIS260108-ai
 #SBATCH --partition=ai
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1

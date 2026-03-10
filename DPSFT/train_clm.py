@@ -241,6 +241,7 @@ def main():
       or "enron" in args.dataset_name
       or "PMC" in args.dataset_name
       or "biorxiv" in args.dataset_name
+      or "openreview" in args.dataset_name
   ), "dataset/task not supported"
   assert args.qbits in [
       4,

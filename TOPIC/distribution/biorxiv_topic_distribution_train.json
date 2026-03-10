@@ -1,0 +1,8846 @@
+{
+  "total_documents": 28846,
+  "n_topics": 1826,
+  "topics": {
+    "2": {
+      "count": 5903,
+      "frequency": 0.20463842473826527,
+      "keywords": [
+        "kinase",
+        "genes",
+        "proteins",
+        "gene",
+        "rna",
+        "pathway",
+        "signaling",
+        "protein",
+        "transcription",
+        "chromosome"
+      ],
+      "name": "kinase_genes_proteins"
+    },
+    "339": {
+      "count": 1400,
+      "frequency": 0.048533592179158286,
+      "keywords": [
+        "orthohantavirus",
+        "phlebovirus",
+        "virus",
+        "orthoreovirus",
+        "hantaviruses",
+        "viruses",
+        "circovirus",
+        "gammaherpesvirus",
+        "viral",
+        "mimivirus"
+      ],
+      "name": "orthohantavirus_phlebovirus_virus"
+    },
+    "920": {
+      "count": 2276,
+      "frequency": 0.07890175414268875,
+      "keywords": [
+        "rna",
+        "nucleolar",
+        "genome",
+        "nucleoside",
+        "gene",
+        "genes",
+        "ribosomal",
+        "methylation",
+        "nucleolus",
+        "spliceosome"
+      ],
+      "name": "rna_nucleolar_genome"
+    },
+    "243": {
+      "count": 53,
+      "frequency": 0.0018373431324967067,
+      "keywords": [
+        "bats",
+        "bat",
+        "batis",
+        "mammal",
+        "mammals",
+        "insectivorous",
+        "species",
+        "fauna",
+        "insects",
+        "endangered"
+      ],
+      "name": "bats_bat_batis"
+    },
+    "1613": {
+      "count": 171,
+      "frequency": 0.00592803161616862,
+      "keywords": [
+        "mesh",
+        "codes",
+        "headings",
+        "medical",
+        "diseases",
+        "antigens",
+        "medicine",
+        "amino",
+        "respiratory",
+        "infections"
+      ],
+      "name": "mesh_codes_headings"
+    },
+    "75": {
+      "count": 47,
+      "frequency": 0.0016293420231574568,
+      "keywords": [
+        "fungi",
+        "fungus",
+        "basidiomycota",
+        "genus",
+        "fungal",
+        "aspergillus",
+        "phylogenetic",
+        "ascospores",
+        "ascomycota",
+        "spores"
+      ],
+      "name": "fungi_fungus_basidiomycota"
+    },
+    "1684": {
+      "count": 1062,
+      "frequency": 0.03681619635304722,
+      "keywords": [
+        "biotech",
+        "pharmaceuticals",
+        "biolabs",
+        "biopharma",
+        "biotechnology",
+        "pharmaceutical",
+        "biopharmaceutical",
+        "pharma",
+        "fda",
+        "biosystems"
+      ],
+      "name": "biotech_pharmaceuticals_biolabs"
+    },
+    "276": {
+      "count": 407,
+      "frequency": 0.014109408583512445,
+      "keywords": [
+        "fungi",
+        "fungal",
+        "fungus",
+        "pathogens",
+        "pathogen",
+        "spores",
+        "fungicides",
+        "fungicide",
+        "fragariae",
+        "phytophthora"
+      ],
+      "name": "fungi_fungal_fungus"
+    },
+    "63": {
+      "count": 65,
+      "frequency": 0.0022533453511752064,
+      "keywords": [
+        "diptera",
+        "flies",
+        "insects",
+        "larvae",
+        "fauna",
+        "subgenus",
+        "fly",
+        "larva",
+        "species",
+        "larval"
+      ],
+      "name": "diptera_flies_insects"
+    },
+    "932": {
+      "count": 13,
+      "frequency": 0.00045066907023504126,
+      "keywords": [
+        "walkers",
+        "zombie",
+        "walker",
+        "rick",
+        "undead",
+        "carl",
+        "finale",
+        "survivor",
+        "judith",
+        "amc"
+      ],
+      "name": "walkers_zombie_walker"
+    },
+    "314": {
+      "count": 71,
+      "frequency": 0.002461346460514456,
+      "keywords": [
+        "insects",
+        "damselfly",
+        "damselflies",
+        "dragonflies",
+        "larvae",
+        "fauna",
+        "dragonfly",
+        "species",
+        "odonata",
+        "wingspan"
+      ],
+      "name": "insects_damselfly_damselflies"
+    },
+    "1089": {
+      "count": 920,
+      "frequency": 0.03189350343201831,
+      "keywords": [
+        "haplogroups",
+        "haplogroup",
+        "haplotypes",
+        "haplotype",
+        "ancestry",
+        "macrohaplogroup",
+        "ancestor",
+        "ancestral",
+        "phylogenetic",
+        "lineages"
+      ],
+      "name": "haplogroups_haplogroup_haplotypes"
+    },
+    "1511": {
+      "count": 19,
+      "frequency": 0.0006586701795742911,
+      "keywords": [
+        "supernaturals",
+        "supernatural",
+        "dean",
+        "sam",
+        "winchester",
+        "finale",
+        "coven",
+        "lucifer",
+        "episode",
+        "demons"
+      ],
+      "name": "supernaturals_supernatural_dean"
+    },
+    "1817": {
+      "count": 57,
+      "frequency": 0.001976010538722873,
+      "keywords": [
+        "pines",
+        "pine",
+        "pinea",
+        "conifers",
+        "pinus",
+        "conifer",
+        "trees",
+        "pinaster",
+        "forests",
+        "canariensis"
+      ],
+      "name": "pines_pine_pinea"
+    },
+    "1569": {
+      "count": 54,
+      "frequency": 0.0018720099840532484,
+      "keywords": [
+        "idahoensis",
+        "oregonensis",
+        "ohioensis",
+        "genus",
+        "paleozoic",
+        "prehistoric",
+        "eufaulensis",
+        "species",
+        "mississippiensis",
+        "canadensis"
+      ],
+      "name": "idahoensis_oregonensis_ohioensis"
+    },
+    "104": {
+      "count": 90,
+      "frequency": 0.003120016640088747,
+      "keywords": [
+        "fossil",
+        "paleontology",
+        "dinosaur",
+        "fossils",
+        "jurassic",
+        "phylogeny",
+        "cretaceous",
+        "phylogenetic",
+        "dinosaurs",
+        "prehistoric"
+      ],
+      "name": "fossil_paleontology_dinosaur"
+    },
+    "672": {
+      "count": 89,
+      "frequency": 0.0030853497885322055,
+      "keywords": [
+        "bodybuilder",
+        "bodybuilders",
+        "bodybuilding",
+        "fitness",
+        "olympia",
+        "muscular",
+        "competed",
+        "physique",
+        "gym",
+        "steroids"
+      ],
+      "name": "bodybuilder_bodybuilders_bodybuilding"
+    },
+    "1013": {
+      "count": 963,
+      "frequency": 0.033384178048949595,
+      "keywords": [
+        "neurotoxins",
+        "neurotoxin",
+        "toxin",
+        "cobratoxin",
+        "toxins",
+        "venom",
+        "venoms",
+        "scorpion",
+        "peptides",
+        "crotoxin"
+      ],
+      "name": "neurotoxins_neurotoxin_toxin"
+    },
+    "818": {
+      "count": 56,
+      "frequency": 0.0019413436871663315,
+      "keywords": [
+        "synthesizers",
+        "synthesizer",
+        "midi",
+        "synths",
+        "yamaha",
+        "synth",
+        "polyphonic",
+        "instruments",
+        "instrument",
+        "keyboard"
+      ],
+      "name": "synthesizers_synthesizer_midi"
+    },
+    "1809": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "donations",
+        "charities",
+        "charity",
+        "donors",
+        "charitable",
+        "nonprofit",
+        "nonprofits",
+        "fundraising",
+        "funding",
+        "grants"
+      ],
+      "name": "donations_charities_charity"
+    },
+    "1824": {
+      "count": 1845,
+      "frequency": 0.06396034112181932,
+      "keywords": [
+        "sleepiness",
+        "insomnia",
+        "sleep",
+        "sleeping",
+        "circadian",
+        "hypersomnia",
+        "drowsiness",
+        "waking",
+        "melatonin",
+        "morningness"
+      ],
+      "name": "sleepiness_insomnia_sleep"
+    },
+    "1280": {
+      "count": 962,
+      "frequency": 0.03334951119739305,
+      "keywords": [
+        "mycobacterium",
+        "mycobacteria",
+        "mycobacterial",
+        "bacterium",
+        "bacteria",
+        "bacterial",
+        "strains",
+        "phylum",
+        "streptococcus",
+        "pathogen"
+      ],
+      "name": "mycobacterium_mycobacteria_mycobacterial"
+    },
+    "653": {
+      "count": 68,
+      "frequency": 0.0023573459058448313,
+      "keywords": [
+        "oceanographer",
+        "geophysicists",
+        "geosciences",
+        "oceanographers",
+        "geoscience",
+        "geologists",
+        "oceanography",
+        "oceanographic",
+        "geophysical",
+        "geology"
+      ],
+      "name": "oceanographer_geophysicists_geosciences"
+    },
+    "1413": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "ballad",
+        "ballads",
+        "stanzas",
+        "poem",
+        "song",
+        "sang",
+        "songs",
+        "willie",
+        "songwriter",
+        "sung"
+      ],
+      "name": "ballad_ballads_stanzas"
+    },
+    "1679": {
+      "count": 1096,
+      "frequency": 0.03799486930596963,
+      "keywords": [
+        "rna",
+        "mir",
+        "genes",
+        "gene",
+        "pathway",
+        "biogenesis",
+        "cytokines",
+        "signalling",
+        "chromatin",
+        "fibroblasts"
+      ],
+      "name": "rna_mir_genes"
+    },
+    "794": {
+      "count": 1418,
+      "frequency": 0.049157595507176036,
+      "keywords": [
+        "olfactory",
+        "receptors",
+        "receptor",
+        "smelling",
+        "smell",
+        "odor",
+        "odorants",
+        "odorant",
+        "odors",
+        "smells"
+      ],
+      "name": "olfactory_receptors_receptor"
+    },
+    "1082": {
+      "count": 26,
+      "frequency": 0.0009013381404700825,
+      "keywords": [
+        "mussels",
+        "mussel",
+        "mollusks",
+        "mollusk",
+        "molluscs",
+        "freshwater",
+        "gills",
+        "bivalves",
+        "aquatic",
+        "mollusc"
+      ],
+      "name": "mussels_mussel_mollusks"
+    },
+    "1566": {
+      "count": 220,
+      "frequency": 0.007626707342439159,
+      "keywords": [
+        "oncology",
+        "cancers",
+        "cancer",
+        "tumour",
+        "tumor",
+        "fda",
+        "researchers",
+        "organisations",
+        "research",
+        "charity"
+      ],
+      "name": "oncology_cancers_cancer"
+    },
+    "29": {
+      "count": 23,
+      "frequency": 0.0007973375858004576,
+      "keywords": [
+        "songwriter",
+        "songs",
+        "singer",
+        "lyrics",
+        "song",
+        "vocals",
+        "album",
+        "albums",
+        "remix",
+        "vocalist"
+      ],
+      "name": "songwriter_songs_singer"
+    },
+    "10": {
+      "count": 14,
+      "frequency": 0.0004853359217915829,
+      "keywords": [
+        "gastropods",
+        "gastropoda",
+        "gastropod",
+        "mollusks",
+        "snails",
+        "mollusk",
+        "snail",
+        "mollusca",
+        "molluscs",
+        "mollusques"
+      ],
+      "name": "gastropods_gastropoda_gastropod"
+    },
+    "1733": {
+      "count": 74,
+      "frequency": 0.002565347015184081,
+      "keywords": [
+        "linguistics",
+        "linguists",
+        "linguist",
+        "linguistic",
+        "sociolinguistics",
+        "sociolinguistic",
+        "phoneticians",
+        "bilingualism",
+        "languages",
+        "syntacticians"
+      ],
+      "name": "linguistics_linguists_linguist"
+    },
+    "287": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "fiba",
+        "euroleague",
+        "eurobasket",
+        "tournament",
+        "quarterfinal",
+        "quarterfinals",
+        "basketball",
+        "finals",
+        "nba",
+        "semifinals"
+      ],
+      "name": "fiba_euroleague_eurobasket"
+    },
+    "467": {
+      "count": 92,
+      "frequency": 0.0031893503432018303,
+      "keywords": [
+        "bees",
+        "bee",
+        "insects",
+        "pollination",
+        "species",
+        "nectar",
+        "pollen",
+        "larvae",
+        "foraging",
+        "nests"
+      ],
+      "name": "bees_bee_insects"
+    },
+    "453": {
+      "count": 34,
+      "frequency": 0.0011786729529224156,
+      "keywords": [
+        "rugby",
+        "tackle",
+        "football",
+        "offside",
+        "punt",
+        "ball",
+        "scoring",
+        "touchdown",
+        "scrimmage",
+        "fullback"
+      ],
+      "name": "rugby_tackle_football"
+    },
+    "1640": {
+      "count": 280,
+      "frequency": 0.009706718435831659,
+      "keywords": [
+        "grassland",
+        "grasslands",
+        "vegetation",
+        "lowland",
+        "lowlands",
+        "meadow",
+        "species",
+        "woodland",
+        "communities",
+        "knotgrass"
+      ],
+      "name": "grassland_grasslands_vegetation"
+    },
+    "1198": {
+      "count": 680,
+      "frequency": 0.02357345905844831,
+      "keywords": [
+        "amoeba",
+        "flagellates",
+        "amoebae",
+        "eukaryotes",
+        "phylogenetic",
+        "eukaryote",
+        "organisms",
+        "organism",
+        "eukaryotic",
+        "flagella"
+      ],
+      "name": "amoeba_flagellates_amoebae"
+    },
+    "1697": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "sail",
+        "sailboats",
+        "sailboat",
+        "sails",
+        "sailing",
+        "boat",
+        "nautical",
+        "boats",
+        "yacht",
+        "rudder"
+      ],
+      "name": "sail_sailboats_sailboat"
+    },
+    "595": {
+      "count": 1074,
+      "frequency": 0.037232198571725716,
+      "keywords": [
+        "personality",
+        "emotion",
+        "emotions",
+        "psychological",
+        "affective",
+        "psychology",
+        "emotional",
+        "traits",
+        "oneself",
+        "interpersonal"
+      ],
+      "name": "personality_emotion_emotions"
+    },
+    "77": {
+      "count": 257,
+      "frequency": 0.0089093808500312,
+      "keywords": [
+        "plumage",
+        "bird",
+        "parrot",
+        "species",
+        "parrots",
+        "birds",
+        "hummingbird",
+        "finch",
+        "warblers",
+        "subspecies"
+      ],
+      "name": "plumage_bird_parrot"
+    },
+    "475": {
+      "count": 59,
+      "frequency": 0.0020453442418359564,
+      "keywords": [
+        "trek",
+        "starship",
+        "voyager",
+        "voyagers",
+        "kirk",
+        "crew",
+        "episodes",
+        "borg",
+        "episode",
+        "vulcan"
+      ],
+      "name": "trek_starship_voyager"
+    },
+    "742": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "episode",
+        "episodes",
+        "stan",
+        "park",
+        "cartoon",
+        "butters",
+        "south",
+        "parody",
+        "kyle",
+        "aired"
+      ],
+      "name": "episode_episodes_stan"
+    },
+    "73": {
+      "count": 964,
+      "frequency": 0.03341884490050614,
+      "keywords": [
+        "bacterium",
+        "bacteria",
+        "microbial",
+        "microbiology",
+        "bacterial",
+        "strains",
+        "pseudomonas",
+        "bacteriology",
+        "phylogenetic",
+        "bacillus"
+      ],
+      "name": "bacterium_bacteria_microbial"
+    },
+    "603": {
+      "count": 36,
+      "frequency": 0.0012480066560354988,
+      "keywords": [
+        "streptomyces",
+        "streptomycin",
+        "streptomycete",
+        "bacterium",
+        "bacteria",
+        "actinomycin",
+        "bacterial",
+        "antibioticus",
+        "strains",
+        "genus"
+      ],
+      "name": "streptomyces_streptomycin_streptomycete"
+    },
+    "831": {
+      "count": 77,
+      "frequency": 0.0026693475698537058,
+      "keywords": [
+        "aspergillus",
+        "aspergillosis",
+        "fungi",
+        "fungal",
+        "fungus",
+        "ascospores",
+        "spores",
+        "yeast",
+        "cultivated",
+        "strains"
+      ],
+      "name": "aspergillus_aspergillosis_fungi"
+    },
+    "1411": {
+      "count": 46,
+      "frequency": 0.0015946751716009152,
+      "keywords": [
+        "knitting",
+        "stitching",
+        "stitch",
+        "knit",
+        "sewing",
+        "knitter",
+        "knitted",
+        "yarn",
+        "knitters",
+        "stitches"
+      ],
+      "name": "knitting_stitching_stitch"
+    },
+    "1050": {
+      "count": 236,
+      "frequency": 0.008181376967343825,
+      "keywords": [
+        "plasmodium",
+        "parasite",
+        "malaria",
+        "parasites",
+        "malariae",
+        "anopheles",
+        "genus",
+        "mosquito",
+        "insect",
+        "mosquitoes"
+      ],
+      "name": "plasmodium_parasite_malaria"
+    },
+    "237": {
+      "count": 87,
+      "frequency": 0.003016016085419122,
+      "keywords": [
+        "breeds",
+        "breed",
+        "bred",
+        "sheepdog",
+        "breeders",
+        "horse",
+        "hounds",
+        "horses",
+        "hound",
+        "livestock"
+      ],
+      "name": "breeds_breed_bred"
+    },
+    "1539": {
+      "count": 83,
+      "frequency": 0.002877348679192956,
+      "keywords": [
+        "nematodes",
+        "nematode",
+        "parasite",
+        "pest",
+        "fungi",
+        "parasitic",
+        "nematicides",
+        "pathogens",
+        "pathogen",
+        "fungal"
+      ],
+      "name": "nematodes_nematode_parasite"
+    },
+    "1114": {
+      "count": 12,
+      "frequency": 0.00041600221867849963,
+      "keywords": [
+        "band",
+        "concert",
+        "saxophone",
+        "albums",
+        "guitarist",
+        "psychedelic",
+        "wright",
+        "album",
+        "tour",
+        "songs"
+      ],
+      "name": "band_concert_saxophone"
+    },
+    "401": {
+      "count": 23,
+      "frequency": 0.0007973375858004576,
+      "keywords": [
+        "acacias",
+        "acacia",
+        "shrub",
+        "flora",
+        "evergreen",
+        "eucalyptus",
+        "subgenus",
+        "flowering",
+        "plants",
+        "shrubland"
+      ],
+      "name": "acacias_acacia_shrub"
+    },
+    "800": {
+      "count": 36,
+      "frequency": 0.0012480066560354988,
+      "keywords": [
+        "owls",
+        "owl",
+        "owlets",
+        "owlet",
+        "plumage",
+        "birds",
+        "species",
+        "bird",
+        "pigeons",
+        "mammals"
+      ],
+      "name": "owls_owl_owlets"
+    },
+    "891": {
+      "count": 98,
+      "frequency": 0.0033973514525410804,
+      "keywords": [
+        "sedimentology",
+        "sediment",
+        "sedimentation",
+        "sediments",
+        "fluvial",
+        "alluvial",
+        "sedimentary",
+        "runoff",
+        "river",
+        "rivers"
+      ],
+      "name": "sedimentology_sediment_sedimentation"
+    },
+    "470": {
+      "count": 86,
+      "frequency": 0.0029813492338625807,
+      "keywords": [
+        "grammars",
+        "linguistics",
+        "grammar",
+        "syntax",
+        "verbs",
+        "syntactic",
+        "linguistic",
+        "constructions",
+        "pronouns",
+        "verbal"
+      ],
+      "name": "grammars_linguistics_grammar"
+    },
+    "1139": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "snowfall",
+        "snowstorm",
+        "snowstorms",
+        "snow",
+        "storms",
+        "weather",
+        "meteorological",
+        "precipitation",
+        "winter",
+        "tornadoes"
+      ],
+      "name": "snowfall_snowstorm_snowstorms"
+    },
+    "704": {
+      "count": 57,
+      "frequency": 0.001976010538722873,
+      "keywords": [
+        "salamander",
+        "salamanders",
+        "amphibians",
+        "salamandra",
+        "species",
+        "fauna",
+        "newt",
+        "newts",
+        "amphibian",
+        "frog"
+      ],
+      "name": "salamander_salamanders_amphibians"
+    },
+    "1623": {
+      "count": 10,
+      "frequency": 0.0003466685155654163,
+      "keywords": [
+        "gardens",
+        "botanical",
+        "jardin",
+        "jardins",
+        "garden",
+        "botanique",
+        "botaniques",
+        "herbarium",
+        "plants",
+        "provence"
+      ],
+      "name": "gardens_botanical_jardin"
+    },
+    "1105": {
+      "count": 27,
+      "frequency": 0.0009360049920266242,
+      "keywords": [
+        "apples",
+        "fruit",
+        "orchards",
+        "cultivar",
+        "cultivars",
+        "apple",
+        "fruits",
+        "pear",
+        "ripen",
+        "ripening"
+      ],
+      "name": "apples_fruit_orchards"
+    },
+    "1516": {
+      "count": 93,
+      "frequency": 0.0032240171947583722,
+      "keywords": [
+        "bumblebees",
+        "bumblebee",
+        "bees",
+        "honeybees",
+        "bomboides",
+        "bombus",
+        "insects",
+        "bee",
+        "pollination",
+        "bumble"
+      ],
+      "name": "bumblebees_bumblebee_bees"
+    },
+    "312": {
+      "count": 87,
+      "frequency": 0.003016016085419122,
+      "keywords": [
+        "journals",
+        "journal",
+        "scopus",
+        "publications",
+        "publishes",
+        "sciences",
+        "publication",
+        "biomed",
+        "oncology",
+        "abstracts"
+      ],
+      "name": "journals_journal_scopus"
+    },
+    "797": {
+      "count": 152,
+      "frequency": 0.005269361436594329,
+      "keywords": [
+        "potyviruses",
+        "potyvirus",
+        "tenuivirus",
+        "virus",
+        "viral",
+        "viruses",
+        "pathogen",
+        "pathogens",
+        "infected",
+        "infect"
+      ],
+      "name": "potyviruses_potyvirus_tenuivirus"
+    },
+    "57": {
+      "count": 18,
+      "frequency": 0.0006240033280177494,
+      "keywords": [
+        "reptiles",
+        "snake",
+        "snakes",
+        "fauna",
+        "rattlesnake",
+        "species",
+        "lizards",
+        "reptile",
+        "colubridae",
+        "geckos"
+      ],
+      "name": "reptiles_snake_snakes"
+    },
+    "23": {
+      "count": 161,
+      "frequency": 0.0055813631006032035,
+      "keywords": [
+        "flora",
+        "asteraceae",
+        "plants",
+        "genus",
+        "plant",
+        "shrubs",
+        "flowering",
+        "botanist",
+        "perennial",
+        "shrub"
+      ],
+      "name": "flora_asteraceae_plants"
+    },
+    "629": {
+      "count": 63,
+      "frequency": 0.002184011648062123,
+      "keywords": [
+        "algae",
+        "algaebase",
+        "genus",
+        "seaweeds",
+        "chloroplast",
+        "chloroplasts",
+        "algal",
+        "cystophora",
+        "rhizoids",
+        "macroalgae"
+      ],
+      "name": "algae_algaebase_genus"
+    },
+    "1296": {
+      "count": 122,
+      "frequency": 0.0042293558898980795,
+      "keywords": [
+        "citrus",
+        "lemon",
+        "lemons",
+        "mandarins",
+        "clementines",
+        "grapefruit",
+        "mandarin",
+        "fruit",
+        "fruits",
+        "clementine"
+      ],
+      "name": "citrus_lemon_lemons"
+    },
+    "221": {
+      "count": 36,
+      "frequency": 0.0012480066560354988,
+      "keywords": [
+        "woodland",
+        "woodlands",
+        "grassland",
+        "habitats",
+        "meadows",
+        "habitat",
+        "woods",
+        "beech",
+        "wiltshire",
+        "wildlife"
+      ],
+      "name": "woodland_woodlands_grassland"
+    },
+    "1475": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "massachusetts",
+        "senate",
+        "senators",
+        "governorships",
+        "representatives",
+        "legislature",
+        "court",
+        "governorship",
+        "congress",
+        "gubernatorial"
+      ],
+      "name": "massachusetts_senate_senators"
+    },
+    "39": {
+      "count": 168,
+      "frequency": 0.005824031061498995,
+      "keywords": [
+        "fishes",
+        "invertebrates",
+        "fish",
+        "crustaceans",
+        "fishbase",
+        "fauna",
+        "fisheries",
+        "genus",
+        "species",
+        "catfish"
+      ],
+      "name": "fishes_invertebrates_fish"
+    },
+    "1638": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "perfumery",
+        "perfumer",
+        "perfume",
+        "fragrance",
+        "perfumers",
+        "fragrances",
+        "scents",
+        "perfumes",
+        "scented",
+        "scent"
+      ],
+      "name": "perfumery_perfumer_perfume"
+    },
+    "1107": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "bidding",
+        "bid",
+        "bids",
+        "bridge",
+        "auction",
+        "bidder",
+        "spades",
+        "spade",
+        "forcing",
+        "cards"
+      ],
+      "name": "bidding_bid_bids"
+    },
+    "452": {
+      "count": 14,
+      "frequency": 0.0004853359217915829,
+      "keywords": [
+        "rapper",
+        "mixtape",
+        "rap",
+        "rappers",
+        "thug",
+        "mixtapes",
+        "raps",
+        "drake",
+        "snoop",
+        "lil"
+      ],
+      "name": "rapper_mixtape_rap"
+    },
+    "963": {
+      "count": 60,
+      "frequency": 0.0020800110933924983,
+      "keywords": [
+        "consonants",
+        "consonantal",
+        "consonant",
+        "phonetics",
+        "phonetic",
+        "palatalized",
+        "vowels",
+        "vowel",
+        "phonology",
+        "palatal"
+      ],
+      "name": "consonants_consonantal_consonant"
+    },
+    "619": {
+      "count": 84,
+      "frequency": 0.0029120155307494973,
+      "keywords": [
+        "chords",
+        "chord",
+        "triads",
+        "triad",
+        "tones",
+        "harmony",
+        "semitones",
+        "supertonic",
+        "octaves",
+        "ascending"
+      ],
+      "name": "chords_chord_triads"
+    },
+    "25": {
+      "count": 9,
+      "frequency": 0.0003120016640088747,
+      "keywords": [
+        "painter",
+        "paintings",
+        "painters",
+        "painting",
+        "artwork",
+        "murals",
+        "arts",
+        "art",
+        "artistic",
+        "sculptors"
+      ],
+      "name": "painter_paintings_painters"
+    },
+    "423": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "greyhound",
+        "greyhounds",
+        "derby",
+        "racing",
+        "competitions",
+        "speedway",
+        "paddy",
+        "cup",
+        "track",
+        "bred"
+      ],
+      "name": "greyhound_greyhounds_derby"
+    },
+    "1667": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "swimmers",
+        "swimmer",
+        "breaststroke",
+        "swimming",
+        "freestyle",
+        "pool",
+        "backstroke",
+        "swim",
+        "olympic",
+        "olympics"
+      ],
+      "name": "swimmers_swimmer_breaststroke"
+    },
+    "886": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "moth",
+        "moths",
+        "lepidoptera",
+        "forewings",
+        "larvae",
+        "hindwings",
+        "tortricidae",
+        "fuscous",
+        "wingspan",
+        "species"
+      ],
+      "name": "moth_moths_lepidoptera"
+    },
+    "254": {
+      "count": 176,
+      "frequency": 0.006101365873951328,
+      "keywords": [
+        "microscopy",
+        "electron",
+        "electrons",
+        "spectroscopy",
+        "diffraction",
+        "optics",
+        "photon",
+        "scattering",
+        "semiconductor",
+        "dielectric"
+      ],
+      "name": "microscopy_electron_electrons"
+    },
+    "1301": {
+      "count": 32,
+      "frequency": 0.0011093392498093323,
+      "keywords": [
+        "squirrel",
+        "squirrels",
+        "mammals",
+        "mammal",
+        "species",
+        "rodents",
+        "rodent",
+        "fauna",
+        "sciurus",
+        "taxonomic"
+      ],
+      "name": "squirrel_squirrels_mammals"
+    },
+    "1348": {
+      "count": 34,
+      "frequency": 0.0011786729529224156,
+      "keywords": [
+        "psilocybe",
+        "psilocybin",
+        "psilocin",
+        "mushrooms",
+        "fungi",
+        "mushroom",
+        "fungus",
+        "psychedelic",
+        "pleurocystidia",
+        "antioquiensis"
+      ],
+      "name": "psilocybe_psilocybin_psilocin"
+    },
+    "292": {
+      "count": 70,
+      "frequency": 0.0024266796089579146,
+      "keywords": [
+        "lens",
+        "nikon",
+        "lenses",
+        "autofocus",
+        "aperture",
+        "camera",
+        "panasonic",
+        "focal",
+        "olympus",
+        "zoom"
+      ],
+      "name": "lens_nikon_lenses"
+    },
+    "1588": {
+      "count": 12,
+      "frequency": 0.00041600221867849963,
+      "keywords": [
+        "weightlifting",
+        "weightlifter",
+        "lifting",
+        "lifts",
+        "powerlifting",
+        "records",
+        "lift",
+        "olympic",
+        "athletes",
+        "snatch"
+      ],
+      "name": "weightlifting_weightlifter_lifting"
+    },
+    "1059": {
+      "count": 155,
+      "frequency": 0.005373361991263953,
+      "keywords": [
+        "lemurs",
+        "lemur",
+        "primates",
+        "primate",
+        "mammals",
+        "monkeys",
+        "species",
+        "fauna",
+        "monkey",
+        "madagascar"
+      ],
+      "name": "lemurs_lemur_primates"
+    },
+    "197": {
+      "count": 13,
+      "frequency": 0.00045066907023504126,
+      "keywords": [
+        "insect",
+        "insects",
+        "pest",
+        "pests",
+        "hemiptera",
+        "bugguide",
+        "species",
+        "aphids",
+        "bugs",
+        "plants"
+      ],
+      "name": "insect_insects_pest"
+    },
+    "141": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "oscars",
+        "oscar",
+        "nominations",
+        "awards",
+        "emmy",
+        "emmys",
+        "nominated",
+        "nominees",
+        "bafta",
+        "actors"
+      ],
+      "name": "oscars_oscar_nominations"
+    },
+    "344": {
+      "count": 19,
+      "frequency": 0.0006586701795742911,
+      "keywords": [
+        "eel",
+        "eels",
+        "anguillid",
+        "fishes",
+        "crustaceans",
+        "shrimp",
+        "fish",
+        "anguilla",
+        "leptocephalus",
+        "freshwater"
+      ],
+      "name": "eel_eels_anguillid"
+    },
+    "260": {
+      "count": 109,
+      "frequency": 0.0037786868196630382,
+      "keywords": [
+        "rodent",
+        "rodents",
+        "mammals",
+        "mammal",
+        "rat",
+        "rattus",
+        "mice",
+        "rats",
+        "fauna",
+        "species"
+      ],
+      "name": "rodent_rodents_mammals"
+    },
+    "670": {
+      "count": 22,
+      "frequency": 0.000762670734243916,
+      "keywords": [
+        "journalist",
+        "actor",
+        "historian",
+        "actress",
+        "comedian",
+        "cricketer",
+        "author",
+        "politician",
+        "footballer",
+        "activist"
+      ],
+      "name": "journalist_actor_historian"
+    },
+    "758": {
+      "count": 38,
+      "frequency": 0.0013173403591485821,
+      "keywords": [
+        "utc",
+        "clocks",
+        "daylight",
+        "dst",
+        "clock",
+        "eastern",
+        "longitudes",
+        "longitude",
+        "noon",
+        "midnight"
+      ],
+      "name": "utc_clocks_daylight"
+    },
+    "1335": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "drafted",
+        "draftees",
+        "undrafted",
+        "draft",
+        "nfl",
+        "selections",
+        "raiders",
+        "players",
+        "drafts",
+        "titans"
+      ],
+      "name": "drafted_draftees_undrafted"
+    },
+    "17": {
+      "count": 36,
+      "frequency": 0.0012480066560354988,
+      "keywords": [
+        "gameplay",
+        "rpg",
+        "games",
+        "gaming",
+        "wii",
+        "arcade",
+        "multiplayer",
+        "playable",
+        "nintendo",
+        "game"
+      ],
+      "name": "gameplay_rpg_games"
+    },
+    "64": {
+      "count": 143,
+      "frequency": 0.004957359772585454,
+      "keywords": [
+        "physicists",
+        "physicist",
+        "chemist",
+        "chemists",
+        "spectroscopy",
+        "chemistry",
+        "sciences",
+        "scientist",
+        "atomic",
+        "quantum"
+      ],
+      "name": "physicists_physicist_chemist"
+    },
+    "1014": {
+      "count": 24,
+      "frequency": 0.0008320044373569993,
+      "keywords": [
+        "roses",
+        "rose",
+        "flowers",
+        "flowering",
+        "flower",
+        "petals",
+        "flowered",
+        "rosarian",
+        "rosa",
+        "bloom"
+      ],
+      "name": "roses_rose_flowers"
+    },
+    "706": {
+      "count": 85,
+      "frequency": 0.0029466823823060388,
+      "keywords": [
+        "corals",
+        "coral",
+        "dinoflagellates",
+        "reefs",
+        "corallites",
+        "reef",
+        "algae",
+        "corallite",
+        "zooxanthellae",
+        "plankton"
+      ],
+      "name": "corals_coral_dinoflagellates"
+    },
+    "1428": {
+      "count": 12,
+      "frequency": 0.00041600221867849963,
+      "keywords": [
+        "illinois",
+        "il",
+        "champaign",
+        "interstate",
+        "routing",
+        "routes",
+        "highway",
+        "route",
+        "expressway",
+        "chicago"
+      ],
+      "name": "illinois_il_champaign"
+    },
+    "1687": {
+      "count": 7,
+      "frequency": 0.00024266796089579144,
+      "keywords": [
+        "deaf",
+        "deafness",
+        "sign",
+        "signers",
+        "signing",
+        "language",
+        "linguists",
+        "languages",
+        "linguistics",
+        "signes"
+      ],
+      "name": "deaf_deafness_sign"
+    },
+    "958": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "nebula",
+        "nebulae",
+        "astronomical",
+        "galaxies",
+        "milky",
+        "astronomers",
+        "astronomy",
+        "supernova",
+        "galactic",
+        "constellation"
+      ],
+      "name": "nebula_nebulae_astronomical"
+    },
+    "256": {
+      "count": 28,
+      "frequency": 0.0009706718435831658,
+      "keywords": [
+        "molecular",
+        "formula",
+        "formulas",
+        "compound",
+        "dimethyl",
+        "methylenedioxyphenyl",
+        "methyl",
+        "molar",
+        "methylindole",
+        "mass"
+      ],
+      "name": "molecular_formula_formulas"
+    },
+    "207": {
+      "count": 36,
+      "frequency": 0.0012480066560354988,
+      "keywords": [
+        "minerals",
+        "mineralogy",
+        "mineral",
+        "mineralogical",
+        "mineralogist",
+        "magnetite",
+        "silicate",
+        "pyrite",
+        "magma",
+        "magnesium"
+      ],
+      "name": "minerals_mineralogy_mineral"
+    },
+    "668": {
+      "count": 54,
+      "frequency": 0.0018720099840532484,
+      "keywords": [
+        "neutrino",
+        "neutrinos",
+        "antineutrino",
+        "detectors",
+        "detector",
+        "telescope",
+        "observatory",
+        "scintillation",
+        "astronomy",
+        "accelerator"
+      ],
+      "name": "neutrino_neutrinos_antineutrino"
+    },
+    "1011": {
+      "count": 65,
+      "frequency": 0.0022533453511752064,
+      "keywords": [
+        "rabbit",
+        "rabbits",
+        "breeds",
+        "breeding",
+        "breed",
+        "bred",
+        "breeders",
+        "poultry",
+        "breeder",
+        "subspecies"
+      ],
+      "name": "rabbit_rabbits_breeds"
+    },
+    "1681": {
+      "count": 11,
+      "frequency": 0.000381335367121958,
+      "keywords": [
+        "transformers",
+        "transformer",
+        "robot",
+        "optimus",
+        "robots",
+        "marvel",
+        "transform",
+        "transforms",
+        "voiced",
+        "bumblebee"
+      ],
+      "name": "transformers_transformer_robot"
+    },
+    "1019": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "radicals",
+        "radical",
+        "kanji",
+        "sinogram",
+        "unicode",
+        "ky\u014diku",
+        "pinyin",
+        "characters",
+        "chinese",
+        "hanyu"
+      ],
+      "name": "radicals_radical_kanji"
+    },
+    "1722": {
+      "count": 37,
+      "frequency": 0.0012826735075920405,
+      "keywords": [
+        "delphinium",
+        "larkspur",
+        "flora",
+        "nuttallianum",
+        "flower",
+        "flowering",
+        "petals",
+        "orchid",
+        "species",
+        "plants"
+      ],
+      "name": "delphinium_larkspur_flora"
+    },
+    "1562": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "allium",
+        "alliums",
+        "oleraceum",
+        "onion",
+        "garlic",
+        "onions",
+        "flora",
+        "plants",
+        "cultivated",
+        "perennial"
+      ],
+      "name": "allium_alliums_oleraceum"
+    },
+    "220": {
+      "count": 39,
+      "frequency": 0.0013520072107051238,
+      "keywords": [
+        "ants",
+        "ant",
+        "insects",
+        "hymenoptera",
+        "species",
+        "nests",
+        "pest",
+        "neotropical",
+        "larvae",
+        "genus"
+      ],
+      "name": "ants_ant_insects"
+    },
+    "523": {
+      "count": 23,
+      "frequency": 0.0007973375858004576,
+      "keywords": [
+        "candy",
+        "chocolate",
+        "sweets",
+        "candies",
+        "confectionery",
+        "flavors",
+        "snickers",
+        "marshmallows",
+        "cereal",
+        "sugar"
+      ],
+      "name": "candy_chocolate_sweets"
+    },
+    "61": {
+      "count": 40,
+      "frequency": 0.0013866740622616653,
+      "keywords": [
+        "butterflies",
+        "butterfly",
+        "lepidoptera",
+        "caterpillars",
+        "fauna",
+        "larvae",
+        "species",
+        "wingspan",
+        "neotropical",
+        "larval"
+      ],
+      "name": "butterflies_butterfly_lepidoptera"
+    },
+    "1152": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "climbing",
+        "climber",
+        "climb",
+        "climbers",
+        "climbs",
+        "climbed",
+        "mountaineering",
+        "bouldering",
+        "ascents",
+        "competed"
+      ],
+      "name": "climbing_climber_climb"
+    },
+    "1481": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "dominica",
+        "river",
+        "rivers",
+        "tributary",
+        "antigua",
+        "caribbean",
+        "island",
+        "lucia",
+        "inland",
+        "rivi\u00e8re"
+      ],
+      "name": "dominica_river_rivers"
+    },
+    "3": {
+      "count": 46,
+      "frequency": 0.0015946751716009152,
+      "keywords": [
+        "unix",
+        "interface",
+        "storage",
+        "java",
+        "software",
+        "applications",
+        "protocol",
+        "api",
+        "web",
+        "hardware"
+      ],
+      "name": "unix_interface_storage"
+    },
+    "532": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "arabi",
+        "arab",
+        "arabic",
+        "mohamed",
+        "arabian",
+        "novelist",
+        "syrian",
+        "ibrahim",
+        "yemeni",
+        "literature"
+      ],
+      "name": "arabi_arab_arabic"
+    },
+    "921": {
+      "count": 20,
+      "frequency": 0.0006933370311308326,
+      "keywords": [
+        "oscar",
+        "oscars",
+        "nominations",
+        "nominated",
+        "films",
+        "filmography",
+        "bafta",
+        "awards",
+        "audio",
+        "recordist"
+      ],
+      "name": "oscar_oscars_nominations"
+    },
+    "1051": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "telephone",
+        "digits",
+        "numbers",
+        "digit",
+        "dialing",
+        "telephony",
+        "dial",
+        "telephones",
+        "number",
+        "telecommunications"
+      ],
+      "name": "telephone_digits_numbers"
+    },
+    "1231": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "yoon",
+        "korean",
+        "korea",
+        "jong",
+        "hangul",
+        "kim",
+        "seoul",
+        "choi",
+        "sk",
+        "hyun"
+      ],
+      "name": "yoon_korean_korea"
+    },
+    "832": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "lizards",
+        "lizard",
+        "reptiles",
+        "iguana",
+        "species",
+        "fauna",
+        "chilean",
+        "lemniscatus",
+        "chiliensis",
+        "preys"
+      ],
+      "name": "lizards_lizard_reptiles"
+    },
+    "889": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "typefaces",
+        "typeface",
+        "fonts",
+        "font",
+        "typography",
+        "italic",
+        "sans",
+        "monotype",
+        "types",
+        "typesetting"
+      ],
+      "name": "typefaces_typeface_fonts"
+    },
+    "133": {
+      "count": 38,
+      "frequency": 0.0013173403591485821,
+      "keywords": [
+        "planthoppers",
+        "planthopper",
+        "grasshoppers",
+        "grasshopper",
+        "insect",
+        "insects",
+        "orthoptera",
+        "leafhoppers",
+        "leafhopper",
+        "pest"
+      ],
+      "name": "planthoppers_planthopper_grasshoppers"
+    },
+    "658": {
+      "count": 11,
+      "frequency": 0.000381335367121958,
+      "keywords": [
+        "ponds",
+        "pond",
+        "lake",
+        "lakes",
+        "headwaters",
+        "maine",
+        "river",
+        "tributaries",
+        "tributary",
+        "fishing"
+      ],
+      "name": "ponds_pond_lake"
+    },
+    "162": {
+      "count": 44,
+      "frequency": 0.001525341468487832,
+      "keywords": [
+        "crabs",
+        "crab",
+        "crustaceans",
+        "crustacean",
+        "lobster",
+        "shrimp",
+        "lobsters",
+        "fauna",
+        "shrimps",
+        "jellyfish"
+      ],
+      "name": "crabs_crab_crustaceans"
+    },
+    "1664": {
+      "count": 17,
+      "frequency": 0.0005893364764612078,
+      "keywords": [
+        "marketing",
+        "advertising",
+        "consumers",
+        "customers",
+        "consumer",
+        "market",
+        "marketers",
+        "customer",
+        "sales",
+        "business"
+      ],
+      "name": "marketing_advertising_consumers"
+    },
+    "952": {
+      "count": 18,
+      "frequency": 0.0006240033280177494,
+      "keywords": [
+        "swimmers",
+        "swimmer",
+        "backstroke",
+        "breaststroke",
+        "swimrankings",
+        "swimming",
+        "iaaf",
+        "freestyle",
+        "records",
+        "aquatics"
+      ],
+      "name": "swimmers_swimmer_backstroke"
+    },
+    "332": {
+      "count": 114,
+      "frequency": 0.003952021077445746,
+      "keywords": [
+        "thermal",
+        "heating",
+        "cooling",
+        "heat",
+        "viscosity",
+        "temperature",
+        "fluids",
+        "heated",
+        "temperatures",
+        "viscous"
+      ],
+      "name": "thermal_heating_cooling"
+    },
+    "1043": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "sahitya",
+        "puraskar",
+        "awards",
+        "award",
+        "bal",
+        "kuya",
+        "akademi",
+        "finalists",
+        "philippine",
+        "rs"
+      ],
+      "name": "sahitya_puraskar_awards"
+    },
+    "1237": {
+      "count": 23,
+      "frequency": 0.0007973375858004576,
+      "keywords": [
+        "karnataka",
+        "wildlife",
+        "habitat",
+        "pradesh",
+        "fauna",
+        "kerala",
+        "maharashtra",
+        "himachal",
+        "bengal",
+        "sanctuary"
+      ],
+      "name": "karnataka_wildlife_habitat"
+    },
+    "1277": {
+      "count": 23,
+      "frequency": 0.0007973375858004576,
+      "keywords": [
+        "buffy",
+        "vampire",
+        "vampires",
+        "slayer",
+        "twilight",
+        "willow",
+        "slayers",
+        "supernatural",
+        "spike",
+        "demons"
+      ],
+      "name": "buffy_vampire_vampires"
+    },
+    "711": {
+      "count": 31,
+      "frequency": 0.0010746723982527906,
+      "keywords": [
+        "quercus",
+        "oak",
+        "oaks",
+        "trees",
+        "tree",
+        "forest",
+        "woodlands",
+        "forests",
+        "evergreen",
+        "pine"
+      ],
+      "name": "quercus_oak_oaks"
+    },
+    "1554": {
+      "count": 69,
+      "frequency": 0.0023920127574013727,
+      "keywords": [
+        "triassic",
+        "fossiliferous",
+        "miocene",
+        "paleontology",
+        "permian",
+        "cretaceous",
+        "stratigraphy",
+        "eocene",
+        "carboniferous",
+        "geochronology"
+      ],
+      "name": "triassic_fossiliferous_miocene"
+    },
+    "1747": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "davis",
+        "ncaa",
+        "cal",
+        "uc",
+        "ucd",
+        "nfl",
+        "sacramento",
+        "athletic",
+        "bowl",
+        "conference"
+      ],
+      "name": "davis_ncaa_cal"
+    },
+    "376": {
+      "count": 18,
+      "frequency": 0.0006240033280177494,
+      "keywords": [
+        "honeycombs",
+        "tessellations",
+        "honeycomb",
+        "polyhedral",
+        "hexagonal",
+        "tilings",
+        "tessellation",
+        "icosahedral",
+        "hexagons",
+        "tetrahedral"
+      ],
+      "name": "honeycombs_tessellations_honeycomb"
+    },
+    "564": {
+      "count": 10,
+      "frequency": 0.0003466685155654163,
+      "keywords": [
+        "sponges",
+        "sponge",
+        "invertebrates",
+        "corals",
+        "fauna",
+        "coral",
+        "genus",
+        "reef",
+        "species",
+        "reefs"
+      ],
+      "name": "sponges_sponge_invertebrates"
+    },
+    "1777": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "insects",
+        "taibaishanensis",
+        "diptera",
+        "hoverflies",
+        "species",
+        "spinipes",
+        "uluguruensis",
+        "hoverfly",
+        "armipes",
+        "furcata"
+      ],
+      "name": "insects_taibaishanensis_diptera"
+    },
+    "1276": {
+      "count": 37,
+      "frequency": 0.0012826735075920405,
+      "keywords": [
+        "paralympic",
+        "paralympics",
+        "athlete",
+        "wheelchair",
+        "athletes",
+        "basketball",
+        "medals",
+        "sportspeople",
+        "disability",
+        "sports"
+      ],
+      "name": "paralympic_paralympics_athlete"
+    },
+    "1273": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "litigation",
+        "defendant",
+        "plaintiff",
+        "courts",
+        "court",
+        "prosecution",
+        "defendants",
+        "lawsuit",
+        "adjudication",
+        "law"
+      ],
+      "name": "litigation_defendant_plaintiff"
+    },
+    "444": {
+      "count": 143,
+      "frequency": 0.004957359772585454,
+      "keywords": [
+        "coronavirus",
+        "covid",
+        "pandemic",
+        "outbreak",
+        "vaccination",
+        "vaccinated",
+        "virus",
+        "vaccine",
+        "vaccines",
+        "disease"
+      ],
+      "name": "coronavirus_covid_pandemic"
+    },
+    "348": {
+      "count": 110,
+      "frequency": 0.0038133536712195797,
+      "keywords": [
+        "computing",
+        "computational",
+        "programming",
+        "computers",
+        "stanford",
+        "academic",
+        "engineers",
+        "academics",
+        "turing",
+        "researcher"
+      ],
+      "name": "computing_computational_programming"
+    },
+    "850": {
+      "count": 9,
+      "frequency": 0.0003120016640088747,
+      "keywords": [
+        "squid",
+        "squids",
+        "cephalopods",
+        "tentacles",
+        "cephalopod",
+        "molluscs",
+        "crustaceans",
+        "genus",
+        "reef",
+        "species"
+      ],
+      "name": "squid_squids_cephalopods"
+    },
+    "244": {
+      "count": 18,
+      "frequency": 0.0006240033280177494,
+      "keywords": [
+        "rollercoaster",
+        "coaster",
+        "coasters",
+        "rides",
+        "ride",
+        "roller",
+        "park",
+        "parks",
+        "amusement",
+        "trains"
+      ],
+      "name": "rollercoaster_coaster_coasters"
+    },
+    "396": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "botanist",
+        "botanists",
+        "botany",
+        "botanical",
+        "herbarium",
+        "botanic",
+        "flora",
+        "plants",
+        "entomologist",
+        "ornithologist"
+      ],
+      "name": "botanist_botanists_botany"
+    },
+    "397": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "nhl",
+        "hockey",
+        "ottawa",
+        "goaltender",
+        "provincial",
+        "edmonton",
+        "ontario",
+        "canadiens",
+        "calgary",
+        "rangers"
+      ],
+      "name": "nhl_hockey_ottawa"
+    },
+    "567": {
+      "count": 15,
+      "frequency": 0.0005200027733481246,
+      "keywords": [
+        "wildfires",
+        "fires",
+        "wildfire",
+        "arson",
+        "firefighting",
+        "firefighters",
+        "burning",
+        "california",
+        "burned",
+        "firefighter"
+      ],
+      "name": "wildfires_fires_wildfire"
+    },
+    "1303": {
+      "count": 20,
+      "frequency": 0.0006933370311308326,
+      "keywords": [
+        "moths",
+        "moth",
+        "larvae",
+        "fauna",
+        "species",
+        "larva",
+        "arthropod",
+        "larval",
+        "butterflies",
+        "choreutidae"
+      ],
+      "name": "moths_moth_larvae"
+    },
+    "1498": {
+      "count": 44,
+      "frequency": 0.001525341468487832,
+      "keywords": [
+        "isotope",
+        "isotopes",
+        "radioisotopes",
+        "radioisotope",
+        "radioactive",
+        "neutron",
+        "nucleus",
+        "nuclei",
+        "neutrons",
+        "roentgenium"
+      ],
+      "name": "isotope_isotopes_radioisotopes"
+    },
+    "13": {
+      "count": 9,
+      "frequency": 0.0003120016640088747,
+      "keywords": [
+        "moths",
+        "moth",
+        "tortricidae",
+        "lepidoptera",
+        "caterpillars",
+        "caterpillar",
+        "larvae",
+        "larva",
+        "insects",
+        "hindwings"
+      ],
+      "name": "moths_moth_tortricidae"
+    },
+    "1807": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "data",
+        "sort",
+        "survey",
+        "align",
+        "peak",
+        "value",
+        "mount",
+        "km",
+        "cerro",
+        "sss"
+      ],
+      "name": "data_sort_survey"
+    },
+    "967": {
+      "count": 23,
+      "frequency": 0.0007973375858004576,
+      "keywords": [
+        "irises",
+        "iris",
+        "flowering",
+        "botanical",
+        "perennial",
+        "petals",
+        "flora",
+        "ornamental",
+        "flowers",
+        "plant"
+      ],
+      "name": "irises_iris_flowering"
+    },
+    "877": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "annulata",
+        "species",
+        "mediomaculata",
+        "nigrolateralis",
+        "subnigra",
+        "subspecies",
+        "vestigialis",
+        "griseolineata"
+      ],
+      "name": "beetles_beetle_annulata"
+    },
+    "305": {
+      "count": 27,
+      "frequency": 0.0009360049920266242,
+      "keywords": [
+        "prehistoric",
+        "fishes",
+        "fish",
+        "paleozoic",
+        "extinct",
+        "fossil",
+        "cretaceous",
+        "phylogeny",
+        "sarcopterygians",
+        "fossils"
+      ],
+      "name": "prehistoric_fishes_fish"
+    },
+    "1077": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "scientology",
+        "scientologists",
+        "cult",
+        "cults",
+        "religion",
+        "psychiatry",
+        "ron",
+        "religious",
+        "church",
+        "hypnosis"
+      ],
+      "name": "scientology_scientologists_cult"
+    },
+    "1573": {
+      "count": 18,
+      "frequency": 0.0006240033280177494,
+      "keywords": [
+        "loudspeaker",
+        "loudspeakers",
+        "subwoofer",
+        "subwoofers",
+        "woofers",
+        "speakers",
+        "amplifiers",
+        "acoustics",
+        "acoustic",
+        "speaker"
+      ],
+      "name": "loudspeaker_loudspeakers_subwoofer"
+    },
+    "1115": {
+      "count": 9,
+      "frequency": 0.0003120016640088747,
+      "keywords": [
+        "proteins",
+        "biomembranes",
+        "superfamily",
+        "holins",
+        "holin",
+        "transmembrane",
+        "bacteriophage",
+        "protein",
+        "bacteriology",
+        "membrane"
+      ],
+      "name": "proteins_biomembranes_superfamily"
+    },
+    "1547": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "hakeas",
+        "hakea",
+        "proteaceae",
+        "flowering",
+        "flora",
+        "botanist",
+        "teretifolia",
+        "plants",
+        "shrub",
+        "flowers"
+      ],
+      "name": "hakeas_hakea_proteaceae"
+    },
+    "695": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "md",
+        "maryland",
+        "highway",
+        "baltimore",
+        "highways",
+        "turnpike",
+        "road",
+        "freeway",
+        "parkway",
+        "roads"
+      ],
+      "name": "md_maryland_highway"
+    },
+    "1596": {
+      "count": 8,
+      "frequency": 0.00027733481245233307,
+      "keywords": [
+        "signals",
+        "signal",
+        "railways",
+        "signalling",
+        "railway",
+        "signaling",
+        "trains",
+        "rail",
+        "signaller",
+        "train"
+      ],
+      "name": "signals_signal_railways"
+    },
+    "1757": {
+      "count": 27,
+      "frequency": 0.0009360049920266242,
+      "keywords": [
+        "kingfisher",
+        "kingfishers",
+        "genus",
+        "fish",
+        "species",
+        "mangroves",
+        "lizards",
+        "perches",
+        "iucn",
+        "subspecies"
+      ],
+      "name": "kingfisher_kingfishers_genus"
+    },
+    "562": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "virginia",
+        "plantation",
+        "farmhouse",
+        "houses",
+        "va",
+        "barns",
+        "house",
+        "smokehouse",
+        "italianate",
+        "barn"
+      ],
+      "name": "virginia_plantation_farmhouse"
+    },
+    "122": {
+      "count": 43,
+      "frequency": 0.0014906746169312903,
+      "keywords": [
+        "jazz",
+        "saxophonist",
+        "saxophone",
+        "trumpeter",
+        "sax",
+        "albums",
+        "trumpet",
+        "allmusic",
+        "bassist",
+        "trombone"
+      ],
+      "name": "jazz_saxophonist_saxophone"
+    },
+    "1485": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "organbuilder",
+        "organ",
+        "organists",
+        "organs",
+        "organist",
+        "hermann",
+        "hamburg",
+        "wagner",
+        "johannes",
+        "german"
+      ],
+      "name": "organbuilder_organ_organists"
+    },
+    "1145": {
+      "count": 12,
+      "frequency": 0.00041600221867849963,
+      "keywords": [
+        "fishes",
+        "darter",
+        "invertebrates",
+        "darters",
+        "fish",
+        "perches",
+        "pikeperches",
+        "freshwater",
+        "larvae",
+        "species"
+      ],
+      "name": "fishes_darter_invertebrates"
+    },
+    "724": {
+      "count": 13,
+      "frequency": 0.00045066907023504126,
+      "keywords": [
+        "batting",
+        "baseball",
+        "baseman",
+        "hitters",
+        "pitches",
+        "fielders",
+        "batters",
+        "batter",
+        "hitter",
+        "fielder"
+      ],
+      "name": "batting_baseball_baseman"
+    },
+    "317": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "everest",
+        "mountaineering",
+        "climber",
+        "climbers",
+        "mountaineer",
+        "climb",
+        "climbed",
+        "summiting",
+        "climbing",
+        "ascents"
+      ],
+      "name": "everest_mountaineering_climber"
+    },
+    "1437": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "louisiana",
+        "cajun",
+        "ncaa",
+        "arkansas",
+        "conference",
+        "orleans",
+        "basketball",
+        "alabama",
+        "southland",
+        "intercollegiate"
+      ],
+      "name": "louisiana_cajun_ncaa"
+    },
+    "1710": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "beetles",
+        "insectorum",
+        "beetle",
+        "subgenus",
+        "species",
+        "birmanicus",
+        "inclusus",
+        "descriptionibus",
+        "rusticus",
+        "hide"
+      ],
+      "name": "beetles_insectorum_beetle"
+    },
+    "1341": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "insects",
+        "bees",
+        "bee",
+        "manicatum",
+        "hymenoptera",
+        "species",
+        "furcatum",
+        "leaf",
+        "pollen",
+        "nectar"
+      ],
+      "name": "insects_bees_bee"
+    },
+    "1274": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "butterflies",
+        "charaxes",
+        "lepidoptera",
+        "species",
+        "larvae",
+        "butterfly",
+        "entomology",
+        "afrotropical",
+        "subspecies",
+        "habitat"
+      ],
+      "name": "butterflies_charaxes_lepidoptera"
+    },
+    "274": {
+      "count": 16,
+      "frequency": 0.0005546696249046661,
+      "keywords": [
+        "crater",
+        "craters",
+        "craterlets",
+        "craterlet",
+        "lunar",
+        "moon",
+        "eroded",
+        "basaltic",
+        "basin",
+        "impact"
+      ],
+      "name": "crater_craters_craterlets"
+    },
+    "1768": {
+      "count": 10,
+      "frequency": 0.0003466685155654163,
+      "keywords": [
+        "encodings",
+        "encoding",
+        "unicode",
+        "encoded",
+        "utf",
+        "encode",
+        "byte",
+        "ascii",
+        "cyrillic",
+        "characters"
+      ],
+      "name": "encodings_encoding_unicode"
+    },
+    "90": {
+      "count": 28,
+      "frequency": 0.0009706718435831658,
+      "keywords": [
+        "frog",
+        "amphibians",
+        "frogs",
+        "rana",
+        "fauna",
+        "tadpoles",
+        "toads",
+        "toad",
+        "species",
+        "amphibian"
+      ],
+      "name": "frog_amphibians_frogs"
+    },
+    "1061": {
+      "count": 12,
+      "frequency": 0.00041600221867849963,
+      "keywords": [
+        "molecular",
+        "formula",
+        "formulas",
+        "compound",
+        "methylphenethylamine",
+        "ethyltryptamine",
+        "dihydroxybenzoic",
+        "dimethylpentane",
+        "methylfentanyl",
+        "dimethyl"
+      ],
+      "name": "molecular_formula_formulas"
+    },
+    "1461": {
+      "count": 8,
+      "frequency": 0.00027733481245233307,
+      "keywords": [
+        "glee",
+        "cheerleader",
+        "finale",
+        "cast",
+        "choir",
+        "murphy",
+        "cheerleading",
+        "audition",
+        "chris",
+        "criss"
+      ],
+      "name": "glee_cheerleader_finale"
+    },
+    "1818": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "oregon",
+        "highway",
+        "highways",
+        "routes",
+        "freeway",
+        "route",
+        "portland",
+        "roadway",
+        "interstate",
+        "expressway"
+      ],
+      "name": "oregon_highway_highways"
+    },
+    "842": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "chiang",
+        "taiwan",
+        "huang",
+        "nippon",
+        "chinese",
+        "mlb",
+        "baseball",
+        "taipei",
+        "cheng",
+        "pitchers"
+      ],
+      "name": "chiang_taiwan_huang"
+    },
+    "659": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "esports",
+        "league",
+        "leagues",
+        "tournament",
+        "teams",
+        "tournaments",
+        "champions",
+        "championship",
+        "playoffs",
+        "legends"
+      ],
+      "name": "esports_league_leagues"
+    },
+    "1395": {
+      "count": 9,
+      "frequency": 0.0003120016640088747,
+      "keywords": [
+        "cephalotes",
+        "ants",
+        "ant",
+        "insects",
+        "complanatus",
+        "arboreal",
+        "scutulatus",
+        "gliding",
+        "species",
+        "laminatus"
+      ],
+      "name": "cephalotes_ants_ant"
+    },
+    "1780": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "rubus",
+        "botanical",
+        "flora",
+        "flowering",
+        "michiganensis",
+        "species",
+        "herbarium",
+        "subgenus",
+        "shrub",
+        "montensis"
+      ],
+      "name": "rubus_botanical_flora"
+    },
+    "703": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "investors",
+        "investor",
+        "invested",
+        "invests",
+        "invest",
+        "investments",
+        "firms",
+        "securities",
+        "equity",
+        "investment"
+      ],
+      "name": "investors_investor_invested"
+    },
+    "1443": {
+      "count": 20,
+      "frequency": 0.0006933370311308326,
+      "keywords": [
+        "disney",
+        "attractions",
+        "parks",
+        "park",
+        "tokyo",
+        "cinderella",
+        "studios",
+        "hollywood",
+        "mickey",
+        "coaster"
+      ],
+      "name": "disney_attractions_parks"
+    },
+    "590": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "thrips",
+        "thrip",
+        "genus",
+        "species",
+        "larvae",
+        "insects",
+        "insect",
+        "pest",
+        "pests",
+        "gladiolus"
+      ],
+      "name": "thrips_thrip_genus"
+    },
+    "714": {
+      "count": 12,
+      "frequency": 0.00041600221867849963,
+      "keywords": [
+        "islands",
+        "seabirds",
+        "island",
+        "archipelago",
+        "penguins",
+        "islet",
+        "fauna",
+        "isles",
+        "reef",
+        "tasman"
+      ],
+      "name": "islands_seabirds_island"
+    },
+    "1208": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "olympic",
+        "olympics",
+        "volleyball",
+        "fivb",
+        "japanese",
+        "sportspeople",
+        "jp",
+        "nippon",
+        "asahi",
+        "japan"
+      ],
+      "name": "olympic_olympics_volleyball"
+    },
+    "1462": {
+      "count": 10,
+      "frequency": 0.0003466685155654163,
+      "keywords": [
+        "maple",
+        "maples",
+        "acer",
+        "trees",
+        "tree",
+        "saccharinum",
+        "leaves",
+        "bonsai",
+        "shirasawanum",
+        "leaf"
+      ],
+      "name": "maple_maples_acer"
+    },
+    "939": {
+      "count": 23,
+      "frequency": 0.0007973375858004576,
+      "keywords": [
+        "bahia",
+        "gerais",
+        "janeiro",
+        "paran\u00e1",
+        "rainforest",
+        "rio",
+        "s\u00e3o",
+        "cerrado",
+        "ecological",
+        "ecosystems"
+      ],
+      "name": "bahia_gerais_janeiro"
+    },
+    "414": {
+      "count": 14,
+      "frequency": 0.0004853359217915829,
+      "keywords": [
+        "doctor",
+        "doctors",
+        "clara",
+        "cast",
+        "lords",
+        "alien",
+        "incarnation",
+        "companion",
+        "ian",
+        "davies"
+      ],
+      "name": "doctor_doctors_clara"
+    },
+    "399": {
+      "count": 7,
+      "frequency": 0.00024266796089579144,
+      "keywords": [
+        "supermodel",
+        "vogue",
+        "supermodels",
+        "elle",
+        "actresses",
+        "glamour",
+        "fashion",
+        "lauren",
+        "chanel",
+        "modeled"
+      ],
+      "name": "supermodel_vogue_supermodels"
+    },
+    "6": {
+      "count": 11,
+      "frequency": 0.000381335367121958,
+      "keywords": [
+        "coleoptera",
+        "beetles",
+        "beetle",
+        "insects",
+        "fauna",
+        "subgenus",
+        "larvae",
+        "pest",
+        "bugguide",
+        "species"
+      ],
+      "name": "coleoptera_beetles_beetle"
+    },
+    "752": {
+      "count": 16,
+      "frequency": 0.0005546696249046661,
+      "keywords": [
+        "turtle",
+        "turtles",
+        "reptiles",
+        "tortoises",
+        "tortoise",
+        "fauna",
+        "lizards",
+        "aquatic",
+        "reptile",
+        "species"
+      ],
+      "name": "turtle_turtles_reptiles"
+    },
+    "1383": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "postcode",
+        "code",
+        "abbreviation",
+        "designation",
+        "iib",
+        "wa",
+        "game",
+        "rm",
+        "troopers",
+        "disambiguation"
+      ],
+      "name": "postcode_code_abbreviation"
+    },
+    "241": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "darts",
+        "dart",
+        "tournament",
+        "tournaments",
+        "player",
+        "players",
+        "pdc",
+        "draw",
+        "finals",
+        "championship"
+      ],
+      "name": "darts_dart_tournament"
+    },
+    "492": {
+      "count": 10,
+      "frequency": 0.0003466685155654163,
+      "keywords": [
+        "paralympics",
+        "paralympic",
+        "athlete",
+        "medals",
+        "javelin",
+        "medal",
+        "sprinters",
+        "swimmer",
+        "breaststroke",
+        "athletes"
+      ],
+      "name": "paralympics_paralympic_athlete"
+    },
+    "1692": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "owls",
+        "rice",
+        "ncaa",
+        "stanford",
+        "owl",
+        "ucla",
+        "lsu",
+        "longhorns",
+        "baylor",
+        "football"
+      ],
+      "name": "owls_rice_ncaa"
+    },
+    "1402": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "mississippi",
+        "ms",
+        "highway",
+        "interstate",
+        "road",
+        "lanes",
+        "creek",
+        "downtown",
+        "lane",
+        "bayou"
+      ],
+      "name": "mississippi_ms_highway"
+    },
+    "93": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "rebounds",
+        "undrafted",
+        "sophomore",
+        "basketball",
+        "freshman",
+        "assists",
+        "ncaa",
+        "fiba",
+        "nba",
+        "scoring"
+      ],
+      "name": "rebounds_undrafted_sophomore"
+    },
+    "568": {
+      "count": 48,
+      "frequency": 0.0016640088747139985,
+      "keywords": [
+        "psychologist",
+        "psychologists",
+        "psychology",
+        "psychopathology",
+        "psychological",
+        "psychiatry",
+        "psychiatric",
+        "psychotherapy",
+        "behavioral",
+        "counseling"
+      ],
+      "name": "psychologist_psychologists_psychology"
+    },
+    "1360": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "eclipse",
+        "eclipses",
+        "solar",
+        "annularity",
+        "april",
+        "annulus",
+        "sun",
+        "annular",
+        "lunar",
+        "sunset"
+      ],
+      "name": "eclipse_eclipses_solar"
+    },
+    "1491": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "marathon",
+        "marathons",
+        "runners",
+        "ultramarathons",
+        "runner",
+        "iaaf",
+        "racing",
+        "running",
+        "parkrun",
+        "competitions"
+      ],
+      "name": "marathon_marathons_runners"
+    },
+    "699": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "species",
+        "genus",
+        "fuscomaculatus",
+        "biseriatus",
+        "spoliatus",
+        "dolosus",
+        "diving",
+        "nigrostriatus"
+      ],
+      "name": "beetles_beetle_species"
+    },
+    "1474": {
+      "count": 27,
+      "frequency": 0.0009360049920266242,
+      "keywords": [
+        "octopus",
+        "octopuses",
+        "cephalopods",
+        "cephalopod",
+        "octopods",
+        "crustaceans",
+        "molluscs",
+        "lobster",
+        "crabs",
+        "gills"
+      ],
+      "name": "octopus_octopuses_cephalopods"
+    },
+    "1118": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "footwear",
+        "shoe",
+        "shoes",
+        "sneakers",
+        "nike",
+        "retailer",
+        "retailers",
+        "soles",
+        "streetwear",
+        "sportswear"
+      ],
+      "name": "footwear_shoe_shoes"
+    },
+    "624": {
+      "count": 15,
+      "frequency": 0.0005200027733481246,
+      "keywords": [
+        "elm",
+        "elms",
+        "tree",
+        "trees",
+        "cultivar",
+        "americana",
+        "cultivars",
+        "planted",
+        "bark",
+        "botanic"
+      ],
+      "name": "elm_elms_tree"
+    },
+    "654": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "fossiliferous",
+        "fossils",
+        "paleontology",
+        "limestones",
+        "geology",
+        "cretaceous",
+        "sedimentary",
+        "limestone",
+        "fossil",
+        "geologic"
+      ],
+      "name": "fossiliferous_fossils_paleontology"
+    },
+    "1576": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "banks",
+        "bank",
+        "banking",
+        "deposit",
+        "lending",
+        "deposits",
+        "financial",
+        "loans",
+        "mortgage",
+        "loan"
+      ],
+      "name": "banks_bank_banking"
+    },
+    "873": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "strongman",
+        "strongest",
+        "strongmen",
+        "competed",
+        "powerlifter",
+        "strength",
+        "competing",
+        "powerlifting",
+        "competitions",
+        "compete"
+      ],
+      "name": "strongman_strongest_strongmen"
+    },
+    "186": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "lakes",
+        "lake",
+        "creek",
+        "ontario",
+        "manitoba",
+        "rivers",
+        "river",
+        "alberta",
+        "tributary",
+        "provincial"
+      ],
+      "name": "lakes_lake_creek"
+    },
+    "662": {
+      "count": 17,
+      "frequency": 0.0005893364764612078,
+      "keywords": [
+        "wnba",
+        "nba",
+        "phoenix",
+        "sun",
+        "waived",
+        "draft",
+        "basketball",
+        "season",
+        "playoffs",
+        "pick"
+      ],
+      "name": "wnba_nba_phoenix"
+    },
+    "58": {
+      "count": 16,
+      "frequency": 0.0005546696249046661,
+      "keywords": [
+        "spider",
+        "spiderlings",
+        "tarantulas",
+        "spiders",
+        "tarantula",
+        "arachnologist",
+        "fauna",
+        "arthropods",
+        "species",
+        "genus"
+      ],
+      "name": "spider_spiderlings_tarantulas"
+    },
+    "1104": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "cemetery",
+        "cemeteries",
+        "grave",
+        "burial",
+        "burials",
+        "buried",
+        "graves",
+        "memorials",
+        "interred",
+        "armistice"
+      ],
+      "name": "cemetery_cemeteries_grave"
+    },
+    "1476": {
+      "count": 28,
+      "frequency": 0.0009706718435831658,
+      "keywords": [
+        "dance",
+        "dancing",
+        "dancers",
+        "arcade",
+        "choreography",
+        "arcades",
+        "revolution",
+        "rhythm",
+        "wii",
+        "gameplay"
+      ],
+      "name": "dance_dancing_dancers"
+    },
+    "1359": {
+      "count": 8,
+      "frequency": 0.00027733481245233307,
+      "keywords": [
+        "geologic",
+        "fossiliferous",
+        "formations",
+        "geological",
+        "fossils",
+        "paleontology",
+        "geology",
+        "cretaceous",
+        "formation",
+        "oaxaca"
+      ],
+      "name": "geologic_fossiliferous_formations"
+    },
+    "872": {
+      "count": 10,
+      "frequency": 0.0003466685155654163,
+      "keywords": [
+        "cookbook",
+        "cookbooks",
+        "recipes",
+        "culinary",
+        "chef",
+        "cook",
+        "cooking",
+        "cooks",
+        "recipe",
+        "chefs"
+      ],
+      "name": "cookbook_cookbooks_recipes"
+    },
+    "472": {
+      "count": 9,
+      "frequency": 0.0003120016640088747,
+      "keywords": [
+        "eucalyptus",
+        "trees",
+        "tree",
+        "flowering",
+        "leaves",
+        "mallees",
+        "leaf",
+        "mallee",
+        "plants",
+        "flora"
+      ],
+      "name": "eucalyptus_trees_tree"
+    },
+    "694": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "sabres",
+        "goaltenders",
+        "goaltender",
+        "nhl",
+        "oilers",
+        "leafs",
+        "islanders",
+        "rangers",
+        "devils",
+        "stanley"
+      ],
+      "name": "sabres_goaltenders_goaltender"
+    },
+    "392": {
+      "count": 12,
+      "frequency": 0.00041600221867849963,
+      "keywords": [
+        "mites",
+        "genus",
+        "species",
+        "brasiliensis",
+        "mite",
+        "termitophila",
+        "sinicus",
+        "acari",
+        "indicus",
+        "superfamily"
+      ],
+      "name": "mites_genus_species"
+    },
+    "88": {
+      "count": 20,
+      "frequency": 0.0006933370311308326,
+      "keywords": [
+        "cuisine",
+        "foods",
+        "recipes",
+        "recipe",
+        "cooking",
+        "dishes",
+        "food",
+        "rice",
+        "pork",
+        "dish"
+      ],
+      "name": "cuisine_foods_recipes"
+    },
+    "1015": {
+      "count": 14,
+      "frequency": 0.0004853359217915829,
+      "keywords": [
+        "hibbertia",
+        "flowering",
+        "flora",
+        "flowers",
+        "flower",
+        "petals",
+        "botanic",
+        "shrub",
+        "foliage",
+        "species"
+      ],
+      "name": "hibbertia_flowering_flora"
+    },
+    "446": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "fjord",
+        "fjords",
+        "arctic",
+        "glacier",
+        "northernmost",
+        "glaciers",
+        "coastline",
+        "inuit",
+        "icebergs",
+        "northwest"
+      ],
+      "name": "fjord_fjords_arctic"
+    },
+    "350": {
+      "count": 8,
+      "frequency": 0.00027733481245233307,
+      "keywords": [
+        "renewable",
+        "hydroelectric",
+        "turbines",
+        "turbine",
+        "electricity",
+        "megawatts",
+        "reactors",
+        "energy",
+        "utilities",
+        "coal"
+      ],
+      "name": "renewable_hydroelectric_turbines"
+    },
+    "986": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "saxophonists",
+        "saxophonist",
+        "saxophone",
+        "musician",
+        "musikk",
+        "musicians",
+        "jonas",
+        "norwegian",
+        "bassist",
+        "jazz"
+      ],
+      "name": "saxophonists_saxophonist_saxophone"
+    },
+    "860": {
+      "count": 29,
+      "frequency": 0.0010053386951397074,
+      "keywords": [
+        "episodes",
+        "episode",
+        "finale",
+        "bender",
+        "fox",
+        "aired",
+        "fry",
+        "aliens",
+        "marvel",
+        "alien"
+      ],
+      "name": "episodes_episode_finale"
+    },
+    "1121": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "banca",
+        "banco",
+        "italiano",
+        "siciliano",
+        "risparmio",
+        "della",
+        "banks",
+        "italiana",
+        "italian",
+        "credito"
+      ],
+      "name": "banca_banco_italiano"
+    },
+    "1436": {
+      "count": 7,
+      "frequency": 0.00024266796089579144,
+      "keywords": [
+        "emma",
+        "cinderella",
+        "fairy",
+        "anastasia",
+        "enchanted",
+        "tale",
+        "regina",
+        "elsa",
+        "ursula",
+        "swan"
+      ],
+      "name": "emma_cinderella_fairy"
+    },
+    "1030": {
+      "count": 8,
+      "frequency": 0.00027733481245233307,
+      "keywords": [
+        "kw",
+        "kn",
+        "kum",
+        "kmo",
+        "kj",
+        "kz",
+        "airport",
+        "kl",
+        "kua",
+        "indonesian"
+      ],
+      "name": "kw_kn_kum"
+    },
+    "482": {
+      "count": 8,
+      "frequency": 0.00027733481245233307,
+      "keywords": [
+        "ry\u016b",
+        "ryu",
+        "karatedo",
+        "karate",
+        "jitsu",
+        "taijutsu",
+        "karateka",
+        "kenjutsu",
+        "samurai",
+        "judo"
+      ],
+      "name": "ry\u016b_ryu_karatedo"
+    },
+    "236": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "fm",
+        "radio",
+        "stations",
+        "station",
+        "ctv",
+        "frequency",
+        "simulcast",
+        "broadcasts",
+        "antenna",
+        "newscasts"
+      ],
+      "name": "fm_radio_stations"
+    },
+    "1202": {
+      "count": 8,
+      "frequency": 0.00027733481245233307,
+      "keywords": [
+        "orchid",
+        "orchids",
+        "flowering",
+        "flora",
+        "petals",
+        "flowers",
+        "plants",
+        "perennial",
+        "leaf",
+        "greenish"
+      ],
+      "name": "orchid_orchids_flowering"
+    },
+    "413": {
+      "count": 10,
+      "frequency": 0.0003466685155654163,
+      "keywords": [
+        "brewery",
+        "breweries",
+        "brewer",
+        "brewing",
+        "brewhouse",
+        "brewmaster",
+        "beers",
+        "brewers",
+        "brew",
+        "brews"
+      ],
+      "name": "brewery_breweries_brewer"
+    },
+    "1241": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "cycads",
+        "cycad",
+        "pectinata",
+        "genus",
+        "dolichophylla",
+        "flora",
+        "hoabinhensis",
+        "megasporophylls",
+        "species",
+        "petioles"
+      ],
+      "name": "cycads_cycad_pectinata"
+    },
+    "1492": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "paralympic",
+        "paralympics",
+        "athlete",
+        "goalie",
+        "medals",
+        "goaltender",
+        "skiers",
+        "athletes",
+        "medal",
+        "hockey"
+      ],
+      "name": "paralympic_paralympics_athlete"
+    },
+    "774": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "moth",
+        "moths",
+        "larvae",
+        "forewings",
+        "quadrillella",
+        "elutella",
+        "hindwings",
+        "ocherous",
+        "fauna",
+        "wingspan"
+      ],
+      "name": "moth_moths_larvae"
+    },
+    "901": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "seamount",
+        "seamounts",
+        "tectonics",
+        "volcanoes",
+        "volcano",
+        "tectonic",
+        "volcanic",
+        "geology",
+        "eruptions",
+        "erupted"
+      ],
+      "name": "seamount_seamounts_tectonics"
+    },
+    "1698": {
+      "count": 16,
+      "frequency": 0.0005546696249046661,
+      "keywords": [
+        "termites",
+        "termite",
+        "termitaria",
+        "insect",
+        "insects",
+        "ants",
+        "species",
+        "pests",
+        "pest",
+        "nests"
+      ],
+      "name": "termites_termite_termitaria"
+    },
+    "386": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "tributary",
+        "tributaries",
+        "river",
+        "oblast",
+        "oblasts",
+        "rivers",
+        "tundra",
+        "russia",
+        "siberian",
+        "russian"
+      ],
+      "name": "tributary_tributaries_river"
+    },
+    "1549": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "paralympics",
+        "paralympic",
+        "skier",
+        "skiers",
+        "skiing",
+        "ski",
+        "medals",
+        "athlete",
+        "sprinters",
+        "slalom"
+      ],
+      "name": "paralympics_paralympic_skier"
+    },
+    "660": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "folktale",
+        "folktales",
+        "tales",
+        "tale",
+        "fairy",
+        "princesses",
+        "folklore",
+        "fairies",
+        "princess",
+        "maid"
+      ],
+      "name": "folktale_folktales_tales"
+    },
+    "571": {
+      "count": 9,
+      "frequency": 0.0003120016640088747,
+      "keywords": [
+        "contestant",
+        "contestants",
+        "drag",
+        "cast",
+        "superstar",
+        "competed",
+        "competing",
+        "competition",
+        "race",
+        "performers"
+      ],
+      "name": "contestant_contestants_drag"
+    },
+    "473": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "r\u00edo",
+        "rio",
+        "river",
+        "rivers",
+        "puerto",
+        "cuenca",
+        "tributaries",
+        "tributary",
+        "colombia",
+        "rico"
+      ],
+      "name": "r\u00edo_rio_river"
+    },
+    "1138": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "exoplanets",
+        "exoplanet",
+        "planets",
+        "planetary",
+        "planet",
+        "astronomers",
+        "orbits",
+        "orbital",
+        "orbiting",
+        "jupiter"
+      ],
+      "name": "exoplanets_exoplanet_planets"
+    },
+    "1072": {
+      "count": 12,
+      "frequency": 0.00041600221867849963,
+      "keywords": [
+        "hypericum",
+        "assamicum",
+        "hypericin",
+        "flora",
+        "plant",
+        "flowering",
+        "plants",
+        "herb",
+        "flower",
+        "genus"
+      ],
+      "name": "hypericum_assamicum_hypericin"
+    },
+    "483": {
+      "count": 7,
+      "frequency": 0.00024266796089579144,
+      "keywords": [
+        "mountains",
+        "glacier",
+        "mountain",
+        "snowfall",
+        "glaciers",
+        "northwest",
+        "snow",
+        "summits",
+        "montana",
+        "peak"
+      ],
+      "name": "mountains_glacier_mountain"
+    },
+    "1376": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "shipwrecks",
+        "shipwreck",
+        "aground",
+        "sank",
+        "sunk",
+        "schooner",
+        "maritime",
+        "disasters",
+        "steamship",
+        "ships"
+      ],
+      "name": "shipwrecks_shipwreck_aground"
+    },
+    "103": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "constellation",
+        "stellar",
+        "star",
+        "stars",
+        "planetary",
+        "jupiter",
+        "luminosity",
+        "sun",
+        "heliocentric",
+        "exoplanets"
+      ],
+      "name": "constellation_stellar_star"
+    },
+    "1608": {
+      "count": 11,
+      "frequency": 0.000381335367121958,
+      "keywords": [
+        "journals",
+        "journal",
+        "psychologists",
+        "psychology",
+        "psychologist",
+        "psychological",
+        "publishes",
+        "scopus",
+        "publications",
+        "psychopathology"
+      ],
+      "name": "journals_journal_psychologists"
+    },
+    "738": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "ky",
+        "kentucky",
+        "highway",
+        "roadway",
+        "routes",
+        "route",
+        "road",
+        "highways",
+        "parkway",
+        "roads"
+      ],
+      "name": "ky_kentucky_highway"
+    },
+    "1447": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "magnolia",
+        "magnolias",
+        "evergreen",
+        "arboretum",
+        "flowering",
+        "flora",
+        "foliage",
+        "shrub",
+        "trees",
+        "tree"
+      ],
+      "name": "magnolia_magnolias_evergreen"
+    },
+    "1598": {
+      "count": 8,
+      "frequency": 0.00027733481245233307,
+      "keywords": [
+        "breaking",
+        "meth",
+        "jesse",
+        "walter",
+        "episode",
+        "saul",
+        "walt",
+        "episodes",
+        "finale",
+        "emmy"
+      ],
+      "name": "breaking_meth_jesse"
+    },
+    "1212": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "missile",
+        "missiles",
+        "ballistic",
+        "radars",
+        "radar",
+        "targets",
+        "weapon",
+        "rocket",
+        "aim",
+        "weapons"
+      ],
+      "name": "missile_missiles_ballistic"
+    },
+    "626": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "hawaii",
+        "maui",
+        "ahupuaa",
+        "islands",
+        "island",
+        "atoll",
+        "kula",
+        "pacific",
+        "pali",
+        "kea"
+      ],
+      "name": "hawaii_maui_ahupuaa"
+    },
+    "189": {
+      "count": 26,
+      "frequency": 0.0009013381404700825,
+      "keywords": [
+        "arthropods",
+        "cephalopods",
+        "fossil",
+        "fossils",
+        "faunal",
+        "cephalopod",
+        "prehistoric",
+        "paleontology",
+        "arthropod",
+        "paleozoic"
+      ],
+      "name": "arthropods_cephalopods_fossil"
+    },
+    "1729": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "roster",
+        "yao",
+        "taipei",
+        "suns",
+        "chang",
+        "liu",
+        "semifinals",
+        "chen",
+        "draft",
+        "playoffs"
+      ],
+      "name": "roster_yao_taipei"
+    },
+    "1048": {
+      "count": 11,
+      "frequency": 0.000381335367121958,
+      "keywords": [
+        "vineyards",
+        "sauvignon",
+        "wines",
+        "vineyard",
+        "grape",
+        "grapes",
+        "blanc",
+        "winemaking",
+        "wine",
+        "noire"
+      ],
+      "name": "vineyards_sauvignon_wines"
+    },
+    "721": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "subnotatus",
+        "species",
+        "inexspectatus",
+        "myanmarensis",
+        "lijiangensis",
+        "scapulatus",
+        "xinjiangensis",
+        "mongolorum"
+      ],
+      "name": "beetles_beetle_subnotatus"
+    },
+    "304": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "saxophonist",
+        "saxophonists",
+        "trumpeter",
+        "trumpeters",
+        "jazz",
+        "clarinetists",
+        "musician",
+        "saxophone",
+        "bassist",
+        "musicians"
+      ],
+      "name": "saxophonist_saxophonists_trumpeter"
+    },
+    "139": {
+      "count": 7,
+      "frequency": 0.00024266796089579144,
+      "keywords": [
+        "fossiliferous",
+        "paleontology",
+        "geologic",
+        "fossils",
+        "geological",
+        "geology",
+        "fossil",
+        "cretaceous",
+        "sedimentary",
+        "paleozoic"
+      ],
+      "name": "fossiliferous_paleontology_geologic"
+    },
+    "152": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "miss",
+        "pageant",
+        "pageants",
+        "pageantry",
+        "finalist",
+        "competed",
+        "semifinalist",
+        "finalists",
+        "semifinalists",
+        "contest"
+      ],
+      "name": "miss_pageant_pageants"
+    },
+    "765": {
+      "count": 13,
+      "frequency": 0.00045066907023504126,
+      "keywords": [
+        "flatworms",
+        "platyhelminthes",
+        "parasitic",
+        "worms",
+        "subgenus",
+        "acanthocephalans",
+        "genus",
+        "species",
+        "annelids",
+        "annelid"
+      ],
+      "name": "flatworms_platyhelminthes_parasitic"
+    },
+    "1459": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "caterpillars",
+        "subgenus",
+        "caterpillar",
+        "calidum",
+        "species",
+        "anthracinum",
+        "vermiculatum",
+        "catenatum"
+      ],
+      "name": "beetles_beetle_caterpillars"
+    },
+    "1275": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "ks",
+        "kansas",
+        "potassium",
+        "kioi",
+        "kevlar",
+        "kh",
+        "kiosk",
+        "jeep",
+        "highway",
+        "airport"
+      ],
+      "name": "ks_kansas_potassium"
+    },
+    "1269": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "painters",
+        "painter",
+        "vase",
+        "painting",
+        "vases",
+        "pottery",
+        "museo",
+        "painted",
+        "antiquity",
+        "decorated"
+      ],
+      "name": "painters_painter_vase"
+    },
+    "388": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "weightlifter",
+        "weightlifters",
+        "weightlifting",
+        "powerlifting",
+        "deadlift",
+        "lifting",
+        "olympic",
+        "kg",
+        "olympics",
+        "lift"
+      ],
+      "name": "weightlifter_weightlifters_weightlifting"
+    },
+    "1537": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "wimbledon",
+        "tournament",
+        "tennis",
+        "qualifier",
+        "qualifiers",
+        "qualifying",
+        "draws",
+        "championships",
+        "championship",
+        "wtatennis"
+      ],
+      "name": "wimbledon_tournament_tennis"
+    },
+    "1374": {
+      "count": 18,
+      "frequency": 0.0006240033280177494,
+      "keywords": [
+        "mosses",
+        "moss",
+        "bryophytes",
+        "sporophytes",
+        "flora",
+        "genus",
+        "bryophyte",
+        "sporophyte",
+        "paraphyses",
+        "archegonium"
+      ],
+      "name": "mosses_moss_bryophytes"
+    },
+    "1317": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "iihf",
+        "goaltender",
+        "goaltenders",
+        "goalie",
+        "hockey",
+        "patty",
+        "athlete",
+        "collegiate",
+        "ncaa",
+        "assists"
+      ],
+      "name": "iihf_goaltender_goaltenders"
+    },
+    "1642": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "paralympics",
+        "olympic",
+        "paralympic",
+        "discus",
+        "javelin",
+        "athletics",
+        "medalists",
+        "held",
+        "athletes",
+        "beijing"
+      ],
+      "name": "paralympics_olympic_paralympic"
+    },
+    "360": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "hockey",
+        "olympics",
+        "olympic",
+        "sportsmen",
+        "sportspeople",
+        "eurohockey",
+        "goalkeeper",
+        "medallists",
+        "sportswomen",
+        "midfielders"
+      ],
+      "name": "hockey_olympics_olympic"
+    },
+    "1763": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "tonight",
+        "aired",
+        "johnny",
+        "episodes",
+        "carl",
+        "december",
+        "january",
+        "comedian",
+        "november",
+        "actor"
+      ],
+      "name": "tonight_aired_johnny"
+    },
+    "1625": {
+      "count": 10,
+      "frequency": 0.0003466685155654163,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "species",
+        "foveatus",
+        "bistriatus",
+        "obscuripennis",
+        "parmatus",
+        "insularis",
+        "laevigatus",
+        "liodes"
+      ],
+      "name": "beetles_beetle_species"
+    },
+    "1524": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "jedi",
+        "prequel",
+        "lightsaber",
+        "empire",
+        "vader",
+        "luke",
+        "menace",
+        "sith",
+        "lucas",
+        "rey"
+      ],
+      "name": "jedi_prequel_lightsaber"
+    },
+    "1823": {
+      "count": 9,
+      "frequency": 0.0003120016640088747,
+      "keywords": [
+        "bmx",
+        "motocross",
+        "cycling",
+        "racer",
+        "bicycles",
+        "racers",
+        "racing",
+        "bike",
+        "riding",
+        "bicycle"
+      ],
+      "name": "bmx_motocross_cycling"
+    },
+    "79": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "comics",
+        "batman",
+        "superman",
+        "superhero",
+        "marvel",
+        "comic",
+        "superheroes",
+        "joker",
+        "supervillain",
+        "daredevil"
+      ],
+      "name": "comics_batman_superman"
+    },
+    "942": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "papyrus",
+        "oxyrhynchus",
+        "manuscripts",
+        "manuscript",
+        "oxy",
+        "ancient",
+        "scribe",
+        "papyri",
+        "codex",
+        "discovered"
+      ],
+      "name": "papyrus_oxyrhynchus_manuscripts"
+    },
+    "78": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "rugby",
+        "nrl",
+        "fullback",
+        "wingers",
+        "zealand",
+        "auckland",
+        "footballer",
+        "wigan",
+        "wakefield",
+        "premiership"
+      ],
+      "name": "rugby_nrl_fullback"
+    },
+    "1753": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "lizards",
+        "lizard",
+        "reptiles",
+        "species",
+        "reptile",
+        "monitor",
+        "monitors",
+        "varanids",
+        "subspecies",
+        "prey"
+      ],
+      "name": "lizards_lizard_reptiles"
+    },
+    "408": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "tokyo",
+        "prefecture",
+        "kyushu",
+        "osaka",
+        "yokohama",
+        "museums",
+        "japan",
+        "chiba",
+        "museum",
+        "archaeological"
+      ],
+      "name": "tokyo_prefecture_kyushu"
+    },
+    "755": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "grevillea",
+        "proteaceae",
+        "shrub",
+        "flowering",
+        "shrubland",
+        "flora",
+        "flowers",
+        "bioregions",
+        "plants",
+        "plant"
+      ],
+      "name": "grevillea_proteaceae_shrub"
+    },
+    "127": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "nueva",
+        "san",
+        "paz",
+        "nuevo",
+        "juan",
+        "barrio",
+        "municipality",
+        "costa",
+        "los",
+        "barrios"
+      ],
+      "name": "nueva_san_paz"
+    },
+    "905": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "colleges",
+        "college",
+        "campus",
+        "accredited",
+        "campuses",
+        "vocational",
+        "enrolled",
+        "accreditation",
+        "curriculum",
+        "tuition"
+      ],
+      "name": "colleges_college_campus"
+    },
+    "984": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "ovatulus",
+        "alutaceus",
+        "species",
+        "nyassicus",
+        "tricarinatus",
+        "sarawakensis",
+        "borneoensis",
+        "curvatus"
+      ],
+      "name": "beetles_beetle_ovatulus"
+    },
+    "1401": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "sec",
+        "ncaa",
+        "lsu",
+        "baylor",
+        "usc",
+        "auburn",
+        "linebackers",
+        "quarterbacks",
+        "conference",
+        "arkansas"
+      ],
+      "name": "sec_ncaa_lsu"
+    },
+    "233": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "madagascar",
+        "malagasy",
+        "population",
+        "villages",
+        "cassava",
+        "sakalava",
+        "agricultural",
+        "crops",
+        "commune",
+        "sugarcane"
+      ],
+      "name": "madagascar_malagasy_population"
+    },
+    "95": {
+      "count": 9,
+      "frequency": 0.0003120016640088747,
+      "keywords": [
+        "bulbophyllum",
+        "orchid",
+        "orchids",
+        "phalaenopsis",
+        "flora",
+        "flower",
+        "flowering",
+        "plants",
+        "plant",
+        "petals"
+      ],
+      "name": "bulbophyllum_orchid_orchids"
+    },
+    "1719": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "prunus",
+        "cherries",
+        "plums",
+        "plum",
+        "cherry",
+        "species",
+        "cerasifera",
+        "fasciculata",
+        "tree",
+        "deciduous"
+      ],
+      "name": "prunus_cherries_plums"
+    },
+    "1793": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "futsal",
+        "uefa",
+        "fifa",
+        "tournament",
+        "teams",
+        "champions",
+        "finals",
+        "championship",
+        "competitions",
+        "matches"
+      ],
+      "name": "futsal_uefa_fifa"
+    },
+    "1159": {
+      "count": 12,
+      "frequency": 0.00041600221867849963,
+      "keywords": [
+        "chameleons",
+        "chameleon",
+        "reptiles",
+        "lizards",
+        "lizard",
+        "chamaeleon",
+        "species",
+        "fauna",
+        "madagascar",
+        "snout"
+      ],
+      "name": "chameleons_chameleon_reptiles"
+    },
+    "1229": {
+      "count": 11,
+      "frequency": 0.000381335367121958,
+      "keywords": [
+        "paralympics",
+        "paralympic",
+        "cycling",
+        "cyclists",
+        "cyclist",
+        "impairments",
+        "impaired",
+        "impairment",
+        "bicycles",
+        "disability"
+      ],
+      "name": "paralympics_paralympic_cycling"
+    },
+    "1085": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "squadron",
+        "naval",
+        "navy",
+        "squadrons",
+        "fleet",
+        "hms",
+        "raf",
+        "submarine",
+        "aircraft",
+        "pilots"
+      ],
+      "name": "squadron_naval_navy"
+    },
+    "1479": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "mn",
+        "highway",
+        "minnesota",
+        "highways",
+        "interstate",
+        "expressway",
+        "freeway",
+        "roadway",
+        "road",
+        "township"
+      ],
+      "name": "mn_highway_minnesota"
+    },
+    "1746": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "congressional",
+        "congressman",
+        "representatives",
+        "congress",
+        "representative",
+        "senators",
+        "senate",
+        "seniority",
+        "chairmanship",
+        "committee"
+      ],
+      "name": "congressional_congressman_representatives"
+    },
+    "515": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "millipedes",
+        "millipede",
+        "genus",
+        "arthropods",
+        "species",
+        "fauna",
+        "germanicum",
+        "arachnids",
+        "genera",
+        "sabulosus"
+      ],
+      "name": "millipedes_millipede_genus"
+    },
+    "623": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "cyrillic",
+        "unicode",
+        "diacritics",
+        "diacritic",
+        "alphabet",
+        "alphabets",
+        "transliteration",
+        "slavic",
+        "letters",
+        "letter"
+      ],
+      "name": "cyrillic_unicode_diacritics"
+    },
+    "46": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "sprinter",
+        "sprinters",
+        "olympic",
+        "iaaf",
+        "olympics",
+        "athlete",
+        "competed",
+        "athletics",
+        "medals",
+        "runners"
+      ],
+      "name": "sprinter_sprinters_olympic"
+    },
+    "754": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "cretaceous",
+        "paleontology",
+        "geologic",
+        "geological",
+        "miocene",
+        "geology",
+        "fossiliferous",
+        "fossils",
+        "jurassic",
+        "sedimentary"
+      ],
+      "name": "cretaceous_paleontology_geologic"
+    },
+    "246": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "finance",
+        "valuation",
+        "financial",
+        "investment",
+        "equity",
+        "securities",
+        "investor",
+        "financing",
+        "investments",
+        "accounting"
+      ],
+      "name": "finance_valuation_financial"
+    },
+    "1103": {
+      "count": 15,
+      "frequency": 0.0005200027733481246,
+      "keywords": [
+        "nematodes",
+        "nematode",
+        "parasites",
+        "parasitic",
+        "phylogenetic",
+        "species",
+        "nematology",
+        "cypriensis",
+        "genus",
+        "tenuicaudatus"
+      ],
+      "name": "nematodes_nematode_parasites"
+    },
+    "1081": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "humanitarian",
+        "unicef",
+        "ngo",
+        "charities",
+        "peacekeeping",
+        "organization",
+        "organizations",
+        "volunteers",
+        "organisations",
+        "organisation"
+      ],
+      "name": "humanitarian_unicef_ngo"
+    },
+    "749": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "korean",
+        "\ubb38\ud559\ub3d9\ub124",
+        "\ubb38\ud559\uacfc",
+        "hangul",
+        "kim",
+        "\ubb38\ud559\uacfc\uc9c0\uc131\uc0ac",
+        "\ucc3d\ube44",
+        "korea",
+        "seoul",
+        "\ub098\ub294"
+      ],
+      "name": "korean_\ubb38\ud559\ub3d9\ub124_\ubb38\ud559\uacfc"
+    },
+    "918": {
+      "count": 8,
+      "frequency": 0.00027733481245233307,
+      "keywords": [
+        "magician",
+        "magicians",
+        "magic",
+        "trick",
+        "magical",
+        "illusionist",
+        "merlin",
+        "illusions",
+        "entertainer",
+        "illusionists"
+      ],
+      "name": "magician_magicians_magic"
+    },
+    "1811": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "paralympics",
+        "medals",
+        "medalists",
+        "athletics",
+        "held",
+        "marathon",
+        "medal",
+        "final",
+        "heats",
+        "finals"
+      ],
+      "name": "paralympics_medals_medalists"
+    },
+    "1405": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "zendo",
+        "buddhist",
+        "zen",
+        "soto",
+        "monastery",
+        "buddhists",
+        "monks",
+        "buddhism",
+        "buddha",
+        "monk"
+      ],
+      "name": "zendo_buddhist_zen"
+    },
+    "1472": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "scouts",
+        "scouting",
+        "scouters",
+        "scoutmasters",
+        "scout",
+        "scoutmaster",
+        "scouter",
+        "baden",
+        "troop",
+        "youth"
+      ],
+      "name": "scouts_scouting_scouters"
+    },
+    "1466": {
+      "count": 7,
+      "frequency": 0.00024266796089579144,
+      "keywords": [
+        "legalizing",
+        "marijuana",
+        "cannabis",
+        "legalize",
+        "legalization",
+        "decriminalization",
+        "decriminalize",
+        "legalized",
+        "prohibition",
+        "decriminalized"
+      ],
+      "name": "legalizing_marijuana_cannabis"
+    },
+    "1463": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "planets",
+        "sort",
+        "unnumbered",
+        "disc",
+        "provisional",
+        "designations",
+        "data",
+        "listed",
+        "apr",
+        "july"
+      ],
+      "name": "planets_sort_unnumbered"
+    },
+    "1742": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "smartphone",
+        "flagship",
+        "smartphones",
+        "mobile",
+        "phones",
+        "android",
+        "sprint",
+        "devices",
+        "gsm",
+        "phone"
+      ],
+      "name": "smartphone_flagship_smartphones"
+    },
+    "1662": {
+      "count": 7,
+      "frequency": 0.00024266796089579144,
+      "keywords": [
+        "cocktail",
+        "cocktails",
+        "martini",
+        "vodka",
+        "gin",
+        "tequila",
+        "beverage",
+        "drinks",
+        "whisky",
+        "lemonade"
+      ],
+      "name": "cocktail_cocktails_martini"
+    },
+    "1006": {
+      "count": 12,
+      "frequency": 0.00041600221867849963,
+      "keywords": [
+        "bowling",
+        "pins",
+        "bowlers",
+        "ball",
+        "pin",
+        "bowler",
+        "paddleball",
+        "pinsetters",
+        "balls",
+        "throwing"
+      ],
+      "name": "bowling_pins_bowlers"
+    },
+    "549": {
+      "count": 7,
+      "frequency": 0.00024266796089579144,
+      "keywords": [
+        "mars",
+        "quadrangles",
+        "quadrangle",
+        "crater",
+        "martian",
+        "craters",
+        "planetary",
+        "geological",
+        "volcanic",
+        "geology"
+      ],
+      "name": "mars_quadrangles_quadrangle"
+    },
+    "1189": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "forcepstail",
+        "hexapods",
+        "species",
+        "bristletail",
+        "genus",
+        "conspicuus",
+        "brevipalpus",
+        "sardous",
+        "conspersus",
+        "arthropod"
+      ],
+      "name": "forcepstail_hexapods_species"
+    },
+    "786": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "contestants",
+        "contestant",
+        "finalists",
+        "supermodel",
+        "cycle",
+        "cycles",
+        "model",
+        "models",
+        "modeled",
+        "modeling"
+      ],
+      "name": "contestants_contestant_finalists"
+    },
+    "612": {
+      "count": 15,
+      "frequency": 0.0005200027733481246,
+      "keywords": [
+        "chef",
+        "chefs",
+        "culinary",
+        "cooks",
+        "cook",
+        "cooking",
+        "cookbook",
+        "recipes",
+        "cuisine",
+        "kitchen"
+      ],
+      "name": "chef_chefs_culinary"
+    },
+    "566": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "correctional",
+        "inmate",
+        "inmates",
+        "prisons",
+        "prison",
+        "incarcerated",
+        "penitentiary",
+        "prisoners",
+        "facility",
+        "parole"
+      ],
+      "name": "correctional_inmate_inmates"
+    },
+    "1109": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "astronomical",
+        "pluto",
+        "neptune",
+        "astronomers",
+        "planets",
+        "asteroid",
+        "perihelion",
+        "orbit",
+        "planet",
+        "orbits"
+      ],
+      "name": "astronomical_pluto_neptune"
+    },
+    "231": {
+      "count": 12,
+      "frequency": 0.00041600221867849963,
+      "keywords": [
+        "nba",
+        "pistons",
+        "lakers",
+        "blazers",
+        "rockets",
+        "warriors",
+        "cavaliers",
+        "harden",
+        "mavericks",
+        "playoffs"
+      ],
+      "name": "nba_pistons_lakers"
+    },
+    "809": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "k\u0101\u02bbei",
+        "ali\u02bbi",
+        "uokalani",
+        "kahu",
+        "maui",
+        "hawaii",
+        "kahuna",
+        "kapu",
+        "koloa",
+        "kalani"
+      ],
+      "name": "k\u0101\u02bbei_ali\u02bbi_uokalani"
+    },
+    "50": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "subdistrict",
+        "subdistricts",
+        "zhou",
+        "prefecture",
+        "prefectures",
+        "beijing",
+        "yan",
+        "zhuang",
+        "qin",
+        "shanghai"
+      ],
+      "name": "subdistrict_subdistricts_zhou"
+    },
+    "995": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "mites",
+        "mite",
+        "species",
+        "wuyiensis",
+        "caudatus",
+        "daliensis",
+        "hederae",
+        "spiculatus",
+        "obtusus",
+        "bahiensis"
+      ],
+      "name": "mites_mite_species"
+    },
+    "12": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "racing",
+        "motorsport",
+        "raced",
+        "motorsports",
+        "indycar",
+        "fia",
+        "ferrari",
+        "driver",
+        "superbike",
+        "nascar"
+      ],
+      "name": "racing_motorsport_raced"
+    },
+    "1362": {
+      "count": 23,
+      "frequency": 0.0007973375858004576,
+      "keywords": [
+        "voles",
+        "vole",
+        "species",
+        "mammals",
+        "mammal",
+        "rodent",
+        "fauna",
+        "rodents",
+        "weasels",
+        "subspecies"
+      ],
+      "name": "voles_vole_species"
+    },
+    "346": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "buddhism",
+        "buddhist",
+        "buddha",
+        "buddhas",
+        "dharma",
+        "sutra",
+        "s\u016btra",
+        "sutras",
+        "sutta",
+        "suttas"
+      ],
+      "name": "buddhism_buddhist_buddha"
+    },
+    "1558": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "rutgers",
+        "intercollegiate",
+        "patriot",
+        "ncaa",
+        "fordham",
+        "leopards",
+        "football",
+        "varsity",
+        "lacrosse",
+        "stadium"
+      ],
+      "name": "rutgers_intercollegiate_patriot"
+    },
+    "496": {
+      "count": 7,
+      "frequency": 0.00024266796089579144,
+      "keywords": [
+        "cards",
+        "decks",
+        "solitaires",
+        "solitaire",
+        "deck",
+        "card",
+        "games",
+        "shuffles",
+        "game",
+        "play"
+      ],
+      "name": "cards_decks_solitaires"
+    },
+    "617": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "brewery",
+        "breweries",
+        "brewing",
+        "brewer",
+        "brew",
+        "brews",
+        "beers",
+        "beer",
+        "brewed",
+        "brewers"
+      ],
+      "name": "brewery_breweries_brewing"
+    },
+    "1099": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "gambit",
+        "chess",
+        "pawns",
+        "pawn",
+        "rook",
+        "moves",
+        "defence",
+        "opponent",
+        "openings",
+        "attacking"
+      ],
+      "name": "gambit_chess_pawns"
+    },
+    "625": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "moth",
+        "moths",
+        "forewings",
+        "hindwings",
+        "wingspan",
+        "larvae",
+        "strigulae",
+        "fuscous",
+        "wing",
+        "ochreous"
+      ],
+      "name": "moth_moths_forewings"
+    },
+    "896": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "skateboarder",
+        "skateboarding",
+        "skateboards",
+        "skateboarders",
+        "skateboard",
+        "skater",
+        "skaters",
+        "skate",
+        "skateshop",
+        "skates"
+      ],
+      "name": "skateboarder_skateboarding_skateboards"
+    },
+    "313": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "mountain",
+        "mountains",
+        "alberta",
+        "rockies",
+        "summit",
+        "glacier",
+        "peak",
+        "orogeny",
+        "glaciers",
+        "geology"
+      ],
+      "name": "mountain_mountains_alberta"
+    },
+    "263": {
+      "count": 6,
+      "frequency": 0.00020800110933924982,
+      "keywords": [
+        "megachilid",
+        "insects",
+        "bee",
+        "bees",
+        "larvae",
+        "species",
+        "fairyfly",
+        "pollination",
+        "subgenus",
+        "bombiformis"
+      ],
+      "name": "megachilid_insects_bee"
+    },
+    "917": {
+      "count": 23,
+      "frequency": 0.0007973375858004576,
+      "keywords": [
+        "nepenthes",
+        "flora",
+        "tentaculata",
+        "plants",
+        "botanical",
+        "species",
+        "talangensis",
+        "carnivorous",
+        "muluensis",
+        "herbarium"
+      ],
+      "name": "nepenthes_flora_tentaculata"
+    },
+    "836": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "bryozoans",
+        "bryozoa",
+        "bryozoan",
+        "genus",
+        "cheilostome",
+        "species",
+        "sphaerospora",
+        "fauna",
+        "jurassic",
+        "worms"
+      ],
+      "name": "bryozoans_bryozoa_bryozoan"
+    },
+    "89": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "swimmer",
+        "swimmers",
+        "swam",
+        "breaststroke",
+        "olympic",
+        "backstroke",
+        "swimming",
+        "olympics",
+        "swim",
+        "olympian"
+      ],
+      "name": "swimmer_swimmers_swam"
+    },
+    "772": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "comet",
+        "comets",
+        "cometary",
+        "astronomical",
+        "telescope",
+        "astronomers",
+        "meteor",
+        "asteroid",
+        "astronomer",
+        "observatory"
+      ],
+      "name": "comet_comets_cometary"
+    },
+    "1337": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "paralympics",
+        "swimmers",
+        "olympic",
+        "swimmer",
+        "swam",
+        "swimming",
+        "freestyle",
+        "backstroke",
+        "breaststroke",
+        "paralympic"
+      ],
+      "name": "paralympics_swimmers_olympic"
+    },
+    "835": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "postcodes",
+        "codes",
+        "coded",
+        "iso",
+        "code",
+        "territories",
+        "postcode",
+        "prefectures",
+        "provinces",
+        "governorates"
+      ],
+      "name": "postcodes_codes_coded"
+    },
+    "1397": {
+      "count": 10,
+      "frequency": 0.0003466685155654163,
+      "keywords": [
+        "nocardiosis",
+        "bacterium",
+        "bacteria",
+        "bacterial",
+        "dokdonensis",
+        "genus",
+        "daejeonensis",
+        "brasiliensis",
+        "pakistanensis",
+        "sinuspersici"
+      ],
+      "name": "nocardiosis_bacterium_bacteria"
+    },
+    "1435": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "dover",
+        "kent",
+        "sussex",
+        "houses",
+        "mansion",
+        "barns",
+        "county",
+        "penn",
+        "house",
+        "farmhouse"
+      ],
+      "name": "dover_kent_sussex"
+    },
+    "745": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "canoeing",
+        "backstroke",
+        "heats",
+        "canoe",
+        "canoeists",
+        "rowing",
+        "olympics",
+        "swimmers",
+        "raced",
+        "semifinalists"
+      ],
+      "name": "canoeing_backstroke_heats"
+    },
+    "1519": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "shuttle",
+        "sts",
+        "spaceflight",
+        "spaceflights",
+        "spacecraft",
+        "nasa",
+        "iss",
+        "astronauts",
+        "astronaut",
+        "missions"
+      ],
+      "name": "shuttle_sts_spaceflight"
+    },
+    "1489": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "ncaa",
+        "dragons",
+        "collegiate",
+        "tournament",
+        "intercollegiate",
+        "lacrosse",
+        "schedule",
+        "varsity",
+        "invitational",
+        "recruiting"
+      ],
+      "name": "ncaa_dragons_collegiate"
+    },
+    "1183": {
+      "count": 7,
+      "frequency": 0.00024266796089579144,
+      "keywords": [
+        "crayfish",
+        "crawfish",
+        "crustaceans",
+        "crustacean",
+        "crab",
+        "fauna",
+        "species",
+        "freshwater",
+        "bartonii",
+        "subgenus"
+      ],
+      "name": "crayfish_crawfish_crustaceans"
+    },
+    "1132": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "cove",
+        "coves",
+        "scotia",
+        "brunswick",
+        "province",
+        "residents",
+        "towns",
+        "harbour",
+        "coastal",
+        "canada"
+      ],
+      "name": "cove_coves_scotia"
+    },
+    "857": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "cartel",
+        "cartels",
+        "mexico",
+        "mexican",
+        "smuggling",
+        "ciudad",
+        "sonora",
+        "trafficking",
+        "narcotics",
+        "juan"
+      ],
+      "name": "cartel_cartels_mexico"
+    },
+    "1444": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "insects",
+        "tephritid",
+        "moths",
+        "flies",
+        "diptera",
+        "moth",
+        "species",
+        "pauperata",
+        "mauritanica",
+        "quadrifasciata"
+      ],
+      "name": "insects_tephritid_moths"
+    },
+    "778": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "hungarian",
+        "nobleman",
+        "ancestor",
+        "hungary",
+        "slovakia",
+        "barons",
+        "nicholas",
+        "palatines",
+        "noblemen",
+        "palatine"
+      ],
+      "name": "hungarian_nobleman_ancestor"
+    },
+    "1804": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "railway",
+        "railroad",
+        "trains",
+        "locomotives",
+        "locomotive",
+        "train",
+        "rail",
+        "accidents",
+        "accident",
+        "passengers"
+      ],
+      "name": "railway_railroad_trains"
+    },
+    "1310": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "survivor",
+        "contestant",
+        "contestants",
+        "finalists",
+        "tribal",
+        "tribemate",
+        "competed",
+        "eliminated",
+        "samoa",
+        "tribes"
+      ],
+      "name": "survivor_contestant_contestants"
+    },
+    "1637": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "sort",
+        "align",
+        "data",
+        "km",
+        "peak",
+        "value",
+        "bgcolor",
+        "survey",
+        "sss",
+        "mar"
+      ],
+      "name": "sort_align_data"
+    },
+    "1798": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "guard",
+        "military",
+        "militias",
+        "militia",
+        "adjutant",
+        "guardsmen",
+        "army",
+        "stationed",
+        "infantry",
+        "troop"
+      ],
+      "name": "guard_military_militias"
+    },
+    "1665": {
+      "count": 11,
+      "frequency": 0.000381335367121958,
+      "keywords": [
+        "petroleum",
+        "uganda",
+        "refinery",
+        "oil",
+        "nigeria",
+        "kampala",
+        "nigerian",
+        "niger",
+        "ethiopia",
+        "congo"
+      ],
+      "name": "petroleum_uganda_refinery"
+    },
+    "796": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "designer",
+        "fashion",
+        "designers",
+        "fashions",
+        "apparel",
+        "designs",
+        "vogue",
+        "stylist",
+        "garments",
+        "wardrobe"
+      ],
+      "name": "designer_fashion_designers"
+    },
+    "1012": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "surgeon",
+        "surgeons",
+        "gandhi",
+        "surgeries",
+        "padma",
+        "neurosurgery",
+        "kumar",
+        "singh",
+        "andhra",
+        "surgery"
+      ],
+      "name": "surgeon_surgeons_gandhi"
+    },
+    "1240": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "economist",
+        "economists",
+        "economics",
+        "econometrics",
+        "econometric",
+        "macroeconomics",
+        "economic",
+        "macroeconomic",
+        "\u00e9conomique",
+        "microeconomics"
+      ],
+      "name": "economist_economists_economics"
+    },
+    "420": {
+      "count": 14,
+      "frequency": 0.0004853359217915829,
+      "keywords": [
+        "mathematician",
+        "mathematicians",
+        "mathematics",
+        "mathematical",
+        "algebras",
+        "math",
+        "princeton",
+        "theorists",
+        "undergraduate",
+        "doctoral"
+      ],
+      "name": "mathematician_mathematicians_mathematics"
+    },
+    "227": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "beetles",
+        "coleoptera",
+        "beetle",
+        "insects",
+        "fauna",
+        "species",
+        "dimidiata",
+        "genus",
+        "bugguide",
+        "leucaspis"
+      ],
+      "name": "beetles_coleoptera_beetle"
+    },
+    "1178": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "centipedes",
+        "centipede",
+        "fauna",
+        "arthropods",
+        "species",
+        "fijiensis",
+        "queenslandica",
+        "entomologist",
+        "myriapodologist",
+        "bidenticulata"
+      ],
+      "name": "centipedes_centipede_fauna"
+    },
+    "569": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "economist",
+        "economists",
+        "economics",
+        "microeconomics",
+        "economic",
+        "macroeconomics",
+        "macroeconomic",
+        "econometric",
+        "econometrics",
+        "economy"
+      ],
+      "name": "economist_economists_economics"
+    },
+    "1688": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "chargers",
+        "alabama",
+        "ice",
+        "lepidoptera",
+        "hockey",
+        "clemens",
+        "larvae",
+        "moth",
+        "mothphotographersgroup",
+        "moths"
+      ],
+      "name": "chargers_alabama_ice"
+    },
+    "1495": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "stations",
+        "radio",
+        "frequencies",
+        "station",
+        "fm",
+        "frequency",
+        "fcc",
+        "broadcast",
+        "mexico",
+        "transmitter"
+      ],
+      "name": "stations_radio_frequencies"
+    },
+    "1708": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "migrants",
+        "immigrants",
+        "emigration",
+        "immigration",
+        "uruguayan",
+        "immigrated",
+        "chile",
+        "chilean",
+        "immigrant",
+        "brazilian"
+      ],
+      "name": "migrants_immigrants_emigration"
+    },
+    "1765": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "olympic",
+        "iaaf",
+        "olympics",
+        "runners",
+        "sprinted",
+        "sprinting",
+        "athletics",
+        "laps",
+        "athletes",
+        "metres"
+      ],
+      "name": "olympic_iaaf_olympics"
+    },
+    "1414": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "painter",
+        "paintings",
+        "painters",
+        "painting",
+        "artworks",
+        "zagreb",
+        "frescoes",
+        "sculptor",
+        "bosnian",
+        "portraits"
+      ],
+      "name": "painter_paintings_painters"
+    },
+    "514": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "teams",
+        "group",
+        "tournaments",
+        "federation",
+        "asia",
+        "fed",
+        "pools",
+        "zones",
+        "oceania",
+        "zone"
+      ],
+      "name": "teams_group_tournaments"
+    },
+    "811": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "paleontology",
+        "fossiliferous",
+        "stratigraphy",
+        "fossils",
+        "carboniferous",
+        "geologic",
+        "fossil",
+        "geology",
+        "paleotropical",
+        "cretaceous"
+      ],
+      "name": "paleontology_fossiliferous_stratigraphy"
+    },
+    "575": {
+      "count": 5,
+      "frequency": 0.00017333425778270816,
+      "keywords": [
+        "confederates",
+        "confederate",
+        "confederacy",
+        "fort",
+        "battle",
+        "battles",
+        "richmond",
+        "mississippi",
+        "skirmish",
+        "virginia"
+      ],
+      "name": "confederates_confederate_confederacy"
+    },
+    "1490": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "korea",
+        "seoul",
+        "korean",
+        "battle",
+        "troops",
+        "regiments",
+        "infantry",
+        "soldiers",
+        "platoon",
+        "battles"
+      ],
+      "name": "korea_seoul_korean"
+    },
+    "1686": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "amanita",
+        "amanitas",
+        "amanitin",
+        "fungi",
+        "muscaria",
+        "flavoconia",
+        "fungus",
+        "genus",
+        "mushrooms",
+        "species"
+      ],
+      "name": "amanita_amanitas_amanitin"
+    },
+    "840": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "species",
+        "proturan",
+        "caatingae",
+        "animals",
+        "gabonense",
+        "venezuelense",
+        "australicum",
+        "taiwanense",
+        "huetheri",
+        "delicatum"
+      ],
+      "name": "species_proturan_caatingae"
+    },
+    "318": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "statue",
+        "sculptures",
+        "sculpture",
+        "sculptor",
+        "statues",
+        "monument",
+        "monuments",
+        "sculpted",
+        "memorials",
+        "memorial"
+      ],
+      "name": "statue_sculptures_sculpture"
+    },
+    "911": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "scorpion",
+        "scorpions",
+        "venomous",
+        "fauna",
+        "venom",
+        "arachnids",
+        "tityus",
+        "arachnologist",
+        "arthropods",
+        "species"
+      ],
+      "name": "scorpion_scorpions_venomous"
+    },
+    "40": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "antarctic",
+        "antarctica",
+        "glacier",
+        "glaciers",
+        "bulgaria",
+        "ice",
+        "bulgarian",
+        "mountains",
+        "peninsula",
+        "massif"
+      ],
+      "name": "antarctic_antarctica_glacier"
+    },
+    "1000": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "museum",
+        "aircraft",
+        "aviation",
+        "museums",
+        "airplanes",
+        "exhibits",
+        "afb",
+        "aerospace",
+        "airplane",
+        "planes"
+      ],
+      "name": "museum_aircraft_aviation"
+    },
+    "744": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "bunny",
+        "looney",
+        "rabbit",
+        "cartoons",
+        "cartoon",
+        "rabbits",
+        "daffy",
+        "goofy",
+        "bugs",
+        "duck"
+      ],
+      "name": "bunny_looney_rabbit"
+    },
+    "866": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "fossiliferous",
+        "stratigraphy",
+        "paleontology",
+        "fossils",
+        "carboniferous",
+        "fossil",
+        "formation",
+        "miocene",
+        "paleotropical",
+        "formations"
+      ],
+      "name": "fossiliferous_stratigraphy_paleontology"
+    },
+    "828": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "surfer",
+        "surfing",
+        "surfers",
+        "surf",
+        "surfed",
+        "surfboard",
+        "surfboards",
+        "surfline",
+        "paddle",
+        "shark"
+      ],
+      "name": "surfer_surfing_surfers"
+    },
+    "1497": {
+      "count": 9,
+      "frequency": 0.0003120016640088747,
+      "keywords": [
+        "brooklyn",
+        "episode",
+        "detectives",
+        "episodes",
+        "nbc",
+        "jake",
+        "detective",
+        "nines",
+        "sitcom",
+        "precinct"
+      ],
+      "name": "brooklyn_episode_detectives"
+    },
+    "839": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "asteroid",
+        "asteroids",
+        "lunar",
+        "orbit",
+        "orbital",
+        "moon",
+        "apollo",
+        "astronomers",
+        "orbits",
+        "eccentricity"
+      ],
+      "name": "asteroid_asteroids_lunar"
+    },
+    "1396": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "photovoltaic",
+        "kenya",
+        "solar",
+        "electricity",
+        "megawatts",
+        "renewable",
+        "kwh",
+        "megawatt",
+        "hydroelectric",
+        "malawi"
+      ],
+      "name": "photovoltaic_kenya_solar"
+    },
+    "151": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "mexicana",
+        "artistas",
+        "painter",
+        "paintings",
+        "murals",
+        "painters",
+        "carlos",
+        "mural",
+        "juan",
+        "museo"
+      ],
+      "name": "mexicana_artistas_painter"
+    },
+    "1821": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "presenter",
+        "radio",
+        "presenters",
+        "bbc",
+        "podcast",
+        "fm",
+        "broadcaster",
+        "broadcasting",
+        "announcer",
+        "breakfast"
+      ],
+      "name": "presenter_radio_presenters"
+    },
+    "1751": {
+      "count": 8,
+      "frequency": 0.00027733481245233307,
+      "keywords": [
+        "garments",
+        "undergarments",
+        "garment",
+        "undergarment",
+        "leggings",
+        "corsets",
+        "fabrics",
+        "clothing",
+        "underwear",
+        "dresses"
+      ],
+      "name": "garments_undergarments_garment"
+    },
+    "926": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "nbl",
+        "playoffs",
+        "finals",
+        "basketball",
+        "adelaide",
+        "teams",
+        "hawks",
+        "league",
+        "sydney",
+        "melbourne"
+      ],
+      "name": "nbl_playoffs_finals"
+    },
+    "1256": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "provisions",
+        "acts",
+        "act",
+        "pensions",
+        "regulations",
+        "regulation",
+        "amendments",
+        "enactments",
+        "repealed",
+        "provision"
+      ],
+      "name": "provisions_acts_act"
+    },
+    "1298": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "observatory",
+        "telescopes",
+        "telescope",
+        "astronomy",
+        "astronomers",
+        "astronomer",
+        "astronomical",
+        "planetarium",
+        "optics",
+        "observatories"
+      ],
+      "name": "observatory_telescopes_telescope"
+    },
+    "894": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "telephone",
+        "dial",
+        "dialing",
+        "telecommunications",
+        "florida",
+        "dialed",
+        "codes",
+        "area",
+        "numbers",
+        "digits"
+      ],
+      "name": "telephone_dial_dialing"
+    },
+    "1090": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "clarinets",
+        "clarinet",
+        "contrabass",
+        "instrument",
+        "oboe",
+        "instruments",
+        "oboes",
+        "trombones",
+        "trombone",
+        "trumpet"
+      ],
+      "name": "clarinets_clarinet_contrabass"
+    },
+    "1239": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "astrophysicist",
+        "astronomer",
+        "astronomers",
+        "astronomical",
+        "astronomy",
+        "astrophysics",
+        "planetary",
+        "astrophotographer",
+        "astronaut",
+        "observatory"
+      ],
+      "name": "astrophysicist_astronomer_astronomers"
+    },
+    "1194": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "dances",
+        "greek",
+        "\u03c0\u03b1\u03c1\u03b1\u03b4\u03bf\u03c3\u03b9\u03b1\u03ba\u03bf\u03af",
+        "dance",
+        "dancing",
+        "dancers",
+        "danced",
+        "dancer",
+        "polka",
+        "choreography"
+      ],
+      "name": "dances_greek_\u03c0\u03b1\u03c1\u03b1\u03b4\u03bf\u03c3\u03b9\u03b1\u03ba\u03bf\u03af"
+    },
+    "1181": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "pulse",
+        "league",
+        "season",
+        "seasons",
+        "cup",
+        "tournament",
+        "team",
+        "emperor",
+        "division",
+        "year"
+      ],
+      "name": "pulse_league_season"
+    },
+    "451": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "tornadoes",
+        "tornado",
+        "storms",
+        "thunderstorms",
+        "thunderstorm",
+        "meteorological",
+        "weather",
+        "winds",
+        "storm",
+        "wind"
+      ],
+      "name": "tornadoes_tornado_storms"
+    },
+    "1478": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "barney",
+        "ted",
+        "episode",
+        "sitcom",
+        "episodes",
+        "daphne",
+        "locket",
+        "robin",
+        "aired",
+        "lily"
+      ],
+      "name": "barney_ted_episode"
+    },
+    "846": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "locomotives",
+        "locomotive",
+        "diesel",
+        "turbocharged",
+        "railway",
+        "emc",
+        "railroad",
+        "railways",
+        "railroads",
+        "engines"
+      ],
+      "name": "locomotives_locomotive_diesel"
+    },
+    "912": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "highways",
+        "highway",
+        "roads",
+        "interstate",
+        "expressway",
+        "road",
+        "routes",
+        "states",
+        "parkway",
+        "eastbound"
+      ],
+      "name": "highways_highway_roads"
+    },
+    "669": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "aquatics",
+        "olympic",
+        "olympics",
+        "iaaf",
+        "springboard",
+        "diving",
+        "semifinals",
+        "swimming",
+        "held",
+        "semifinal"
+      ],
+      "name": "aquatics_olympic_olympics"
+    },
+    "1227": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "racers",
+        "cyclists",
+        "track",
+        "cycling",
+        "competed",
+        "uci",
+        "raced",
+        "medalists",
+        "qualifying",
+        "races"
+      ],
+      "name": "racers_cyclists_track"
+    },
+    "261": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "nigerian",
+        "rapper",
+        "nigeria",
+        "rappers",
+        "lagos",
+        "afrobeat",
+        "afrobeats",
+        "singer",
+        "songwriter",
+        "rap"
+      ],
+      "name": "nigerian_rapper_nigeria"
+    },
+    "1018": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "fifa",
+        "soccer",
+        "football",
+        "ea",
+        "uefa",
+        "games",
+        "sports",
+        "nes",
+        "wii",
+        "nintendo"
+      ],
+      "name": "fifa_soccer_football"
+    },
+    "1216": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "monsoon",
+        "typhoon",
+        "cyclone",
+        "cyclones",
+        "storms",
+        "meteorological",
+        "hurricane",
+        "storm",
+        "winds",
+        "landfall"
+      ],
+      "name": "monsoon_typhoon_cyclone"
+    },
+    "1723": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "salamander",
+        "salamanders",
+        "amphibians",
+        "fauna",
+        "species",
+        "amphibian",
+        "forests",
+        "habitat",
+        "montane",
+        "lowland"
+      ],
+      "name": "salamander_salamanders_amphibians"
+    },
+    "136": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "mountain",
+        "mountains",
+        "canyon",
+        "nevada",
+        "elevation",
+        "hills",
+        "peak",
+        "creeks",
+        "summit",
+        "valley"
+      ],
+      "name": "mountain_mountains_canyon"
+    },
+    "851": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "robberfly",
+        "leptogaster",
+        "insect",
+        "insects",
+        "flies",
+        "diptera",
+        "species",
+        "robber",
+        "fly",
+        "flavipes"
+      ],
+      "name": "robberfly_leptogaster_insect"
+    },
+    "647": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "radio",
+        "fm",
+        "stations",
+        "station",
+        "broadcasts",
+        "broadcasting",
+        "broadcast",
+        "frequencies",
+        "bbc",
+        "listeners"
+      ],
+      "name": "radio_fm_stations"
+    },
+    "520": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "nigerian",
+        "novelist",
+        "nigeria",
+        "lagos",
+        "literatures",
+        "literature",
+        "writer",
+        "novelists",
+        "writing",
+        "literary"
+      ],
+      "name": "nigerian_novelist_nigeria"
+    },
+    "1203": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "madden",
+        "nfl",
+        "ea",
+        "football",
+        "gaming",
+        "consoles",
+        "games",
+        "sports",
+        "quarterback",
+        "wii"
+      ],
+      "name": "madden_nfl_ea"
+    },
+    "954": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "fauna",
+        "species",
+        "subgenus",
+        "tiger",
+        "moths",
+        "leucodactyla",
+        "crassicornis",
+        "moth"
+      ],
+      "name": "beetles_beetle_fauna"
+    },
+    "48": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "racehorse",
+        "racehorses",
+        "thoroughbred",
+        "filly",
+        "jockey",
+        "furlongs",
+        "racecourse",
+        "horse",
+        "stallion",
+        "jockeys"
+      ],
+      "name": "racehorse_racehorses_thoroughbred"
+    },
+    "248": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "tributary",
+        "quebec",
+        "rivi\u00e8re",
+        "river",
+        "rivers",
+        "watersheds",
+        "upstream",
+        "rapids",
+        "lake",
+        "lakes"
+      ],
+      "name": "tributary_quebec_rivi\u00e8re"
+    },
+    "1561": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "insects",
+        "beetles",
+        "baliensis",
+        "weevils",
+        "fauna",
+        "species",
+        "weevil",
+        "palawanensis",
+        "moths",
+        "sulawesi"
+      ],
+      "name": "insects_beetles_baliensis"
+    },
+    "545": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "softball",
+        "outfielder",
+        "fielder",
+        "shortstop",
+        "batting",
+        "baseball",
+        "pitchers",
+        "pitching",
+        "hitters",
+        "pitcher"
+      ],
+      "name": "softball_outfielder_fielder"
+    },
+    "1206": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "confederate",
+        "commanders",
+        "sergeant",
+        "adjutant",
+        "sgt",
+        "brigadier",
+        "lieutenant",
+        "infantry",
+        "armies",
+        "battles"
+      ],
+      "name": "confederate_commanders_sergeant"
+    },
+    "1420": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "alps",
+        "monte",
+        "genoa",
+        "mountain",
+        "mountains",
+        "monti",
+        "italy",
+        "italian",
+        "comune",
+        "pizzo"
+      ],
+      "name": "alps_monte_genoa"
+    },
+    "1425": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "catsharks",
+        "catshark",
+        "fishes",
+        "species",
+        "crustaceans",
+        "fish",
+        "carpetshark",
+        "cephalopods",
+        "trawls",
+        "fisheries"
+      ],
+      "name": "catsharks_catshark_fishes"
+    },
+    "935": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "moth",
+        "moths",
+        "tortricidae",
+        "larvae",
+        "formosensis",
+        "sedge",
+        "species",
+        "fauna",
+        "pygmaeella",
+        "forewings"
+      ],
+      "name": "moth_moths_tortricidae"
+    },
+    "657": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "freestyle",
+        "tournament",
+        "wrestlers",
+        "semifinal",
+        "wrestling",
+        "medalists",
+        "medals",
+        "bronze",
+        "matches",
+        "competition"
+      ],
+      "name": "freestyle_tournament_wrestlers"
+    },
+    "1725": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "tigers",
+        "ncaa",
+        "rams",
+        "intercollegiate",
+        "robinson",
+        "football",
+        "nfl",
+        "college",
+        "tiger",
+        "jackson"
+      ],
+      "name": "tigers_ncaa_rams"
+    },
+    "1534": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "doubles",
+        "semifinals",
+        "tennis",
+        "wimbledon",
+        "ausopen",
+        "finals",
+        "wheelchair",
+        "quad",
+        "winners",
+        "rematch"
+      ],
+      "name": "doubles_semifinals_tennis"
+    },
+    "466": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "metro",
+        "san",
+        "freeway",
+        "railroad",
+        "subway",
+        "railway",
+        "los",
+        "riverside",
+        "transit",
+        "sacramento"
+      ],
+      "name": "metro_san_freeway"
+    },
+    "353": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "kad\u0131n",
+        "turkish",
+        "k\u0131z",
+        "actor",
+        "p\u0131nar",
+        "istanbul",
+        "actors",
+        "actress",
+        "osman",
+        "ankara"
+      ],
+      "name": "kad\u0131n_turkish_k\u0131z"
+    },
+    "1518": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "swimmers",
+        "swimmer",
+        "breaststroke",
+        "swam",
+        "backstroke",
+        "swimming",
+        "olympic",
+        "pools",
+        "freestyle",
+        "medalists"
+      ],
+      "name": "swimmers_swimmer_breaststroke"
+    },
+    "1614": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "golf",
+        "golfing",
+        "golfer",
+        "wii",
+        "golfers",
+        "pga",
+        "mario",
+        "games",
+        "nintendo",
+        "gaming"
+      ],
+      "name": "golf_golfing_golfer"
+    },
+    "1406": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "rowers",
+        "rower",
+        "rowing",
+        "oxford",
+        "cambridge",
+        "regatta",
+        "boat",
+        "tide",
+        "varsity",
+        "race"
+      ],
+      "name": "rowers_rower_rowing"
+    },
+    "410": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "zhang",
+        "zhou",
+        "huang",
+        "chen",
+        "chinese",
+        "jiang",
+        "beijing",
+        "peking",
+        "qian",
+        "yang"
+      ],
+      "name": "zhang_zhou_huang"
+    },
+    "279": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "yoon",
+        "jong",
+        "korean",
+        "korea",
+        "kim",
+        "seoul",
+        "chung",
+        "politburo",
+        "hyun",
+        "hyon"
+      ],
+      "name": "yoon_jong_korean"
+    },
+    "652": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "anole",
+        "anoles",
+        "reptiles",
+        "lizards",
+        "lizard",
+        "species",
+        "fauna",
+        "reptile",
+        "amphibians",
+        "hispaniola"
+      ],
+      "name": "anole_anoles_reptiles"
+    },
+    "667": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "artillery",
+        "infantry",
+        "regiments",
+        "regiment",
+        "stationed",
+        "platoon",
+        "battalions",
+        "army",
+        "battalion",
+        "troop"
+      ],
+      "name": "artillery_infantry_regiments"
+    },
+    "837": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "routes",
+        "route",
+        "highway",
+        "southbound",
+        "turnpike",
+        "highways",
+        "expressway",
+        "interstate",
+        "freeway",
+        "road"
+      ],
+      "name": "routes_route_highway"
+    },
+    "142": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "papua",
+        "languages",
+        "swahili",
+        "guinea",
+        "indonesia",
+        "sulawesi",
+        "language",
+        "cameroon",
+        "dialects",
+        "linguistics"
+      ],
+      "name": "papua_languages_swahili"
+    },
+    "1391": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "moth",
+        "forewings",
+        "moths",
+        "hindwings",
+        "larvae",
+        "wingspan",
+        "ochreous",
+        "fuscous",
+        "mozambique",
+        "madagascar"
+      ],
+      "name": "moth_forewings_moths"
+    },
+    "1332": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "swimmer",
+        "breaststroke",
+        "backstroke",
+        "freestyle",
+        "swimming",
+        "ipc",
+        "held",
+        "medalists",
+        "medals",
+        "tournament"
+      ],
+      "name": "swimmer_breaststroke_backstroke"
+    },
+    "1024": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "generals",
+        "commandant",
+        "lieutenant",
+        "brigadier",
+        "commander",
+        "military",
+        "personnel",
+        "commanded",
+        "marine",
+        "general"
+      ],
+      "name": "generals_commandant_lieutenant"
+    },
+    "1328": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "insects",
+        "lepidum",
+        "species",
+        "anthracinum",
+        "pulchrum",
+        "foveolatum",
+        "violaceum",
+        "purpureum"
+      ],
+      "name": "beetles_beetle_insects"
+    },
+    "1636": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "l\u00e0o",
+        "lao",
+        "laos",
+        "th\u00e1i",
+        "thai",
+        "khmer",
+        "vietnamese",
+        "burmese",
+        "thailand",
+        "chiang"
+      ],
+      "name": "l\u00e0o_lao_laos"
+    },
+    "270": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "pharaoh",
+        "pharaohs",
+        "egyptologist",
+        "egyptologists",
+        "egyptian",
+        "dynasty",
+        "rulers",
+        "egypt",
+        "throne",
+        "amun"
+      ],
+      "name": "pharaoh_pharaohs_egyptologist"
+    },
+    "1755": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "mount",
+        "align",
+        "survey",
+        "km",
+        "data",
+        "id",
+        "peak",
+        "bgcolor",
+        "observatory",
+        "mesa"
+      ],
+      "name": "mount_align_survey"
+    },
+    "1125": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "peru",
+        "minera",
+        "peruvian",
+        "mining",
+        "copper",
+        "mined",
+        "miner",
+        "minerals",
+        "chile",
+        "miners"
+      ],
+      "name": "peru_minera_peruvian"
+    },
+    "675": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "olympic",
+        "olympics",
+        "korean",
+        "yoon",
+        "choi",
+        "korea",
+        "competed",
+        "jin",
+        "chung",
+        "hockey"
+      ],
+      "name": "olympic_olympics_korean"
+    },
+    "1721": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "y\u014dkai",
+        "yokai",
+        "yako",
+        "yamabiko",
+        "emakimono",
+        "yamauba",
+        "kijimuna",
+        "hyakumonogatari",
+        "emaki",
+        "shinto"
+      ],
+      "name": "y\u014dkai_yokai_yako"
+    },
+    "1400": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "playboy",
+        "actress",
+        "playboys",
+        "playmate",
+        "actresses",
+        "pamela",
+        "nicole",
+        "julie",
+        "monica",
+        "penthouse"
+      ],
+      "name": "playboy_actress_playboys"
+    },
+    "1758": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "rhododendrons",
+        "rhododendron",
+        "flora",
+        "shrub",
+        "subgenus",
+        "argyrophyllum",
+        "flowering",
+        "evergreen",
+        "flowers",
+        "plants"
+      ],
+      "name": "rhododendrons_rhododendron_flora"
+    },
+    "814": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "boko",
+        "nigeria",
+        "nigerian",
+        "niger",
+        "violence",
+        "insurgency",
+        "haram",
+        "bombings",
+        "gunmen",
+        "attacked"
+      ],
+      "name": "boko_nigeria_nigerian"
+    },
+    "1247": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "miss",
+        "pageant",
+        "pageants",
+        "finalist",
+        "pageantry",
+        "indian",
+        "india",
+        "bollywood",
+        "finalists",
+        "diva"
+      ],
+      "name": "miss_pageant_pageants"
+    },
+    "112": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "romans",
+        "roman",
+        "cicero",
+        "praenomina",
+        "plebeians",
+        "augustus",
+        "praenomen",
+        "praefectus",
+        "lucius",
+        "praetorian"
+      ],
+      "name": "romans_roman_cicero"
+    },
+    "1805": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "species",
+        "trisulcatus",
+        "fossiliferous",
+        "picticornis",
+        "brevicornis",
+        "madagascariensis",
+        "emarginatus",
+        "foveatus"
+      ],
+      "name": "beetles_beetle_species"
+    },
+    "1622": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "oz",
+        "wizard",
+        "fairy",
+        "emerald",
+        "wicked",
+        "enchanted",
+        "princess",
+        "scarecrow",
+        "aunt",
+        "rainbow"
+      ],
+      "name": "oz_wizard_fairy"
+    },
+    "1345": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "rowing",
+        "rowers",
+        "rower",
+        "regattas",
+        "regatta",
+        "olympic",
+        "competitions",
+        "competed",
+        "olympics",
+        "medalists"
+      ],
+      "name": "rowing_rowers_rower"
+    },
+    "594": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "vineyards",
+        "sauvignon",
+        "wines",
+        "wineries",
+        "vineyard",
+        "winemakers",
+        "grape",
+        "winemaking",
+        "winery",
+        "wine"
+      ],
+      "name": "vineyards_sauvignon_wines"
+    },
+    "1619": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "universities",
+        "university",
+        "faculty",
+        "academic",
+        "alumni",
+        "campus",
+        "colleges",
+        "campuses",
+        "provost",
+        "undergraduate"
+      ],
+      "name": "universities_university_faculty"
+    },
+    "1582": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "tsarina",
+        "tsarevna",
+        "tsar",
+        "tsarevich",
+        "tsardom",
+        "tsaritsa",
+        "anastasia",
+        "empress",
+        "tatiana",
+        "alexandra"
+      ],
+      "name": "tsarina_tsarevna_tsar"
+    },
+    "540": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "nigeria",
+        "nigerian",
+        "universities",
+        "polytechnic",
+        "university",
+        "lagos",
+        "polytechnics",
+        "institution",
+        "campus",
+        "institute"
+      ],
+      "name": "nigeria_nigerian_universities"
+    },
+    "1106": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "britishlistedbuildings",
+        "buildings",
+        "wiltshire",
+        "surrey",
+        "sussex",
+        "boroughs",
+        "cheshire",
+        "suffolk",
+        "cornwall",
+        "districts"
+      ],
+      "name": "britishlistedbuildings_buildings_wiltshire"
+    },
+    "1627": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "regatta",
+        "olympics",
+        "olympic",
+        "rowing",
+        "rowers",
+        "semifinals",
+        "canoeing",
+        "heats",
+        "competed",
+        "boats"
+      ],
+      "name": "regatta_olympics_olympic"
+    },
+    "983": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "earthquake",
+        "earthquakes",
+        "seismicity",
+        "seismic",
+        "seismically",
+        "quake",
+        "tsunami",
+        "tectonic",
+        "tsunamis",
+        "chile"
+      ],
+      "name": "earthquake_earthquakes_seismicity"
+    },
+    "1538": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "salix",
+        "botanical",
+        "willows",
+        "willow",
+        "flora",
+        "species",
+        "deciduous",
+        "ovate",
+        "plant",
+        "leaves"
+      ],
+      "name": "salix_botanical_willows"
+    },
+    "731": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "nm",
+        "highway",
+        "mexico",
+        "road",
+        "highways",
+        "interstate",
+        "roads",
+        "state",
+        "route",
+        "traffic"
+      ],
+      "name": "nm_highway_mexico"
+    },
+    "1555": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "moth",
+        "lepidoptera",
+        "moths",
+        "larvae",
+        "larval",
+        "butterflies",
+        "fauna",
+        "wingspan",
+        "chrysella",
+        "species"
+      ],
+      "name": "moth_lepidoptera_moths"
+    },
+    "1255": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "chao",
+        "princesses",
+        "phraya",
+        "princess",
+        "phra",
+        "thai",
+        "siam",
+        "bangkok",
+        "thailand",
+        "chiang"
+      ],
+      "name": "chao_princesses_phraya"
+    },
+    "1606": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "smackdown",
+        "wrestle",
+        "raw",
+        "wrestling",
+        "wrestlers",
+        "wii",
+        "rumble",
+        "wrestler",
+        "nxt",
+        "undertaker"
+      ],
+      "name": "smackdown_wrestle_raw"
+    },
+    "972": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "pilot",
+        "pilots",
+        "piloting",
+        "aviation",
+        "aeronautical",
+        "flew",
+        "flying",
+        "amelia",
+        "airlines",
+        "biplane"
+      ],
+      "name": "pilot_pilots_piloting"
+    },
+    "1186": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "district",
+        "congressional",
+        "california",
+        "redistricting",
+        "ventura",
+        "districts",
+        "bernardino",
+        "san",
+        "rancho",
+        "riverside"
+      ],
+      "name": "district_congressional_california"
+    },
+    "285": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "universidad",
+        "universidade",
+        "educaci\u00f3n",
+        "universitaria",
+        "university",
+        "universities",
+        "ciencias",
+        "institution",
+        "chile",
+        "campus"
+      ],
+      "name": "universidad_universidade_educaci\u00f3n"
+    },
+    "622": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "festival",
+        "festivals",
+        "fest",
+        "cinema",
+        "cinemas",
+        "filmmaking",
+        "filmmakers",
+        "filmmaker",
+        "moviemaker",
+        "film"
+      ],
+      "name": "festival_festivals_fest"
+    },
+    "65": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "biplanes",
+        "biplane",
+        "aircraft",
+        "fuselage",
+        "airframe",
+        "wing",
+        "bomber",
+        "aero",
+        "sailplanes",
+        "aviation"
+      ],
+      "name": "biplanes_biplane_aircraft"
+    },
+    "105": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "tian",
+        "zhu",
+        "jian",
+        "qing",
+        "zhou",
+        "qin",
+        "shang",
+        "huang",
+        "zhongshu",
+        "emperor"
+      ],
+      "name": "tian_zhu_jian"
+    },
+    "1578": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "cardinals",
+        "ncaa",
+        "southland",
+        "conference",
+        "naia",
+        "sophomore",
+        "basketball",
+        "postseason",
+        "tournament",
+        "roster"
+      ],
+      "name": "cardinals_ncaa_southland"
+    },
+    "824": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "shrews",
+        "shrew",
+        "fauna",
+        "species",
+        "mammals",
+        "invertebrates",
+        "mammal",
+        "earthworms",
+        "insectivore",
+        "snout"
+      ],
+      "name": "shrews_shrew_fauna"
+    },
+    "775": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "botaniste",
+        "botany",
+        "botanist",
+        "botanists",
+        "fran\u00e7ois",
+        "botanical",
+        "scientifique",
+        "sciences",
+        "naturelle",
+        "entomologist"
+      ],
+      "name": "botaniste_botany_botanist"
+    },
+    "1424": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "ko\u0142o",
+        "ma\u0142y",
+        "poland",
+        "buda",
+        "voivodeship",
+        "ma\u0142e",
+        "lublin",
+        "gmina",
+        "governorate",
+        "pomorskie"
+      ],
+      "name": "ko\u0142o_ma\u0142y_poland"
+    },
+    "1046": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "turbines",
+        "turbine",
+        "windfarms",
+        "windfarm",
+        "renewables",
+        "renewable",
+        "wind",
+        "farms",
+        "farm",
+        "megawatts"
+      ],
+      "name": "turbines_turbine_windfarms"
+    },
+    "308": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "census",
+        "province",
+        "unincorporated",
+        "municipality",
+        "localities",
+        "municipalities",
+        "manitoba",
+        "population",
+        "alberta",
+        "saskatoon"
+      ],
+      "name": "census_province_unincorporated"
+    },
+    "1080": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "lake",
+        "lac",
+        "lakes",
+        "provence",
+        "lacs",
+        "seine",
+        "france",
+        "reservoirs",
+        "pont",
+        "reservoir"
+      ],
+      "name": "lake_lac_lakes"
+    },
+    "390": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "carex",
+        "flora",
+        "perennial",
+        "perigynia",
+        "plant",
+        "species",
+        "plants",
+        "botanist",
+        "endemic",
+        "arctogena"
+      ],
+      "name": "carex_flora_perennial"
+    },
+    "326": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "journalism",
+        "pulitzer",
+        "journalist",
+        "journalists",
+        "reporter",
+        "newspaper",
+        "reporters",
+        "columnist",
+        "newspapers",
+        "journalistic"
+      ],
+      "name": "journalism_pulitzer_journalist"
+    },
+    "580": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "painters",
+        "painter",
+        "paintings",
+        "painting",
+        "murals",
+        "czech",
+        "impressionist",
+        "prague",
+        "artists",
+        "hungarian"
+      ],
+      "name": "painters_painter_paintings"
+    },
+    "558": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "lighthouse",
+        "lighthouses",
+        "lighthousefriends",
+        "beacon",
+        "pier",
+        "harbor",
+        "island",
+        "light",
+        "lantern",
+        "lightkeeper"
+      ],
+      "name": "lighthouse_lighthouses_lighthousefriends"
+    },
+    "1448": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "eurohockey",
+        "olympic",
+        "hockey",
+        "olympics",
+        "olympica",
+        "sportspeople",
+        "goalkeeper",
+        "medalists",
+        "sportswomen",
+        "goalkeepers"
+      ],
+      "name": "eurohockey_olympic_hockey"
+    },
+    "267": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "fran\u00e7ois",
+        "fran\u00e7aise",
+        "novelist",
+        "claude",
+        "philippe",
+        "french",
+        "michel",
+        "novelists",
+        "une",
+        "histoire"
+      ],
+      "name": "fran\u00e7ois_fran\u00e7aise_novelist"
+    },
+    "381": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "miss",
+        "pageant",
+        "pageants",
+        "pageantry",
+        "finalist",
+        "competed",
+        "finalists",
+        "mrs",
+        "hawaii",
+        "contestant"
+      ],
+      "name": "miss_pageant_pageants"
+    },
+    "253": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "surgeon",
+        "surgeons",
+        "edinburgh",
+        "knighted",
+        "scottish",
+        "glasgow",
+        "doctor",
+        "surgery",
+        "honours",
+        "aberdeen"
+      ],
+      "name": "surgeon_surgeons_edinburgh"
+    },
+    "1418": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "owls",
+        "temple",
+        "nfl",
+        "ncaa",
+        "tulane",
+        "stadium",
+        "preseason",
+        "bowl",
+        "football",
+        "uconn"
+      ],
+      "name": "owls_temple_nfl"
+    },
+    "1426": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "anthurium",
+        "flora",
+        "fasciculata",
+        "genus",
+        "plants",
+        "plant",
+        "podophyllum",
+        "endemic",
+        "species",
+        "foliage"
+      ],
+      "name": "anthurium_flora_fasciculata"
+    },
+    "4": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "communes",
+        "commune",
+        "arrondissement",
+        "arrondissements",
+        "provence",
+        "france",
+        "c\u00f4te",
+        "c\u00f4tes",
+        "chateau",
+        "ch\u00e2teau"
+      ],
+      "name": "communes_commune_arrondissement"
+    },
+    "32": {
+      "count": 3,
+      "frequency": 0.00010400055466962491,
+      "keywords": [
+        "films",
+        "film",
+        "screenplay",
+        "movie",
+        "screenplays",
+        "filming",
+        "cast",
+        "uncredited",
+        "directed",
+        "silent"
+      ],
+      "name": "films_film_screenplay"
+    },
+    "14": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "novelist",
+        "novelists",
+        "nonfiction",
+        "novels",
+        "writer",
+        "author",
+        "anthologies",
+        "literature",
+        "writers",
+        "literary"
+      ],
+      "name": "novelist_novelists_nonfiction"
+    },
+    "934": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "watchmakers",
+        "watchmaker",
+        "watches",
+        "wristwatch",
+        "wristwatches",
+        "watchmaking",
+        "manufacturer",
+        "manufacturers",
+        "manufactures",
+        "brand"
+      ],
+      "name": "watchmakers_watchmaker_watches"
+    },
+    "543": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "puerto",
+        "barrios",
+        "barrio",
+        "rico",
+        "urbanizaci\u00f3n",
+        "census",
+        "juana",
+        "pueblo",
+        "spanish",
+        "territory"
+      ],
+      "name": "puerto_barrios_barrio"
+    },
+    "121": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "fran\u00e7ois",
+        "fran\u00e7oise",
+        "claude",
+        "cast",
+        "madeleine",
+        "michel",
+        "jacques",
+        "screenwriter",
+        "films",
+        "philippe"
+      ],
+      "name": "fran\u00e7ois_fran\u00e7oise_claude"
+    },
+    "1550": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "wrestling",
+        "freestyle",
+        "wrestlers",
+        "kg",
+        "kilograms",
+        "competing",
+        "medalists",
+        "wrestler",
+        "greco",
+        "women"
+      ],
+      "name": "wrestling_freestyle_wrestlers"
+    },
+    "489": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "eclipse",
+        "eclipses",
+        "lunar",
+        "moon",
+        "solar",
+        "sunset",
+        "sun",
+        "thursday",
+        "duration",
+        "sunlight"
+      ],
+      "name": "eclipse_eclipses_lunar"
+    },
+    "739": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "composers",
+        "composer",
+        "m\u00fasica",
+        "concerto",
+        "orchestra",
+        "orchestral",
+        "pianist",
+        "violinist",
+        "orchestras",
+        "symphonic"
+      ],
+      "name": "composers_composer_m\u00fasica"
+    },
+    "1455": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "fauna",
+        "species",
+        "sapporensis",
+        "caraboides",
+        "shanxiensis",
+        "cylindricollis",
+        "cyanicollis",
+        "nepalensis"
+      ],
+      "name": "beetles_beetle_fauna"
+    },
+    "184": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "concertos",
+        "concerto",
+        "symphonies",
+        "quartets",
+        "orchestral",
+        "composer",
+        "piano",
+        "violins",
+        "orchestra",
+        "compositions"
+      ],
+      "name": "concertos_concerto_symphonies"
+    },
+    "938": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "explosive",
+        "detonated",
+        "blast",
+        "detonator",
+        "minefields",
+        "steel",
+        "tank",
+        "fuze",
+        "detonation",
+        "fuse"
+      ],
+      "name": "explosive_detonated_blast"
+    },
+    "1419": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "dams",
+        "hydroelectric",
+        "hydroelectricity",
+        "hydropower",
+        "dam",
+        "hydro",
+        "reservoirs",
+        "tributary",
+        "river",
+        "prefecture"
+      ],
+      "name": "dams_hydroelectric_hydroelectricity"
+    },
+    "361": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "korean",
+        "yoon",
+        "jung",
+        "hyun",
+        "jin",
+        "hanja",
+        "jong",
+        "kyong",
+        "jae",
+        "yun"
+      ],
+      "name": "korean_yoon_jung"
+    },
+    "1180": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "virginia",
+        "routes",
+        "route",
+        "highways",
+        "highway",
+        "state",
+        "interstate",
+        "road",
+        "va",
+        "roads"
+      ],
+      "name": "virginia_routes_route"
+    },
+    "871": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "insects",
+        "fauna",
+        "subgenus",
+        "species",
+        "chitralensis",
+        "ferganensis",
+        "gebleri",
+        "dahlii"
+      ],
+      "name": "beetles_beetle_insects"
+    },
+    "1486": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "chef",
+        "chefs",
+        "contestants",
+        "contestant",
+        "cook",
+        "finalists",
+        "cooking",
+        "cooks",
+        "culinary",
+        "kitchen"
+      ],
+      "name": "chef_chefs_contestants"
+    },
+    "1653": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "kurdish",
+        "anatolian",
+        "turkey",
+        "turkish",
+        "ankara",
+        "turks",
+        "villages",
+        "ottoman",
+        "village",
+        "province"
+      ],
+      "name": "kurdish_anatolian_turkey"
+    },
+    "830": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "cheung",
+        "chang",
+        "tian",
+        "hong",
+        "singer",
+        "wong",
+        "cheng",
+        "zhou",
+        "kong",
+        "huang"
+      ],
+      "name": "cheung_chang_tian"
+    },
+    "1126": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "species",
+        "ogasawarensis",
+        "basilewskyi",
+        "rufomaculata",
+        "batjanensis",
+        "sanfilippoi",
+        "genus",
+        "guamensis"
+      ],
+      "name": "beetles_beetle_species"
+    },
+    "1057": {
+      "count": 4,
+      "frequency": 0.00013866740622616653,
+      "keywords": [
+        "larks",
+        "lark",
+        "plumage",
+        "species",
+        "bird",
+        "birds",
+        "rufous",
+        "subspecies",
+        "insects",
+        "breeding"
+      ],
+      "name": "larks_lark_plumage"
+    },
+    "179": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "regiment",
+        "regiments",
+        "infantry",
+        "confederates",
+        "regimental",
+        "enlisted",
+        "confederate",
+        "soldiers",
+        "army",
+        "cavalry"
+      ],
+      "name": "regiment_regiments_infantry"
+    },
+    "943": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "fiba",
+        "euroleague",
+        "eurobasket",
+        "assists",
+        "basketball",
+        "hellenic",
+        "nba",
+        "coached",
+        "greece",
+        "olympia"
+      ],
+      "name": "fiba_euroleague_eurobasket"
+    },
+    "1775": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "wasp",
+        "jupiter",
+        "astronomical",
+        "orbital",
+        "planetary",
+        "exoplanets",
+        "astronomers",
+        "exoplanet",
+        "constellation",
+        "planets"
+      ],
+      "name": "wasp_jupiter_astronomical"
+    },
+    "393": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "archery",
+        "archers",
+        "archer",
+        "bow",
+        "arrow",
+        "arrows",
+        "athlete",
+        "olympic",
+        "medalists",
+        "medalist"
+      ],
+      "name": "archery_archers_archer"
+    },
+    "1776": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "beetles",
+        "beetle",
+        "species",
+        "reticulatus",
+        "genus",
+        "mongolicus",
+        "cordatus",
+        "prehistoric",
+        "virgatus",
+        "constrictus"
+      ],
+      "name": "beetles_beetle_species"
+    },
+    "1540": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "ncaa",
+        "championship",
+        "naia",
+        "competitions",
+        "collegiate",
+        "track",
+        "decathlon",
+        "championships",
+        "standings",
+        "hurdles"
+      ],
+      "name": "ncaa_championship_naia"
+    },
+    "486": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "road",
+        "roads",
+        "motorway",
+        "motorways",
+        "dublin",
+        "lane",
+        "carriageway",
+        "galway",
+        "routes",
+        "southbound"
+      ],
+      "name": "road_roads_motorway"
+    },
+    "1184": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "flora",
+        "brasileira",
+        "gerais",
+        "tropical",
+        "bahia",
+        "plants",
+        "endemic",
+        "friburgensis",
+        "genus",
+        "shrubland"
+      ],
+      "name": "flora_brasileira_gerais"
+    },
+    "1705": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "moth",
+        "lepidoptera",
+        "moths",
+        "formosella",
+        "xantholeuca",
+        "grisella",
+        "fauna",
+        "paludella",
+        "cilia",
+        "diodonta"
+      ],
+      "name": "moth_lepidoptera_moths"
+    },
+    "1196": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "mlb",
+        "baseball",
+        "baseman",
+        "leagues",
+        "games",
+        "pitching",
+        "batting",
+        "sports",
+        "pitchers",
+        "batter"
+      ],
+      "name": "mlb_baseball_baseman"
+    },
+    "1787": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "footballer",
+        "poland",
+        "footballers",
+        "polski",
+        "polish",
+        "dzieje",
+        "krakow",
+        "bundesliga",
+        "players",
+        "midfielder"
+      ],
+      "name": "footballer_poland_footballers"
+    },
+    "100": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "cameroon",
+        "senegal",
+        "niger",
+        "mali",
+        "faso",
+        "prefecture",
+        "prefectures",
+        "commune",
+        "villages",
+        "guinea"
+      ],
+      "name": "cameroon_senegal_niger"
+    },
+    "1441": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "zappa",
+        "albums",
+        "album",
+        "frank",
+        "concert",
+        "songs",
+        "unreleased",
+        "song",
+        "vocals",
+        "drums"
+      ],
+      "name": "zappa_albums_album"
+    },
+    "1786": {
+      "count": 2,
+      "frequency": 6.933370311308327e-05,
+      "keywords": [
+        "lottery",
+        "lotto",
+        "gambling",
+        "prizes",
+        "raffle",
+        "jackpot",
+        "casinos",
+        "casino",
+        "betting",
+        "jackpots"
+      ],
+      "name": "lottery_lotto_gambling"
+    },
+    "378": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "ethiopia",
+        "woreda",
+        "woredas",
+        "somali",
+        "afar",
+        "oromo",
+        "inhabitants",
+        "ethnic",
+        "arable",
+        "bordered"
+      ],
+      "name": "ethiopia_woreda_woredas"
+    },
+    "337": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "loch",
+        "lochs",
+        "lochside",
+        "lochan",
+        "scotland",
+        "scottish",
+        "highlands",
+        "scots",
+        "isle",
+        "isles"
+      ],
+      "name": "loch_lochs_lochside"
+    },
+    "1294": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "prelate",
+        "poland",
+        "pontifical",
+        "archbishop",
+        "bishop",
+        "bishops",
+        "priesthood",
+        "polish",
+        "priest",
+        "pope"
+      ],
+      "name": "prelate_poland_pontifical"
+    },
+    "1430": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "garment",
+        "garments",
+        "robes",
+        "wearing",
+        "attire",
+        "robe",
+        "clothing",
+        "fashion",
+        "skirts",
+        "dress"
+      ],
+      "name": "garment_garments_robes"
+    },
+    "242": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "hospital",
+        "hospitals",
+        "clinics",
+        "clinic",
+        "inpatient",
+        "outpatient",
+        "facility",
+        "healthcare",
+        "patients",
+        "nursing"
+      ],
+      "name": "hospital_hospitals_clinics"
+    },
+    "44": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "yoon",
+        "korean",
+        "chung",
+        "hyun",
+        "kyung",
+        "jung",
+        "jae",
+        "kim",
+        "wong",
+        "lee"
+      ],
+      "name": "yoon_korean_chung"
+    },
+    "56": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "bmw",
+        "sedan",
+        "sedans",
+        "honda",
+        "toyota",
+        "convertible",
+        "renault",
+        "suzuki",
+        "coupe",
+        "coup\u00e9"
+      ],
+      "name": "bmw_sedan_sedans"
+    },
+    "578": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "catholics",
+        "liturgy",
+        "catholic",
+        "papal",
+        "pontifical",
+        "liturgical",
+        "ecclesiastical",
+        "ecumenical",
+        "pope",
+        "sacramental"
+      ],
+      "name": "catholics_liturgy_catholic"
+    },
+    "802": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "housemates",
+        "contestant",
+        "houseguests",
+        "contestants",
+        "houseguest",
+        "viewers",
+        "presenter",
+        "airing",
+        "housemate",
+        "evicted"
+      ],
+      "name": "housemates_contestant_houseguests"
+    },
+    "1471": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "earthquakes",
+        "earthquake",
+        "quake",
+        "seismic",
+        "tectonics",
+        "san",
+        "tectonic",
+        "epicenter",
+        "valley",
+        "faults"
+      ],
+      "name": "earthquakes_earthquake_quake"
+    },
+    "119": {
+      "count": 1,
+      "frequency": 3.4666851556541634e-05,
+      "keywords": [
+        "murderer",
+        "murders",
+        "convicted",
+        "murdered",
+        "murder",
+        "conviction",
+        "sentenced",
+        "manslaughter",
+        "convictions",
+        "crimes"
+      ],
+      "name": "murderer_murders_convicted"
+    }
+  }
+}

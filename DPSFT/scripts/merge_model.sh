@@ -4,7 +4,7 @@
 # SLURM 资源配置
 # ==========================================
 #SBATCH --job-name=biorxiv_model_merge          # 任务名称
-#SBATCH --account=NAIRR250463-ai           # 你的项目账户
+#SBATCH --account=CIS260108-ai           # 你的项目账户
 #SBATCH --partition=ai
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
@@ -85,6 +85,8 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
     if [ "${USE_DP}" = "1" ]; then
       if [ "${EPS}" = "4.0" ]; then 
         NP="4.3"
+      elif [ "${EPS}" = "1.0" ]; then 
+        NP="13.8"
       else
         echo "Error: NP not defined for eps=${EPS}." >&2; exit 1;
       fi
@@ -106,7 +108,10 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
 
     if [ "${USE_DP}" = "1" ]; then
       if [ "${EPS}" = "4.0" ]; then
-        NP="3.013"
+        # NP="3.013"
+        NP="3.15"
+      elif [ "${EPS}" = "1.0" ]; then 
+        NP="10.26"
       else
         echo "Error: NP not defined for eps=${EPS}." >&2; exit 1;
       fi
@@ -133,6 +138,9 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
       if [ "${EPS}" = "4.0" ]; then
         PREV_NP="4.3"
         RHO_FILTER="0.03"
+      elif [ "${EPS}" = "1.0" ]; then 
+        NP="13.8"
+        RHO_FILTER="0.0025"
       else
         echo "Error: NP not defined for eps=${EPS}." >&2; exit 1;
       fi
@@ -167,6 +175,6 @@ fi
 
 echo "Matched directory: ${DIR_NAME}"
 echo "Merging epoch: ${EPOCH_ID}"
-bash scripts/run_merge.sh "${DIR_NAME}" "${EPOCH_ID}" "${MODEL_HF}"
+bash scripts/gen/run_merge.sh "${DIR_NAME}" "${EPOCH_ID}" "${MODEL_HF}"
 
 echo "Job finished at: $(date)"

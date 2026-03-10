@@ -4,10 +4,10 @@
 # SLURM Resource Configuration (for 2 H100 GPUs)
 # ==========================================
 #SBATCH --job-name=biorxiv_train_filter
-#SBATCH --account=NAIRR250463-ai
+#SBATCH --account=CIS260108-ai
 #SBATCH --partition=ai
 #SBATCH --nodes=1
-#SBATCH --gpus-per-node=2
+#SBATCH --gpus-per-node=4
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem=48G
@@ -40,7 +40,7 @@ DATASET_NAME=${1:? "Missing argument: dataset name"}
 ALGO=${2:? "Missing argument: algorithm name"}
 
 # Parameters for current training task (can differ from generation settings)
-TRAIN_GPU_NUM=${3:-2}
+TRAIN_GPU_NUM=${3:-4}
 TRAIN_MODEL_NAME=${4:-gemma}
 PORT_ID=${5:-29500}
 

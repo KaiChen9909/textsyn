@@ -56,7 +56,7 @@ parser.add_argument(
 parser.add_argument(
     '--prompt_file',
     type=str,
-    default='./prompts/schema_extraction_prompt.txt',
+    default='./prompts/biorxiv_schema_extraction_prompt.txt',
     help='Path to the schema inference prompt file.',
 )
 parser.add_argument(
@@ -206,7 +206,7 @@ def main():
       return val
 
   clean_df = pd.DataFrame({
-      'abstract': df[args.text_column],
+      args.text_column: df[args.text_column],
       'schema': df[f'inferred_{args.output_column}'].apply(clean_schema)
   })
 

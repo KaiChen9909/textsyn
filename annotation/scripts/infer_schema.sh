@@ -4,7 +4,7 @@
 # SLURM 资源配置
 # ==========================================
 #SBATCH --job-name=biorxiv_gen
-#SBATCH --account=NAIRR250463-ai
+#SBATCH --account=CIS260108-ai
 #SBATCH --partition=ai
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
@@ -36,19 +36,15 @@ DATASET_NAME=${1:-biorxiv}
 SCHEMA_TYPE=${2:-noexample}
 NUM_FEATURES=${3:-8}
 TEXT_COLUMN=${4:-abstract}
+SPLIT=${5:-train}
 
 echo "inferring schema"
 
 python infer_biorxiv_schema.py \
-    --input_file ../data/${DATASET_NAME}/train.csv \
-    --output_file ../data/${DATASET_NAME}/${DATASET_NAME}_schema_${SCHEMA_TYPE}_train.csv \
+    --input_file ../data/${DATASET_NAME}/${SPLIT}.csv \
+    --output_file ../data/${DATASET_NAME}/${DATASET_NAME}_schema_${SCHEMA_TYPE}_${SPLIT}.csv \
     --schema_name ${DATASET_NAME}_schema_${SCHEMA_TYPE} \
-    --text_column ${TEXT_COLUMN}
-
-python infer_biorxiv_schema.py \
-    --input_file ../data/${DATASET_NAME}/validation.csv \
-    --output_file ../data/${DATASET_NAME}/${DATASET_NAME}_schema_${SCHEMA_TYPE}_valid.csv \
-    --schema_name ${DATASET_NAME}_schema_${SCHEMA_TYPE} \
+    --prompt_file ./prompts/${DATASET_NAME}_schema_extraction_prompt.txt \
     --text_column ${TEXT_COLUMN}
 
 echo "inference finished"

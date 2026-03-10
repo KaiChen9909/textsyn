@@ -225,107 +225,8 @@ def preprocess_text_dataset(
     text_dataset, dataset_name, prompt_template=None, split='train'
 ):
   """Preprocess text dataset."""
-  # --- Movie JSON dataset ---
-  if 'movie-json' in dataset_name:
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset, prompt_dict=get_prompt_dict(prompt_template), split=split
-    )
-  # --- Mixture of PubMed and OpenReview ---
-  elif 'pubmed_openreview_mixture' in dataset_name:
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset, prompt_dict=get_prompt_dict(prompt_template), split=split
-    )
-  # --- Enron dataset ---
-  elif dataset_name in [
-      'enron',
-      'enron_lenfilt_200-850',
-      'enron_lenskew_5',
-      'enron_sampled_5000',
-  ]:
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        column='content',
-    )
-  elif dataset_name in [
-      'enron-eval',
-      'enron-generated',
-      'enron-eval-generated',
-  ]:
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        column='content',
-    )
-  elif dataset_name == 'enron-freeform-conditions':
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        column='extracted_features',
-    )
-  elif dataset_name == 'enron-condgen-freeform':
-    return _preprocess_text_dataset_conditional_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        feature_name='extracted_features',
-        text_name='content',
-    )
-  elif dataset_name == 'enron-freeform-e2e':
-    return _preprocess_text_dataset_enron_freeform_e2e_instructions(
-        text_dataset, prompt_dict=get_prompt_dict(prompt_template), split=split
-    )
-  elif dataset_name == 'enron-schema-conditions':
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        column='extracted_schema',
-    )
-  elif dataset_name == 'enron-condgen-schema':
-    return _preprocess_text_dataset_conditional_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        feature_name='extracted_schema',
-        text_name='content',
-    )
-  elif dataset_name == 'enron-condgen-topic':
-    return _preprocess_text_dataset_conditional_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        feature_name='topic_keywords',
-        text_name='content',
-    )
-  # --- PMC dataset ---
-  elif dataset_name == 'PMC':
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        column='note',
-    )
-  elif dataset_name == 'PMC-conditions':
-    return _preprocess_text_dataset_fixed_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        column='summary',
-    )
-  elif dataset_name == 'PMC-condgen':
-    return _preprocess_text_dataset_conditional_prompt_instructions(
-        text_dataset,
-        prompt_dict=get_prompt_dict(prompt_template),
-        split=split,
-        feature_name='summary',
-        text_name='note',
-    )
   # --- bioRxiv dataset ---
-  elif dataset_name == 'biorxiv':
+  if dataset_name == 'biorxiv':
     return _preprocess_text_dataset_fixed_prompt_instructions(
         text_dataset,
         prompt_dict=get_prompt_dict(prompt_template),
@@ -355,12 +256,21 @@ def preprocess_text_dataset(
         feature_name='schema',
         text_name='abstract',
     )
-  elif dataset_name in ['biorxiv-generated', 'biorxiv-filtered']:
+  # --- openreview dataset ---
+  if dataset_name == 'openreview':
     return _preprocess_text_dataset_fixed_prompt_instructions(
         text_dataset,
         prompt_dict=get_prompt_dict(prompt_template),
         split=split,
-        column='abstract',
+        column='text',
+    )
+  elif dataset_name.startswith('openreview_condgen'):
+    return _preprocess_text_dataset_conditional_prompt_instructions(
+        text_dataset,
+        prompt_dict=get_prompt_dict(prompt_template),
+        split=split,
+        feature_name='schema',
+        text_name='text',
     )
   else:
     raise NotImplementedError(
@@ -548,8 +458,68 @@ def get_prompt_dict(prompt_template):
             instruction=instruction
         ),
     }
+  elif prompt_template == 'biorxiv_condgen_topic_generation':
+    instruction = (
+        'Given the list of keywords below, generate a synthetic scientific '
+        'abstract that matches the keywords, in the style of a bioRxiv paper.'
+    )
+    PROMPT_DICT = {
+        'type': 'biorxiv_condgen_topic',
+        'prompt': '<start_of_turn>user\n{instruction}\n\nKeywords: {{feature}}\n<end_of_turn>\n<start_of_turn>model\n'.format(
+            instruction=instruction
+        ),
+    }
   elif prompt_template == 'biorxiv_evaluation':
     PROMPT_DICT = {'type': 'biorxiv-eval', 'prompt': ''}
+
+  #  -- openreview dataset -- 
+  elif prompt_template == 'openreview_generation':
+    instruction = (
+        'Generate a synthetic scientific review comment for a computer science'
+        ' paper submitted to ICLR.'
+    )
+    PROMPT_DICT = {
+        'type': 'openreview',
+        'prompt': '<start_of_turn>user\n{instruction}\n<end_of_turn>\n<start_of_turn>model\n'.format(
+            instruction=instruction
+        ),
+    }
+  elif prompt_template == 'openreview_dpft_generation':
+    instruction = (
+        'Generate a synthetic scientific review comment for a computer science'
+        ' paper submitted to ICLR.'
+    )
+    PROMPT_DICT = {
+        'type': 'openreview_dpft',
+        'prompt': '<start_of_turn>user\n{instruction}\n<end_of_turn>\n<start_of_turn>model\n'.format(
+            instruction=instruction
+        ),
+    }
+  elif prompt_template == 'openreview_condgen_generation':
+    prompt_type = '_'.join(prompt_template.split('_')[:-1])
+    instruction = (
+        'Generate a synthetic scientific review comment that belongs to the JSON summary, for a computer science'
+        ' paper submitted to ICLR.'
+    )
+    PROMPT_DICT = {
+        'type': prompt_type,
+        'prompt': '<start_of_turn>user\n{instruction}\n\n{{feature}}\n<end_of_turn>\n<start_of_turn>model\n'.format(
+            instruction=instruction
+        ),
+    }
+  elif prompt_template == 'openreview_condgen_topic_generation':
+    prompt_type = '_'.join(prompt_template.split('_')[:-1])
+    instruction = (
+        'Generate a synthetic scientific review comment that matches the keywords, for a computer science'
+        ' paper submitted to ICLR.'
+    )
+    PROMPT_DICT = {
+        'type': prompt_type,
+        'prompt': '<start_of_turn>user\n{instruction}\n\nKeywords: {{feature}}\n<end_of_turn>\n<start_of_turn>model\n'.format(
+            instruction=instruction
+        ),
+    }
+
   else:
     raise ValueError(f'Prompt template {prompt_template} is not supported.')
   return PROMPT_DICT
@@ -589,45 +559,11 @@ class TokenizedSupervisedInstructDataset(Dataset):
             'csv',
             data_files={
                 'train': os.path.join(data_dir, 'train.csv'),
-                'validation': os.path.join(data_dir, 'validation.csv'),
+                'validation': os.path.join(data_dir, 'valid.csv'),
                 'test': os.path.join(data_dir, 'test.csv'),
             },
         )
-      elif dataset_name in [
-          'biorxiv-conditions',
-          'biorxiv-condgen',
-          'biorxiv-nl3-condgen',
-      ]:
-        data_dir = '../data/biorxiv'
-        text_dataset = load_dataset(
-            'csv',
-            data_files={
-                'train': osp.join(data_dir, 'train_features_v6_selected.csv'),
-                'validation': osp.join(
-                    data_dir, 'validation_features_v6_selected.csv'
-                ),
-                'test': osp.join(data_dir, 'test_features_v6_selected.csv'),
-            },
-        )
-      elif dataset_name in [
-          'biorxiv-complex8et-conditions',
-          'biorxiv-complex8et-condgen',
-      ]:
-        data_dir = '../data/biorxiv'
-        text_dataset = load_dataset(
-            'csv',
-            data_files={
-                'train': osp.join(
-                    data_dir,
-                    'biorxiv_json_schema_v2et_train_gemini-2.5-flash_parsed.csv',
-                ),
-                'validation': osp.join(
-                    data_dir,
-                    'biorxiv_json_schema_v2et_valid_gemini-2.5-flash_parsed.csv',
-                ),
-            },
-        )
-      elif dataset_name.startswith('biorxiv_noexample') or dataset_name == 'biorxiv_condgen':
+      elif dataset_name == 'biorxiv_condgen':
         data_dir = '../data/biorxiv'
         file_str = '_'.join(dataset_name.split('_')[1:])
         text_dataset = load_dataset(
@@ -637,14 +573,26 @@ class TokenizedSupervisedInstructDataset(Dataset):
                 'validation': osp.join(data_dir, f'clean_biorxiv_schema_{file_str}_valid.csv'),
             },
         )
-      elif dataset_name.startswith('biorxiv_condgen_pretrain'):
-        data_dir = '../data/biorxiv'
-        file_str = 'condgen_pretrain'
+      elif dataset_name in [
+          'openreview'
+      ]:
+        data_dir = '../data/openreview'
         text_dataset = load_dataset(
             'csv',
             data_files={
-                'train': osp.join(data_dir, f'clean_biorxiv_schema_{file_str}_train.csv'),
-                'validation': osp.join(data_dir, f'clean_biorxiv_schema_{file_str}_valid.csv'),
+                'train': os.path.join(data_dir, 'train.csv'),
+                'validation': os.path.join(data_dir, 'valid.csv'),
+                'test': os.path.join(data_dir, 'test.csv'),
+            },
+        )
+      elif dataset_name == 'openreview_condgen':
+        data_dir = '../data/openreview'
+        file_str = '_'.join(dataset_name.split('_')[1:])
+        text_dataset = load_dataset(
+            'csv',
+            data_files={
+                'train': osp.join(data_dir, f'clean_openreview_schema_{file_str}_train.csv'),
+                'validation': osp.join(data_dir, f'clean_openreview_schema_{file_str}_valid.csv'),
             },
         )
       elif dataset_name == 'pubmed_openreview_mixture':
@@ -753,6 +701,28 @@ class TokenizedSupervisedInstructDataset(Dataset):
                 ),
             },
         )
+      elif dataset_name in [
+          'biorxiv_condgen_topic',
+      ]:
+        data_dir = '../data/biorxiv'
+        text_dataset = load_dataset(
+            'csv',
+            data_files={
+                'train': osp.join(data_dir, 'clean_biorxiv_topic_train.csv'),
+                'validation': osp.join(data_dir, 'clean_biorxiv_topic_valid.csv'),
+            },
+        )
+      elif dataset_name in [
+          'openreview_condgen_topic',
+      ]:
+        data_dir = '../data/openreview'
+        text_dataset = load_dataset(
+            'csv',
+            data_files={
+                'train': osp.join(data_dir, 'clean_openreview_topic_train.csv'),
+                'validation': osp.join(data_dir, 'clean_openreview_topic_valid.csv'),
+            },
+        )
       elif dataset_name in ['PMC', 'PMC-conditions', 'PMC-condgen']:
         text_dataset = load_dataset(
             'json',
@@ -811,7 +781,7 @@ class TokenizedSupervisedInstructDataset(Dataset):
         # Load validation dataset and extract only 'content' column
         valid_dataset_full = load_dataset(
             'csv',
-            data_files={'validation': osp.join(data_dir, 'validation.csv')},
+            data_files={'validation': osp.join(data_dir, 'valid.csv')},
         )['validation']
         valid_dataset = valid_dataset_full.remove_columns([
             col for col in valid_dataset_full.column_names if col != 'abstract'
@@ -871,7 +841,7 @@ class TokenizedSupervisedInstructDataset(Dataset):
 
         valid_dataset_full = load_dataset(
             'csv',
-            data_files={'validation': osp.join(data_dir, 'validation.csv')},
+            data_files={'validation': osp.join(data_dir, 'valid.csv')},
         )['validation']
         valid_dataset = valid_dataset_full.remove_columns([
             col for col in valid_dataset_full.column_names if col != 'abstract'

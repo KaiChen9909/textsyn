@@ -4,7 +4,7 @@
 # SLURM 资源配置 (针对 2 块 H100)
 # ==========================================
 #SBATCH --job-name=biorxiv_train
-#SBATCH --account=NAIRR250463-ai
+#SBATCH --account=CIS260108-ai
 #SBATCH --partition=ai
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=4
@@ -38,7 +38,7 @@ DATASET_NAME=${1:? "Missing argument: dataset name"}
 ALGO=${2:?         "Missing argument: algorithm name"}
 EPS=${3:-4.0}
 USE_DP=${4:-1}
-GPU_NUM=${5:-2}
+GPU_NUM=${5:-4}
 MODEL_NAME=${6:-gemma}
 PORT_ID=${7:-29500}
 
@@ -57,6 +57,7 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
   PORT="${PORT_ID}"
   SEQLEN="512"
   GPUS="${GPU_NUM}"
+  DEVICE_BS="4"
 
   if [ "${EPS}" = "4.0" ]; then
     if [[ "${ALGO}" = "condgen"* ]]; then
@@ -80,6 +81,37 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
       exit 1
     fi
   fi
+elif [ "${DATASET_NAME}" = "openreview" ]; then
+  BS="2048"
+  STEP="320"
+  LR="1e-3"
+  PORT="${PORT_ID}"
+  SEQLEN="1024"
+  GPUS="${GPU_NUM}"
+  DEVICE_BS="2"
+
+  if [ "${EPS}" = "4.0" ]; then
+    if [[ "${ALGO}" = "condgen"* ]]; then
+      NP="7.0"
+      MAX_INST_LEN=300
+    elif [ "${ALGO}" = "dpft" ]; then
+      NP="5.11"
+      # NP="5.4" # for dpft_filter
+    else
+      echo "Error: Unknown algo '${ALGO}'" >&2
+      exit 1
+    fi
+  elif [ "${EPS}" = "1.0" ]; then 
+    if [[ "${ALGO}" = "condgen"* ]]; then
+      NP="24.1" 
+      MAX_INST_LEN=300
+    elif [ "${ALGO}" = "dpft" ]; then
+      NP="17.48"
+    else
+      echo "Error: Unknown algo '${ALGO}'" >&2
+      exit 1
+    fi
+  fi
 else
   echo "Error: Unknown dataset '${DATASET_NAME}'" >&2
   exit 1
@@ -87,14 +119,12 @@ fi
 
 
 if [ "${USE_DP}" = "1" ]; then
-  DEVICE_BS="4"
   if [ "${ALGO}" = "dpft" ]; then
     bash scripts/train/run_biorxiv_ft_dp.sh ${BS} ${STEP} ${LR} ${PORT} ${EPS} ${NP} ${SEQLEN} ${DEVICE_BS} ${GPUS} ${DATASET_NAME} cosine ${GEN_MODEL} ${MODEL_STR}
   else
     bash scripts/train/run_biorxiv-condgen_ft_dp.sh ${BS} ${STEP} ${LR} ${PORT} ${EPS} ${NP} ${SEQLEN} ${DEVICE_BS} ${GPUS} ${DATASET_NAME}_${ALGO} ${MAX_INST_LEN} constant ${GEN_MODEL} ${MODEL_STR}
   fi
-else 
-  DEVICE_BS="16"
+else
   if [ "${ALGO}" = "dpft" ]; then
     bash scripts/train/run_biorxiv_ft_nondp.sh ${BS} ${STEP} ${LR} ${PORT} ${SEQLEN} ${DEVICE_BS} ${GPUS} ${DATASET_NAME} cosine ${GEN_MODEL} ${MODEL_STR}
   else

@@ -146,7 +146,7 @@ def filter_by_voting(generated_data, real_data_path, top_k,
 
   filtered_data = [generated_data[i] for i in top_k_indices]
 
-  return filtered_data
+  return filtered_data, vote_counts, top_k_indices
 
 
 def main():
@@ -352,7 +352,7 @@ def main():
     t_filter_start = time.time()
 
     rho = args.rho if args.rho > 0 else None
-    filtered_data = filter_by_voting(
+    filtered_data, vote_counts, selected_indices = filter_by_voting(
       all_generated,
       args.real_data_path,
       top_k=n_gen,
@@ -367,8 +367,10 @@ def main():
   else:
     logging.info('L=1, skipping filtering step.')
     filtered_data = all_generated
+    vote_counts = np.ones(len(all_generated))
+    selected_indices = np.arange(len(all_generated))
 
-  # --- Step 3: Save results ---
+  # --- Step 3: Save filtered results (unchanged) ---
   with open(jsonl_file, 'w') as f:
     for item in filtered_data:
       f.write(
@@ -376,6 +378,23 @@ def main():
       )
 
   logging.info(f'Saved {len(filtered_data)} samples to {jsonl_file}')
+
+  # --- Step 4: Save full dataset with labels ---
+  selected_set = set(selected_indices.tolist())
+  full_out_file = 'full_' + args.out_file
+  full_jsonl_file = os.path.join(out_folder, full_out_file)
+
+  with open(full_jsonl_file, 'w') as f:
+    for i, item in enumerate(all_generated):
+      record = {
+          'input_text': item['input_text'],
+          'generated_text': item['generated_text'],
+          'label': 1 if i in selected_set else 0,
+          'vote_count': float(vote_counts[i]),
+      }
+      f.write(json.dumps(record, ensure_ascii=False) + '\n')
+
+  logging.info(f'Saved {len(all_generated)} full samples (with labels) to {full_jsonl_file}')
   logging.info(f'Total time: {time.time() - t_start:.2f}s')
 
 

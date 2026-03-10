@@ -4,7 +4,7 @@
 # SLURM 资源配置
 # ==========================================
 #SBATCH --job-name=biorxiv_gen
-#SBATCH --account=NAIRR250463-ai
+#SBATCH --account=CIS260108-ai
 #SBATCH --partition=ai
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
@@ -38,7 +38,7 @@ DATASET_NAME=${1:? "Missing argument: dataset name"}
 ALGO=${2:?         "Missing argument: algorithm name"}
 EPS=${3:-4.0}
 USE_DP=${4:-1}
-GPU_NUM=${5:-2}
+GPU_NUM=${5:-4}
 EPOCH_ID=${6:-79}
 MODEL=${7:-gemma}
 N_GEN=${8:-5000}
@@ -74,6 +74,9 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
     if [ "${EPS}" = "4.0" ]; then
       NP="4.3"
       RHO="0.18"
+    elif [ "${EPS}" = "1.0" ]; then
+      NP="13.8"
+      RHO="0.015"
     else
       echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
       exit 1
@@ -92,6 +95,9 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
     if [ "${EPS}" = "4.0" ]; then
       NP="4.3"
       RHO_FILTER="0.03"
+    elif [ "${EPS}" = "1.0" ]; then
+      NP="13.8"
+      RHO_FILTER="0.0025"
     else
       echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
       exit 1
@@ -109,6 +115,8 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
 
     if [ "${EPS}" = "4.0" ]; then
       NP="3.013"
+    elif [ "${EPS}" = "1.0" ]; then
+      NP="10.26"
     else
       echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
       exit 1

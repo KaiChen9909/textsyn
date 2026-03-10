@@ -57,9 +57,41 @@ def parse_response_to_schema(response_text: str) -> str:
   return '{{\n' + '\n'.join(schema_lines) + '\n}}'
 
 
+def dataset_info(dataset_name):
+  if dataset_name == 'biorxiv':
+    data_description = (
+      "This is a dataset of biological research paper abstracts hosted on the"
+      " bioRxiv preprint server."
+    )
+    workload_description = (
+        "Help feature the category and main idea of the paper, for the purpose of"
+        " e.g. assigning a reviewer."
+    )
+    
+  elif dataset_name == 'openreview':
+    data_description = (
+      "This is a dataset of review comments of computer science research papers"
+      " submitted to the ICLR conference."
+    )
+    workload_description = (
+        "Help categorize the reviews and capture their main statements and ideas,"
+        " for the purpose of e.g. writing review summary and making acceptance decision"
+    )
+  else:
+    raise ValueError('Unsupported dataset')
+  
+  return data_description, workload_description
+
+
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(
       description='Design schema for abstracts using the Gemini API.'
+  )
+  parser.add_argument(
+      '--dataset_name',
+      type=str,
+      required=True,
+      help='Name of dataset',
   )
   parser.add_argument(
       '--output_name',
@@ -83,14 +115,7 @@ if __name__ == "__main__":
 
   client = genai.Client(api_key=GOOGLE_API_KEY)
 
-  data_description = (
-      "This is a dataset of biological research paper abstracts hosted on the"
-      " bioRxiv preprint server."
-  )
-  workload_description = (
-      "Help feature the category and main idea of the paper, for the purpose of"
-      " e.g. assigning a reviewer."
-  )
+  data_description, workload_description = dataset_info(args.dataset_name)
   num_features = args.num_features
 
   prompt_template = open("prompts/schema_design_prompt.txt").read()
