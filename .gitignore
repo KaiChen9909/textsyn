@@ -1,3 +1,7 @@
+.claude/
+.vscode/
+__pycache__/
+
 AIM/logs/
 AIM/results/
 
@@ -7,6 +11,7 @@ DPSFT/results/
 DPSFT/wandb/
 DPSFT/logs/
 DPSFT/scripts/unused/
+DPSFT/pretrain/
 
 evaluation/mauve/logs/
 evaluation/mauve/embeddings
@@ -15,13 +20,10 @@ evaluation/feature_divergence/logs/
 evaluation/classification/logs/
 
 evaluation/acc/logs
-evaluation/acc/results
 evaluation/fid/logs
 evaluation/self_bleu/logs
 
 data/
 
-.claude/
-.vscode/
-
 .env
+test.ipynb
