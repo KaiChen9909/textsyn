@@ -54,11 +54,11 @@ L=${11:-4}
 EPOCH_ID=${12:-79}
 
 # KTO-specific hyperparameters
-KTO_LR=${13:-5e-6}
-KTO_EPOCHS=${14:-1}
+KTO_LR=${13:-1e-5}
+KTO_EPOCHS=${14:-3}
 KTO_BETA=${15:-0.1}
 KTO_BS=${16:-4}
-KTO_GRAD_ACCUM=${17:-4}
+KTO_GRAD_ACCUM=${17:-32}  # Increased from 4 to get effective BS=256
 
 # ==========================================
 # Parse Model for Current Training
@@ -97,7 +97,7 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
   STEP="1120"
   LR="1e-3"
   SEQLEN="512"
-  GPUS_GEN="4"  # GPUs used during condgen training
+  GPUS_GEN="4"
   MAX_INST_LEN="300"
   EPOCH="3"
   LR_VAL="0.001"

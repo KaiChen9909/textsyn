@@ -152,6 +152,8 @@ def main():
       torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
   )
 
+  # Load training model (will have LoRA adapters added)
+  logging.info('Loading training model...')
   model = AutoModelForCausalLM.from_pretrained(
       args.model_name_or_path,
       torch_dtype=compute_dtype,
@@ -159,6 +161,24 @@ def main():
       attn_implementation='eager',
       token=access_token,
   )
+
+  # Load reference model (independent, 8bit quantized to save memory)
+  # This is critical to prevent KL divergence from becoming 0 during training
+  logging.info('Loading reference model with 8bit quantization...')
+  ref_model = AutoModelForCausalLM.from_pretrained(
+      args.model_name_or_path,
+      load_in_8bit=True,
+      device_map='auto',
+      torch_dtype=torch.float16,
+      token=access_token,
+  )
+
+  # Freeze reference model parameters
+  for param in ref_model.parameters():
+    param.requires_grad = False
+
+  logging.info(f'Training model device: {model.device}')
+  logging.info(f'Reference model quantized: load_in_8bit=True')
 
   tokenizer = AutoTokenizer.from_pretrained(
       args.model_name_or_path,
@@ -199,15 +219,18 @@ def main():
       bf16=args.bf16 and torch.cuda.is_bf16_supported(),
       fp16=not (args.bf16 and torch.cuda.is_bf16_supported()),
       gradient_checkpointing=args.gradient_checkpointing,
+      gradient_checkpointing_kwargs={'use_reentrant': False},
+      ddp_find_unused_parameters=False,
       report_to='wandb',
       run_name=args.output_dir.split('/')[-1],
   )
 
   # --- Trainer ---
-  # With PEFT, ref_model=None: the base model (without LoRA) is used as reference
+  # Use explicit reference model to prevent KL divergence collapse
+  # The ref_model is independently loaded with 8bit quantization
   trainer = KTOTrainer(
       model=model,
-      ref_model=None,
+      ref_model=ref_model,
       args=kto_config,
       train_dataset=dataset,
       peft_config=peft_config,

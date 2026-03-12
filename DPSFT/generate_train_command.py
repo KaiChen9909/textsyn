@@ -33,6 +33,7 @@ parser.add_argument(
     default='',
 )
 parser.add_argument('--model_name', type=str, default='yahma/llama-7b-hf')
+parser.add_argument('--model_path', type=str, default='', help='Optional: path to pretrained model (overrides model_name for loading)')
 parser.add_argument(
     '--job_sess',
     type=str,
@@ -172,6 +173,8 @@ else:
 dataset_name = args.dataset_name
 dataset_path = args.dataset_path
 model_name = args.model_name
+# If model_path is provided, use it for loading; but keep model_name for directory naming
+model_name_or_path = args.model_path if args.model_path else model_name
 perdevice_bs = args.perdevice_bs
 max_seq_len = f'{args.max_instruction_len}-{args.max_answer_len}'
 total_bs = args.total_bs
@@ -267,7 +270,7 @@ command = f"""{prepend} accelerate launch \\
     --config_file {accelerate_cfg_file} \\
     ./train_clm.py \\
     --dataset_name {dataset_name} \\
-    --model_name_or_path {model_name} \\
+    --model_name_or_path {model_name_or_path} \\
     --output_dir {prefix}/outputs/{sess} \\
     --seed {args.seed} \\
     --per_device_train_batch_size {perdevice_bs} \\

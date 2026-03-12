@@ -44,6 +44,9 @@ GPU_NUM=${8:-4}
 EPOCH_ID=${9:-79}
 MODEL=${10:-gemma}
 N_GEN=${11:-5000}
+ROUND=${12:-1}
+VARIATION_MODEL_TYPE=${13:-qwen}
+EVALUATE=${14:-1}
 
 if [ "${MODEL}" = "gemma" ]; then
   MODEL_STR="gemma-3-1b"
@@ -51,6 +54,20 @@ if [ "${MODEL}" = "gemma" ]; then
 elif [ "${MODEL}" = "qwen" ]; then
   MODEL_STR="qwen2.5-1.5b"
   MODEL_PT="Qwen2.5-1.5B-Instruct"
+fi
+
+# Set variation model path based on type
+if [ "${VARIATION_MODEL_TYPE}" = "qwen" ]; then
+  VARIATION_MODEL="Qwen/Qwen2.5-7B-Instruct"
+elif [ "${VARIATION_MODEL_TYPE}" = "qwen-3b" ]; then
+  VARIATION_MODEL="Qwen/Qwen2.5-3B-Instruct"
+elif [ "${VARIATION_MODEL_TYPE}" = "qwen-1.5b" ]; then
+  VARIATION_MODEL="Qwen/Qwen2.5-1.5B-Instruct"
+elif [ "${VARIATION_MODEL_TYPE}" = "gemma" ]; then
+  VARIATION_MODEL="google/gemma-2-9b-it"
+else
+  # If it's a full path, use it directly
+  VARIATION_MODEL="${VARIATION_MODEL_TYPE}"
 fi
 
 if [ "${DATASET_NAME}" = "biorxiv" ]; then
@@ -139,19 +156,39 @@ echo "Output str: ${OUTPUT_STR}"
 echo "Epoch: ${EPOCH_ID}"
 echo "L (oversampling): ${L}"
 echo "N_GEN: ${N_GEN}"
+echo "ROUND: ${ROUND}"
+echo "VARIATION_MODEL_TYPE: ${VARIATION_MODEL_TYPE}"
+echo "VARIATION_MODEL: ${VARIATION_MODEL}"
+echo "EVALUATE: ${EVALUATE}"
 
 set -x
 
 if [ "${ALGO}" = "condgen_filter" ]; then
+  # Build evaluate flag (default: enabled)
+  EVAL_FLAG="--evaluate"
+  if [ "${EVALUATE}" = "0" ] || [ "${EVALUATE}" = "false" ]; then
+    EVAL_FLAG=""
+  fi
+
+  # Build output filename based on round
+  if [ "${ROUND}" = "1" ]; then
+    OUT_FILENAME="generated_${OUTPUT_STR}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}-L-${L}.jsonl"
+  else
+    OUT_FILENAME="generated_${OUTPUT_STR}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}-L-${L}_round-${ROUND}.jsonl"
+  fi
+
   python generation_condgen_filter.py \
       -m ${MODEL_PATH} \
       -pl ${MAX_INST_LEN} -sl ${SEQLEN} -d 0 \
       -o ${OUTPUT_STR} -ps ${PROMPT_STR} \
-      -out generated_${OUTPUT_STR}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}-L-${L}.jsonl \
+      -out ${OUT_FILENAME} \
       -n_gen ${N_GEN} -L ${L} -bs 512 -tp 0.95 \
       -pf ${PROMPT_FILE} \
       -rd ${REAL_DATA_PATH} -tc abstract \
-      -rho ${RHO_FILTER}
+      -rho ${RHO_FILTER} \
+      --round ${ROUND} \
+      --variation_model ${VARIATION_MODEL} \
+      ${EVAL_FLAG}
 
 elif [ "${ALGO}" = "dpft_filter" ]; then
   python generation_gen_filter.py \

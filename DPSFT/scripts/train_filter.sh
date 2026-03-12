@@ -51,16 +51,16 @@ PREV_MODEL_NAME=${8:-gemma}
 RHO_FILTER=${9:-0.03}
 N_GEN=${10:-5000}
 L=${11:-4}
+EPOCH_ID=${12:-79}  # Epoch ID of the generation model to use
+PREV_GPU_NUM=${13:-2}  # GPU number used when training the generation model
 
 # ==========================================
 # Parse Model for Current Training
 # ==========================================
 if [ "${TRAIN_MODEL_NAME}" = "gemma" ]; then
-  GEN_MODEL="google/gemma-3-1b-pt"
   MODEL_STR="gemma-3-1b"
   MODEL_PT="gemma-3-1b-pt"
 elif [ "${TRAIN_MODEL_NAME}" = "qwen" ]; then
-  GEN_MODEL="Qwen/Qwen2.5-1.5B-Instruct"
   MODEL_STR="qwen2.5-1.5b"
   MODEL_PT="Qwen2.5-1.5B-Instruct"
 else
@@ -109,11 +109,64 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
     GEN_NP="-1"
   fi
 
+  # ==========================================
+  # Build Generation Model Path (from gen_filter.sh)
+  # ==========================================
+  # Reconstruct the model directory name used by gen_filter.sh
+  if [ "${ALGO}" = "condgen_filter" ]; then
+    # Use parameters matching gen_filter.sh for condgen_filter
+    GEN_BS="2048"
+    GEN_STEP="1120"
+    GEN_LR="1e-3"
+    GEN_EPOCH="3"
+    GEN_LR_VAL="0.001"
+    GEN_CLIP="1.0"
+    GEN_LR_SCHEDULER="constant"
+    GEN_MAX_INST_LEN="300"
+    GEN_DELTA="3.38e-06"
+
+    if [ "${PREV_USE_DP}" = "1" ]; then
+      JOB_SESS="${MODEL_STR}_${DATASET_NAME}_condgen_bs-${GEN_BS}_step-${GEN_STEP}_lr-${GEN_LR}-${GEN_LR_SCHEDULER}_seed-42"
+      MODEL_DIR="${JOB_SESS}_biorxiv_condgen_noredacted_model${MODEL_PT}_eps${GEN_EPS}_delta${GEN_DELTA}_bs${GEN_BS}_maxseq${GEN_MAX_INST_LEN}-${SEQLEN}_epoch${GEN_EPOCH}_lr${GEN_LR_VAL}_clip${GEN_CLIP}_np${GEN_NP}_gpus${PREV_GPU_NUM}"
+    else
+      GEN_DELTA="0.1"
+      GEN_CLIP="-1.0"
+      JOB_SESS="${MODEL_STR}_${DATASET_NAME}_condgen_nondp_bs-${GEN_BS}_step-${GEN_STEP}_lr-${GEN_LR}-${GEN_LR_SCHEDULER}_seed-42"
+      MODEL_DIR="${JOB_SESS}_biorxiv_condgen_noredacted_model${MODEL_PT}_eps${GEN_EPS}_delta${GEN_DELTA}_bs${GEN_BS}_maxseq${GEN_MAX_INST_LEN}-${SEQLEN}_epoch${GEN_EPOCH}_lr${GEN_LR_VAL}_clip${GEN_CLIP}_np${GEN_NP}_gpus${PREV_GPU_NUM}"
+    fi
+
+  elif [ "${ALGO}" = "dpft_filter" ]; then
+    # Use parameters matching gen_filter.sh for dpft_filter
+    GEN_BS="2048"
+    GEN_STEP="1120"
+    GEN_LR="1e-3"
+    GEN_EPOCH="3"
+    GEN_LR_VAL="0.001"
+    GEN_CLIP="1.0"
+    GEN_LR_SCHEDULER="cosine"
+    GEN_MAX_INST_LEN="32"
+    GEN_DELTA="3.38e-06"
+
+    if [ "${PREV_USE_DP}" = "1" ]; then
+      JOB_SESS="${MODEL_STR}_${DATASET_NAME}_dpft_bs-${GEN_BS}_step-${GEN_STEP}_lr-${GEN_LR}-${GEN_LR_SCHEDULER}_seed-42"
+      MODEL_DIR="${JOB_SESS}_${DATASET_NAME}_noredacted_model${MODEL_PT}_eps${GEN_EPS}_delta${GEN_DELTA}_bs${GEN_BS}_maxseq${GEN_MAX_INST_LEN}-${SEQLEN}_epoch${GEN_EPOCH}_lr${GEN_LR_VAL}_clip${GEN_CLIP}_np${GEN_NP}_gpus${PREV_GPU_NUM}"
+    else
+      GEN_DELTA="0.1"
+      GEN_CLIP="-1.0"
+      JOB_SESS="${MODEL_STR}_${DATASET_NAME}_dpft_nondp_bs-${GEN_BS}_step-${GEN_STEP}_lr-${GEN_LR}-${GEN_LR_SCHEDULER}_seed-42"
+      MODEL_DIR="${JOB_SESS}_${DATASET_NAME}_noredacted_model${MODEL_PT}_eps${GEN_EPS}_delta${GEN_DELTA}_bs${GEN_BS}_maxseq${GEN_MAX_INST_LEN}-${SEQLEN}_epoch${GEN_EPOCH}_lr${GEN_LR_VAL}_clip${GEN_CLIP}_np${GEN_NP}_gpus${PREV_GPU_NUM}"
+    fi
+  else
+    echo "Error: Unknown algorithm '${ALGO}'. Supported: condgen_filter, dpft_filter" >&2
+    exit 1
+  fi
+
+  GEN_MODEL_PATH="results/outputs/${MODEL_DIR}/model_epoch${EPOCH_ID}"
+
 else
   echo "Error: Unknown dataset '${DATASET_NAME}'. Supported: biorxiv" >&2
   exit 1
 fi
-
 
 # JSONL Output by gen_filter.sh (using generation model parameters)
 FULL_DATASET_NAME="${DATASET_NAME}_${ALGO}"
@@ -125,9 +178,15 @@ echo "Generated Data Info (from gen_filter.sh):"
 echo "  - Prev Model: ${PREV_MODEL_NAME} (${PREV_MODEL_PT})"
 echo "  - Prev Eps: ${PREV_EPS}, NP: ${PREV_NP}"
 echo "  - Prev Use DP: ${PREV_USE_DP}"
+echo "  - Prev GPU Num: ${PREV_GPU_NUM}"
 echo "  - RHO Filter: ${RHO_FILTER}"
 echo "  - N_GEN: ${N_GEN}"
 echo "  - File: ${GEN_FILTER_OUTPUT}"
+echo "=========================================="
+echo "Generation Model to Use for Training:"
+echo "  - Model Dir: ${MODEL_DIR}"
+echo "  - Model Path: ${GEN_MODEL_PATH}"
+echo "  - Epoch ID: ${EPOCH_ID}"
 echo "=========================================="
 echo "Current Training Info:"
 echo "  - Train Model: ${TRAIN_MODEL_NAME} (${MODEL_PT})"
@@ -141,14 +200,21 @@ if [ ! -f "${GEN_FILTER_OUTPUT}" ]; then
   exit 1
 fi
 
+if [ ! -d "${GEN_MODEL_PATH}" ]; then
+  echo "Error: Generation model not found: ${GEN_MODEL_PATH}" >&2
+  echo "Please ensure the generation model exists at the expected path." >&2
+  echo "You may need to adjust EPOCH_ID (current: ${EPOCH_ID}) or run gen_filter.sh first." >&2
+  exit 1
+fi
+
 # ==========================================
-# Non-DP Training
+# Non-DP Training (using generation model from gen_filter.sh)
 # ==========================================
 DEVICE_BS="8"
 
 bash scripts/train/run_biorxiv_filter-condgen_ft_nondp.sh \
   ${BS} ${STEP} ${LR} ${PORT} ${SEQLEN} ${DEVICE_BS} ${GPUS} \
   ${FULL_DATASET_NAME} "${GEN_FILTER_OUTPUT}" ${GEN_EPS} ${GEN_NP} ${RHO_FILTER} \
-  cosine ${GEN_MODEL} ${MODEL_STR} ${N_GEN} ${L} ${MAX_INST_LEN}
+  cosine ${GEN_MODEL_PATH} ${MODEL_STR} ${N_GEN} ${L} ${MAX_INST_LEN}
 
 echo "Job finished at: $(date)"

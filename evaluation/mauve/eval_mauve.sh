@@ -23,7 +23,7 @@ mkdir -p logs
 module load anaconda
 source activate syn
 
-# cd $SLURM_SUBMIT_DIR
+cd $SLURM_SUBMIT_DIR
 
 # ==========================================
 # 运行你的 Bash 脚本任务
@@ -46,6 +46,8 @@ DATA_TYPE=${10:-final}  # condgen_filter: "final" (from gen.sh) or "intermediate
 STEP=${11:-1120}
 PREV_N_GEN=${12:-5000}
 L=${13:-4}
+KTO_LR=${14:-5e-6}
+KTO_BETA=${15:-0.1}
 
 if [ "${MODEL}" = "gemma" ]; then 
   MODEL_STR="gemma-3-1b"
@@ -67,7 +69,28 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
 
   N_GEN=5000
 
-  if [ "${ALGO}" = "condgen_filter" ]; then
+  if [ "${ALGO}" = "condgen_filter_kto" ]; then
+    MODE="${DATASET_NAME}_${ALGO}"
+    MAX_INST_LEN="300"
+    FILE_TYPE="jsonl"
+
+    if [ "${USE_DP}" = "1" ]; then
+      if [ "${EPS}" = "4.0" ]; then
+        NP="4.3"
+      elif [ "${EPS}" = "1.0" ]; then
+        NP="13.8"
+      else
+        echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
+        exit 1
+      fi
+    else
+      EPS="-1.0"
+      NP="-1"
+    fi
+
+    FILE_STEM="${DATASET_NAME}_condgen_filter_kto_model-${MODEL_PT}_preveps-${EPS}-np-${NP}_rho-${RHO_FILTER}_lr-${KTO_LR}_beta-${KTO_BETA}_n${PREV_N_GEN}-L${L}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${N_GEN}"
+
+  elif [ "${ALGO}" = "condgen_filter" ]; then
     MODE="${DATASET_NAME}_${ALGO}"
 
     if [ "${DATA_TYPE}" = "intermediate" ]; then
@@ -191,7 +214,7 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
     fi
 
   else
-    echo "Error: Unknown algo '${ALGO}'. Supported: condgen_filter, condgen, dpft_filter, dpft, noft" >&2
+    echo "Error: Unknown algo '${ALGO}'. Supported: condgen_filter_kto, condgen_filter, condgen, dpft_filter, dpft, noft" >&2
     exit 1
   fi
 else
@@ -223,7 +246,9 @@ Q_TEXTS_PATH=""
 if [ "${DETAILED_ANALYSIS}" = "true" ]; then
   P_TEXTS_PATH="../../data/${DATASET_NAME}/test.csv"
 
-  if [ "${ALGO}" = "condgen_filter" ]; then
+  if [ "${ALGO}" = "condgen_filter_kto" ]; then
+    Q_TEXTS_PATH="../../DPSFT/results/synthetic/generations_${MODE}/generated_${FILE_STEM}.jsonl"
+  elif [ "${ALGO}" = "condgen_filter" ]; then
     if [ "${DATA_TYPE}" = "intermediate" ]; then
       Q_TEXTS_PATH="../../DPSFT/results/intermediate/generations_${MODE}/generated_${FILE_STEM}.jsonl"
     else

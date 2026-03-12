@@ -271,9 +271,9 @@ def load_texts(file_path):
   Special handling: If file_path ends with 'test.csv' and contains 'biorxiv',
   automatically loads both validation.csv and test.csv and merges them.
   """
-  # Special case: biorxiv test.csv should include validation.csv
+  # Special case: biorxiv test.csv should include valid.csv
   if file_path.endswith('test.csv') and 'biorxiv' in file_path:
-    validation_path = file_path.replace('test.csv', 'validation.csv')
+    validation_path = file_path.replace('test.csv', 'valid.csv')
     if os.path.exists(validation_path):
       logging.info(f'Auto-loading validation set from: {validation_path}')
       validation_texts = load_texts_single_file(validation_path)
