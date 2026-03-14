@@ -3,15 +3,13 @@
 # ==========================================
 # SLURM 资源配置
 # ==========================================
-#SBATCH --job-name=biorxiv_eval_self_bleu
-#SBATCH --account=CIS260108-ai
-#SBATCH --partition=ai
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=16
+#SBATCH -J biorxiv_eval_self_bleu
+#SBATCH -A dplab
+#SBATCH -p gpu
+#SBATCH -c 16
 #SBATCH --mem=32G
-#SBATCH --time=02:00:00
-#SBATCH --output=logs/%j_eval_self_bleu_stdout.txt
+#SBATCH -t 02:00:00
+#SBATCH -o logs/%j_eval_self_bleu_stdout.txt
 
 # ==========================================
 # 环境准备
@@ -19,8 +17,8 @@
 mkdir -p logs
 
 # load anaconda and activate env
-module load anaconda
-source activate syn
+module load uv
+source /scratch/pkq2ps/envs/syn/bin/activate
 
 # ==========================================
 # 运行你的 Bash 脚本任务

@@ -3,16 +3,13 @@
 # ==========================================
 # SLURM 资源配置
 # ==========================================
-#SBATCH --job-name=biorxiv_gen
-#SBATCH --account=CIS260108-ai
-#SBATCH --partition=ai
-#SBATCH --nodes=1
-#SBATCH --gpus-per-node=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=16
+#SBATCH -J biorxiv_gen
+#SBATCH -A dplab
+#SBATCH -p standard
+#SBATCH -c 8
 #SBATCH --mem=32G
-#SBATCH --time=24:00:00
-#SBATCH --output=logs/%j_design_schema_stdout.txt
+#SBATCH -t 24:00:00
+#SBATCH -o logs/%j_design_schema_stdout.txt
 
 # ==========================================
 # 环境准备
@@ -20,8 +17,8 @@
 mkdir -p logs
 
 # load anaconda and activate env
-module load anaconda
-source activate syn
+module load uv
+source /scratch/pkq2ps/envs/syn/bin/activate
 
 cd $SLURM_SUBMIT_DIR
 
@@ -30,7 +27,6 @@ cd $SLURM_SUBMIT_DIR
 # ==========================================
 echo "Job started at: $(date)"
 echo "Running on node: $SLURM_NODELIST"
-echo "Allocated GPUs: $CUDA_VISIBLE_DEVICES"
 
 DATASET_NAME=${1:-biorxiv}
 ALGO=${2:-noexample}

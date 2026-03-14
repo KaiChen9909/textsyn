@@ -3,16 +3,15 @@
 # ==========================================
 # SLURM 资源配置
 # ==========================================
-#SBATCH --job-name=biorxiv_gen_filter
-#SBATCH --account=CIS260108-ai
-#SBATCH --partition=ai
-#SBATCH --nodes=1
-#SBATCH --gpus-per-node=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=8
+#SBATCH -J biorxiv_gen_filter
+#SBATCH -A dplab
+#SBATCH -p gpu
+#SBATCH --gres=gpu:a100:1
+#SBATCH -C a100_80gb
+#SBATCH -c 8
 #SBATCH --mem=48G
-#SBATCH --time=24:00:00
-#SBATCH --output=logs/%j_gen_filter_stdout.txt
+#SBATCH -t 24:00:00
+#SBATCH -o logs/%j_gen_filter_stdout.txt
 
 # ==========================================
 # 环境准备
@@ -20,8 +19,8 @@
 mkdir -p logs
 
 # load anaconda and activate env
-module load anaconda
-source activate syn
+module load uv
+source /scratch/pkq2ps/envs/syn/bin/activate
 
 export HF_HOME="/anvil/scratch/x-kchen28/.cache/huggingface"
 cd $SLURM_SUBMIT_DIR

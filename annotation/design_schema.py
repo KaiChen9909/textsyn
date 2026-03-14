@@ -77,6 +77,15 @@ def dataset_info(dataset_name):
         "Help categorize the reviews and capture their main statements and ideas,"
         " for the purpose of e.g. writing review summary and making acceptance decision"
     )
+  
+  elif dataset_name == 'pmc':
+    data_description = (
+      "This is a dataset of patient summaries extracted from case reports in PubMed Central (PMC)."
+    )
+    workload_description = (
+        "Help categorize the summaries and capture their main conclusions"
+    )
+
   else:
     raise ValueError('Unsupported dataset')
   

@@ -24,8 +24,8 @@ SEED=42
 mkdir -p results
 
 # load anaconda and activate env (if needed)
-# module load anaconda
-# source activate syn
+# module load uv
+# source /scratch/pkq2ps/envs/syn/bin/activate
 
 cd $SLURM_SUBMIT_DIR
 cd ..  # Move to TOPIC directory

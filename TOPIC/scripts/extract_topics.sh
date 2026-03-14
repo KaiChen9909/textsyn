@@ -3,22 +3,21 @@
 # ==========================================
 # SLURM Resource Configuration (optional - uncomment if submitting as SLURM job)
 # ==========================================
-#SBATCH --job-name=extract_topics
-#SBATCH --account=CIS260108-ai
-#SBATCH --partition=ai
-#SBATCH --nodes=1
-#SBATCH --gpus-per-node=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=8
+#SBATCH -J extract_topics
+#SBATCH -A dplab
+#SBATCH -p gpu
+#SBATCH --gres=gpu:a100:1
+#SBATCH -C a100_80gb
+#SBATCH -c 8
 #SBATCH --mem=32G
-#SBATCH --time=12:00:00
-#SBATCH --output=logs/%j_extract_topics_stdout.txt
+#SBATCH -t 12:00:00
+#SBATCH -o logs/%j_extract_topics_stdout.txt
 
 # ==========================================
 # Environment Setup
 # ==========================================
-module load anaconda
-source activate syn
+module load uv
+source /scratch/pkq2ps/envs/syn/bin/activate
 
 cd $SLURM_SUBMIT_DIR
 
