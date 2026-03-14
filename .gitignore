@@ -28,7 +28,7 @@ evaluation/self_bleu/logs
 
 data/
 
-wandb
+wandb/
 
 .env
 test.ipynb
