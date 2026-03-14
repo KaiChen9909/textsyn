@@ -45,12 +45,12 @@ DATASET_NAME=${1:? "Missing argument: dataset name"}
 ALGO=${2:?         "Missing argument: algorithm name"}
 EPS=${3:-4.0}
 USE_DP=${4:-1}
-GPU_NUM=${5:-2}
+GPU_NUM=${5:-4}
 EPOCH_ID=${6:-79}
 MODEL_NAME=${7:-gemma}
 
 # param for pe
-PREV_N_GEN=${8:-5000}
+PREV_N_GEN=${8:-20000}
 L=${9:-4}
 
 if [ "${MODEL_NAME}" = "gemma" ]; then
@@ -129,7 +129,7 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
   elif [ "${ALGO}" = "condgen_filter" ]; then
     # condgen_filter uses different BS/STEP from default
     BS="1024";
-    STEP="320";
+    STEP="1280";
     MAX_INST_LEN="300";
     LR_SCHEDULER="cosine";
     TRAIN_DATASET="${DATASET_NAME}_${ALGO}"

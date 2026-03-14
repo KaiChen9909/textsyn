@@ -9,7 +9,6 @@ Follows train_clm.py conventions:
 """
 
 import argparse
-import copy
 import json
 import logging
 import os
@@ -17,7 +16,7 @@ import os
 import torch
 from datasets import Dataset
 from dotenv import load_dotenv
-from peft import LoraConfig, get_peft_model
+from peft import LoraConfig
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from trl import KTOConfig, KTOTrainer
 
@@ -152,7 +151,7 @@ def main():
       torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
   )
 
-  # Load training model (will have LoRA adapters added)
+  # Load training model (will have LoRA adapters added by KTOTrainer)
   logging.info('Loading training model...')
   model = AutoModelForCausalLM.from_pretrained(
       args.model_name_or_path,
@@ -162,23 +161,23 @@ def main():
       token=access_token,
   )
 
-  # Load reference model (independent, 8bit quantized to save memory)
-  # This is critical to prevent KL divergence from becoming 0 during training
-  logging.info('Loading reference model with 8bit quantization...')
+  # Load reference model explicitly.
+  #
+  # NOTE: ref_model=None with disable_adapter() was tried but results in KL=0
+  # throughout training in multi-GPU DDP mode (confirmed from logs). We load
+  # a separate frozen copy of the base model instead.
+  # Memory: ~2GB per GPU for a 1B model in bfloat16 → total ~4GB/GPU with LoRA.
+  logging.info('Loading reference model...')
   ref_model = AutoModelForCausalLM.from_pretrained(
       args.model_name_or_path,
-      load_in_8bit=True,
-      device_map='auto',
-      torch_dtype=torch.float16,
+      torch_dtype=compute_dtype,
+      low_cpu_mem_usage=True,
+      attn_implementation='eager',
       token=access_token,
   )
-
-  # Freeze reference model parameters
   for param in ref_model.parameters():
     param.requires_grad = False
-
-  logging.info(f'Training model device: {model.device}')
-  logging.info(f'Reference model quantized: load_in_8bit=True')
+  logging.info('Reference model loaded and frozen.')
 
   tokenizer = AutoTokenizer.from_pretrained(
       args.model_name_or_path,
@@ -226,8 +225,6 @@ def main():
   )
 
   # --- Trainer ---
-  # Use explicit reference model to prevent KL divergence collapse
-  # The ref_model is independently loaded with 8bit quantization
   trainer = KTOTrainer(
       model=model,
       ref_model=ref_model,
@@ -242,40 +239,49 @@ def main():
   logging.info('KTO training complete.')
 
   # --- Save model (following train_clm.py pattern) ---
-  # Save the final trained model following the same convention as train_clm.py:
-  #   - peftmodel_epoch{N} for LoRA adapter
-  #   - model_epoch{N} for merged full model
-
+  # Only rank 0 saves. All other ranks skip to avoid concurrent writes to the
+  # same directory (race condition / file corruption).
   final_epoch = args.num_train_epochs - 1
 
-  # Save LoRA adapter
-  peft_save_dir = os.path.join(args.output_dir, f'peftmodel_epoch{final_epoch}')
-  os.makedirs(peft_save_dir, exist_ok=True)
-  trainer.model.save_pretrained(peft_save_dir)
-  tokenizer.save_pretrained(peft_save_dir)
-  logging.info(f'Saved LoRA adapter to {peft_save_dir}')
+  if trainer.is_world_process_zero():
+    # Save LoRA adapter
+    peft_save_dir = os.path.join(args.output_dir, f'peftmodel_epoch{final_epoch}')
+    os.makedirs(peft_save_dir, exist_ok=True)
+    trainer.model.save_pretrained(peft_save_dir)
+    tokenizer.save_pretrained(peft_save_dir)
+    logging.info(f'Saved LoRA adapter to {peft_save_dir}')
 
-  # Merge LoRA into base model and save
-  logging.info('Merging LoRA adapter into base model...')
-  temp_model = copy.deepcopy(trainer.model)
-  merged_model = temp_model.merge_and_unload()
+    # Merge LoRA into base model and save.
+    # Reload from the saved adapter + original base model (same pattern as
+    # merge_sft_peft.py) to avoid deepcopy of a GPU model.
+    logging.info('Merging LoRA adapter into base model...')
+    from peft import PeftModel
+    base_for_merge = AutoModelForCausalLM.from_pretrained(
+        args.model_name_or_path,
+        torch_dtype=compute_dtype,
+        low_cpu_mem_usage=True,
+        attn_implementation='eager',
+        token=access_token,
+    )
+    peft_for_merge = PeftModel.from_pretrained(base_for_merge, peft_save_dir)
+    merged_model = peft_for_merge.merge_and_unload()
 
-  merged_dir = os.path.join(args.output_dir, f'model_epoch{final_epoch}')
-  os.makedirs(merged_dir, exist_ok=True)
-  merged_model.save_pretrained(merged_dir)
-  tokenizer.save_pretrained(merged_dir)
-  logging.info(f'Saved merged model to {merged_dir}')
+    merged_dir = os.path.join(args.output_dir, f'model_epoch{final_epoch}')
+    os.makedirs(merged_dir, exist_ok=True)
+    merged_model.save_pretrained(merged_dir)
+    tokenizer.save_pretrained(merged_dir)
+    logging.info(f'Saved merged model to {merged_dir}')
 
-  # Also save results JSON (matching train_clm.py)
-  results_file = os.path.join(args.output_dir, f'all_results_epoch{final_epoch}.json')
-  with open(results_file, 'w') as f:
-    json.dump({
-        'final_epoch': final_epoch,
-        'num_train_epochs': args.num_train_epochs,
-        'learning_rate': args.learning_rate,
-        'beta': args.beta,
-    }, f)
-  logging.info(f'Saved training results to {results_file}')
+    # Save results JSON (matching train_clm.py)
+    results_file = os.path.join(args.output_dir, f'all_results_epoch{final_epoch}.json')
+    with open(results_file, 'w') as f:
+      json.dump({
+          'final_epoch': final_epoch,
+          'num_train_epochs': args.num_train_epochs,
+          'learning_rate': args.learning_rate,
+          'beta': args.beta,
+      }, f)
+    logging.info(f'Saved training results to {results_file}')
 
 
 if __name__ == '__main__':

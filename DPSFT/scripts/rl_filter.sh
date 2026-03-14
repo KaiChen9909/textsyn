@@ -13,6 +13,7 @@
 #SBATCH --mem=48G
 #SBATCH --time=27:00:00
 #SBATCH --output=logs/%j_rl_filter_stdout.txt
+#SBATCH --exclude=h014
 
 # ==========================================
 # Environment Setup
@@ -24,6 +25,16 @@ module load anaconda
 source activate syn
 
 export HF_HOME="/anvil/scratch/x-kchen28/.cache/huggingface"
+
+# Fix bitsandbytes CUDA detection permission issues
+export BNB_CUDA_VERSION=$(nvidia-smi | grep "CUDA Version" | awk '{print $9}')
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+
+# Skip bitsandbytes welcome message and problematic path scanning
+export BITSANDBYTES_NOWELCOME=1
+# Filter out /var/cache paths that cause permission errors
+export LD_LIBRARY_PATH=$(echo $LD_LIBRARY_PATH | tr ':' '\n' | grep -v '/var/cache' | paste -sd: -)
+
 cd $SLURM_SUBMIT_DIR
 
 # ==========================================
@@ -57,8 +68,8 @@ EPOCH_ID=${12:-79}
 KTO_LR=${13:-1e-5}
 KTO_EPOCHS=${14:-3}
 KTO_BETA=${15:-0.1}
-KTO_BS=${16:-4}
-KTO_GRAD_ACCUM=${17:-32}  # Increased from 4 to get effective BS=256
+KTO_BS=${16:-2}  # Multi-GPU: smaller per-device batch size
+KTO_GRAD_ACCUM=${17:-64}  # Effective BS = 2*64*4 = 512
 
 # ==========================================
 # Parse Model for Current Training

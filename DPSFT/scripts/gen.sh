@@ -42,7 +42,7 @@ GPU_NUM=${5:-4}
 EPOCH_ID=${6:-79}
 MODEL=${7:-gemma}
 N_GEN=${8:-5000}
-PREV_N_GEN=${9:-5000}
+PREV_N_GEN=${9:-20000}
 L=${10:-4}
 
 if [ "${MODEL}" = "gemma" ]; then 
@@ -87,26 +87,26 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
 
   elif [[ "${ALGO}" = "condgen_filter" ]]; then
     BS="1024"
-    STEP="320"
+    STEP="1280"
     MAX_INST_LEN="300"
     LR_SCHEDULER="cosine"
     TRAIN_DATASET="${DATASET_NAME}_${ALGO}"
 
     if [ "${EPS}" = "4.0" ]; then
       NP="4.3"
+      RHO="0.15"
       RHO_FILTER="0.03"
     elif [ "${EPS}" = "1.0" ]; then
       NP="13.8"
+      RHO="0.0125"
       RHO_FILTER="0.0025"
     else
       echo "Error: NP not defined for eps=${EPS}. Please add the corresponding NP value." >&2
       exit 1
     fi
 
-    # Set prompt source to training data (from train_filter.sh output)
     PROMPT_STR="${DATASET_NAME}_condgen"
-    PROMPT_FILE="results/intermediate/generations_${TRAIN_DATASET}/generated_${TRAIN_DATASET}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${PREV_N_GEN}-L-${L}.jsonl"
-    SCHEMA_COLUMN="input_text"
+    PROMPT_FILE="../AIM/results/synthetic_${DATASET_NAME}_condgen_et_5k_rho-${RHO}_iter-2000.csv"
 
   elif [ "${ALGO}" = "dpft" ]; then
     MAX_INST_LEN="32"
@@ -143,7 +143,6 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
     CLIP="-1.0"
     NP="-1"
     if [ "${ALGO}" = "condgen_filter" ]; then
-      PROMPT_FILE="results/intermediate/generations_${TRAIN_DATASET}/generated_${TRAIN_DATASET}_rho-${RHO_FILTER}_model-${MODEL_PT}_dp-eps-${EPS}-np-${NP}-lr-${LR}_seqlen-${MAX_INST_LEN}-${SEQLEN}_temp-1.0_tp-0.95_tk-0_eval_n-${PREV_N_GEN}-L-${L}.jsonl"
       JOB_SESS="${MODEL_STR}_${DATASET_NAME}_${ALGO}_preveps${EPS}-np${NP}-rho0.0-n${PREV_N_GEN}-L${L}_nondp_bs-${BS}_step-${STEP}_lr-${LR}-${LR_SCHEDULER}_seed-42"
       DIR_NAME="${JOB_SESS}_${TRAIN_DATASET}_noredacted_model${MODEL_PT}_eps-1.0_delta0.1_bs${BS}_maxseq${MAX_INST_LEN}-${SEQLEN}_epoch${EPOCH}_lr${LR_VAL}_clip-1.0_np-1_gpus${GPUS}"
     else

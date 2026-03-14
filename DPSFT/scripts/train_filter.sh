@@ -42,17 +42,19 @@ ALGO=${2:? "Missing argument: algorithm name"}
 # Parameters for current training task (can differ from generation settings)
 TRAIN_GPU_NUM=${3:-4}
 TRAIN_MODEL_NAME=${4:-gemma}
-PORT_ID=${5:-29500}
+TRAIN_STEP=${5:-320}  # Number of training steps
+PORT_ID=${6:-29500}
 
 # Parameters for locating generated filtered data (must match gen_filter.sh settings)
-PREV_EPS=${6:-4.0}
-PREV_USE_DP=${7:-1}
-PREV_MODEL_NAME=${8:-gemma}
-RHO_FILTER=${9:-0.03}
-N_GEN=${10:-5000}
-L=${11:-4}
-EPOCH_ID=${12:-79}  # Epoch ID of the generation model to use
-PREV_GPU_NUM=${13:-2}  # GPU number used when training the generation model
+PREV_EPS=${7:-4.0}
+PREV_USE_DP=${8:-1}
+PREV_MODEL_NAME=${9:-gemma}
+RHO_FILTER=${10:-0.03}
+N_GEN=${11:-5000}
+L=${12:-4}
+EPOCH_ID=${13:-79}  # Epoch ID of the generation model to use
+PREV_GPU_NUM=${14:-4}  # GPU number used when training the generation model
+USE_HF=${15:-1}  # Whether to use HuggingFace pretrained model (1) or local trained model (0)
 
 # ==========================================
 # Parse Model for Current Training
@@ -85,7 +87,7 @@ fi
 # ==========================================
 if [ "${DATASET_NAME}" = "biorxiv" ]; then
   BS="1024"
-  STEP="320"
+  STEP="${TRAIN_STEP}"
   LR="1e-3"
   PORT="${PORT_ID}"
   SEQLEN="512"
@@ -192,6 +194,7 @@ echo "Current Training Info:"
 echo "  - Train Model: ${TRAIN_MODEL_NAME} (${MODEL_PT})"
 echo "  - Train GPUs: ${TRAIN_GPU_NUM}"
 echo "  - Batch Size: ${BS}, Steps: ${STEP}, LR: ${LR}"
+echo "  - Use HuggingFace Model: ${USE_HF}"
 echo "=========================================="
 
 if [ ! -f "${GEN_FILTER_OUTPUT}" ]; then
@@ -200,21 +203,40 @@ if [ ! -f "${GEN_FILTER_OUTPUT}" ]; then
   exit 1
 fi
 
-if [ ! -d "${GEN_MODEL_PATH}" ]; then
-  echo "Error: Generation model not found: ${GEN_MODEL_PATH}" >&2
-  echo "Please ensure the generation model exists at the expected path." >&2
-  echo "You may need to adjust EPOCH_ID (current: ${EPOCH_ID}) or run gen_filter.sh first." >&2
-  exit 1
+# ==========================================
+# Determine Model to Use Based on USE_HF
+# ==========================================
+if [ "${USE_HF}" = "1" ]; then
+  # Use HuggingFace pretrained model
+  if [ "${TRAIN_MODEL_NAME}" = "gemma" ]; then
+    TRAINING_MODEL="google/gemma-3-1b-pt"
+  elif [ "${TRAIN_MODEL_NAME}" = "qwen" ]; then
+    TRAINING_MODEL="Qwen/Qwen2.5-1.5B-Instruct"
+  else
+    echo "Error: Unknown train model '${TRAIN_MODEL_NAME}' for HuggingFace" >&2
+    exit 1
+  fi
+  echo "Using HuggingFace pretrained model: ${TRAINING_MODEL}"
+else
+  # Use local trained model
+  if [ ! -d "${GEN_MODEL_PATH}" ]; then
+    echo "Error: Generation model not found: ${GEN_MODEL_PATH}" >&2
+    echo "Please ensure the generation model exists at the expected path." >&2
+    echo "You may need to adjust EPOCH_ID (current: ${EPOCH_ID}) or run gen_filter.sh first." >&2
+    exit 1
+  fi
+  TRAINING_MODEL="${GEN_MODEL_PATH}"
+  echo "Using local trained model: ${TRAINING_MODEL}"
 fi
 
 # ==========================================
-# Non-DP Training (using generation model from gen_filter.sh)
+# Non-DP Training
 # ==========================================
 DEVICE_BS="8"
 
 bash scripts/train/run_biorxiv_filter-condgen_ft_nondp.sh \
   ${BS} ${STEP} ${LR} ${PORT} ${SEQLEN} ${DEVICE_BS} ${GPUS} \
   ${FULL_DATASET_NAME} "${GEN_FILTER_OUTPUT}" ${GEN_EPS} ${GEN_NP} ${RHO_FILTER} \
-  cosine ${GEN_MODEL_PATH} ${MODEL_STR} ${N_GEN} ${L} ${MAX_INST_LEN}
+  cosine ${TRAINING_MODEL} ${MODEL_STR} ${N_GEN} ${L} ${MAX_INST_LEN}
 
 echo "Job finished at: $(date)"

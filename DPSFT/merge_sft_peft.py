@@ -94,7 +94,7 @@ def main():
         args.base_model_path,
         torch_dtype=compute_dtype,
         low_cpu_mem_usage=True,
-        device_map="auto",  # Distribute model across available devices
+        device_map="auto",
     )
 
     # Handle padding token for models that don't have one set.
