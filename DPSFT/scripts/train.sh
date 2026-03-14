@@ -57,6 +57,7 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
   SEQLEN="512"
   GPUS="${GPU_NUM}"
   DEVICE_BS="4"
+  DELTA="3.38e-6"
 
   if [ "${EPS}" = "4.0" ]; then
     if [[ "${ALGO}" = "condgen"* ]]; then
@@ -75,6 +76,7 @@ if [ "${DATASET_NAME}" = "biorxiv" ]; then
       MAX_INST_LEN=300
     elif [ "${ALGO}" = "dpft" ]; then
       NP="10.26"
+      # NP="10.8" # for dpft_filter
     else
       echo "Error: Unknown algo '${ALGO}'" >&2
       exit 1
@@ -88,6 +90,7 @@ elif [ "${DATASET_NAME}" = "openreview" ]; then
   SEQLEN="1024"
   GPUS="${GPU_NUM}"
   DEVICE_BS="2"
+  DELTA="1.32e-5"
 
   if [ "${EPS}" = "4.0" ]; then
     if [[ "${ALGO}" = "condgen"* ]]; then
@@ -100,12 +103,45 @@ elif [ "${DATASET_NAME}" = "openreview" ]; then
       echo "Error: Unknown algo '${ALGO}'" >&2
       exit 1
     fi
-  elif [ "${EPS}" = "1.0" ]; then 
+  elif [ "${EPS}" = "1.0" ]; then
     if [[ "${ALGO}" = "condgen"* ]]; then
-      NP="24.1" 
+      NP="24.1"
       MAX_INST_LEN=300
     elif [ "${ALGO}" = "dpft" ]; then
       NP="17.48"
+    else
+      echo "Error: Unknown algo '${ALGO}'" >&2
+      exit 1
+    fi
+  fi
+elif [ "${DATASET_NAME}" = "pmc" ]; then
+  BS=4096
+  STEP=960
+  LR="1e-3"
+  PORT="${PORT_ID}"
+  SEQLEN="1024"
+  GPUS="${GPU_NUM}"
+  DEVICE_BS="2"
+  DELTA="1.85e-6"
+
+  if [ "${EPS}" = "4.0" ]; then
+    if [[ "${ALGO}" = "condgen"* ]]; then
+      NP="4.8"
+      MAX_INST_LEN=300
+    elif [ "${ALGO}" = "dpft" ]; then
+      NP="3.28"
+      # NP="3.5"
+    else
+      echo "Error: Unknown algo '${ALGO}'" >&2
+      exit 1
+    fi
+  elif [ "${EPS}" = "1.0" ]; then
+    if [[ "${ALGO}" = "condgen"* ]]; then
+      NP="17.4"
+      MAX_INST_LEN=300
+    elif [ "${ALGO}" = "dpft" ]; then
+      NP="11.26"
+      # NP="11.9"
     else
       echo "Error: Unknown algo '${ALGO}'" >&2
       exit 1
@@ -119,9 +155,9 @@ fi
 
 if [ "${USE_DP}" = "1" ]; then
   if [ "${ALGO}" = "dpft" ]; then
-    bash scripts/train/run_biorxiv_ft_dp.sh ${BS} ${STEP} ${LR} ${PORT} ${EPS} ${NP} ${SEQLEN} ${DEVICE_BS} ${GPUS} ${DATASET_NAME} cosine ${GEN_MODEL} ${MODEL_STR}
+    bash scripts/train/run_biorxiv_ft_dp.sh ${BS} ${STEP} ${LR} ${PORT} ${EPS} ${NP} ${DELTA} ${SEQLEN} ${DEVICE_BS} ${GPUS} ${DATASET_NAME} cosine ${GEN_MODEL} ${MODEL_STR}
   else
-    bash scripts/train/run_biorxiv-condgen_ft_dp.sh ${BS} ${STEP} ${LR} ${PORT} ${EPS} ${NP} ${SEQLEN} ${DEVICE_BS} ${GPUS} ${DATASET_NAME}_${ALGO} ${MAX_INST_LEN} constant ${GEN_MODEL} ${MODEL_STR}
+    bash scripts/train/run_biorxiv-condgen_ft_dp.sh ${BS} ${STEP} ${LR} ${PORT} ${EPS} ${NP} ${DELTA} ${SEQLEN} ${DEVICE_BS} ${GPUS} ${DATASET_NAME}_${ALGO} ${MAX_INST_LEN} constant ${GEN_MODEL} ${MODEL_STR}
   fi
 else
   if [ "${ALGO}" = "dpft" ]; then

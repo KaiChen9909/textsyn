@@ -17,6 +17,7 @@
 
 import argparse
 import os
+import math
 
 from dotenv import load_dotenv
 from utils import dp_utils
@@ -83,7 +84,7 @@ parser.add_argument(
 parser.add_argument(
     '--delta',
     type=float,
-    default=5e-7,
+    default=0.1,
     help='target delta value for (eps,delta)-DP',
 )
 parser.add_argument(
@@ -136,9 +137,10 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-# 允许通过 --dataset_size 直接指定训练样本数
 if args.dataset_size is not None:
   NUM_TRAIN_SAMPLES = args.dataset_size
+elif args.dataset_name.startswith('pmc'):
+  NUM_TRAIN_SAMPLES = 50000
 elif args.dataset_name.startswith('biorxiv'):
   NUM_TRAIN_SAMPLES = 28846
 elif args.dataset_name.startswith('openreview'):
@@ -160,7 +162,6 @@ elif args.dataset_name in [
   NUM_TRAIN_SAMPLES = 5000
 
 prefix = 'results/'
-
 os.makedirs(prefix + 'logs', exist_ok=True)
 
 if args.gpus == 1:

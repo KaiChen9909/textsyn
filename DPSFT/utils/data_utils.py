@@ -225,8 +225,24 @@ def preprocess_text_dataset(
     text_dataset, dataset_name, prompt_template=None, split='train'
 ):
   """Preprocess text dataset."""
+  # --- PMC dataset (lowercase, new CSV format) ---
+  if dataset_name == 'pmc':
+    return _preprocess_text_dataset_fixed_prompt_instructions(
+        text_dataset,
+        prompt_dict=get_prompt_dict(prompt_template),
+        split=split,
+        column='patient',
+    )
+  elif dataset_name.startswith('pmc_condgen'):
+    return _preprocess_text_dataset_conditional_prompt_instructions(
+        text_dataset,
+        prompt_dict=get_prompt_dict(prompt_template),
+        split=split,
+        feature_name='schema',
+        text_name='patient',
+    )
   # --- bioRxiv dataset ---
-  if dataset_name == 'biorxiv':
+  elif dataset_name == 'biorxiv':
     return _preprocess_text_dataset_fixed_prompt_instructions(
         text_dataset,
         prompt_dict=get_prompt_dict(prompt_template),
@@ -374,40 +390,39 @@ def get_prompt_dict(prompt_template):
         ),
     }
   # --- PMC dataset ---
-  elif prompt_template == 'PMC_generation':
+  elif prompt_template in ('pmc_generation'):
     instruction = (
         'Please generate a clinical note presenting a thorough summary'
         ' encompassing the patient’s visit, medical history, symptoms,'
         ' administered treatments, and outcome of the intervention.'
     )
     PROMPT_DICT = {
-        'type': 'PMC',
+        'type': 'pmc',
         'prompt': '<start_of_turn>user\n{instruction}\n<end_of_turn>\n<start_of_turn>model\n'.format(
             instruction=instruction
         ),
     }
-  elif prompt_template == 'PMC-conditions_generation':
-    instruction = (
-        "Please generate a structured JSON summary of the patient's visit,"
-        ' including the following sections: visit motivation, admission,'
-        ' patient information, patient medical history, surgeries, symptoms,'
-        ' medical examinations, diagnosis tests, treatments.'
-    )
-    PROMPT_DICT = {
-        'type': 'PMC-conditions',
-        'prompt': '<start_of_turn>user\n{instruction}\n<end_of_turn>\n<start_of_turn>model\n'.format(
-            instruction=instruction
-        ),
-    }
-  elif prompt_template == 'PMC-condgen_generation':
+  elif prompt_template in ('pmc_condgen_generation'):
     instruction = (
         'Please generate a detailed clinical note based solely on the below'
         ' JSON summary, covering the patient’s visit, medical history,'
         ' symptoms, administered treatments, and outcome of the intervention.'
     )
     PROMPT_DICT = {
-        'type': 'PMC-condgen',
+        'type': 'pmc_condgen',
         'prompt': '<start_of_turn>user\n{instruction}\n\n{{feature}}\n<end_of_turn>\n<start_of_turn>model\n'.format(
+            instruction=instruction
+        ),
+    }
+  elif prompt_template in ('pmc_condgen_topic_generation'):
+    instruction = (
+        'Please generate a detailed clinical note based solely on the below'
+        ' keywords, covering the patient’s visit, medical history,'
+        ' symptoms, administered treatments, and outcome of the intervention.'
+    )
+    PROMPT_DICT = {
+        'type': 'pmc_condgen_topic',
+        'prompt': '<start_of_turn>user\n{instruction}\n\nKeywords: {{feature}}\n<end_of_turn>\n<start_of_turn>model\n'.format(
             instruction=instruction
         ),
     }
@@ -721,6 +736,25 @@ class TokenizedSupervisedInstructDataset(Dataset):
             data_files={
                 'train': osp.join(data_dir, 'clean_openreview_topic_train.csv'),
                 'validation': osp.join(data_dir, 'clean_openreview_topic_valid.csv'),
+            },
+        )
+      elif dataset_name == 'pmc':
+        data_dir = '../data/pmc'
+        text_dataset = load_dataset(
+            'csv',
+            data_files={
+                'train': os.path.join(data_dir, 'train.csv'),
+                'validation': os.path.join(data_dir, 'valid.csv'),
+                'test': os.path.join(data_dir, 'test.csv'),
+            },
+        )
+      elif dataset_name == 'pmc_condgen':
+        data_dir = '../data/pmc'
+        text_dataset = load_dataset(
+            'csv',
+            data_files={
+                'train': osp.join(data_dir, 'clean_pmc_schema_condgen_train.csv'),
+                'validation': osp.join(data_dir, 'clean_pmc_schema_condgen_valid.csv'),
             },
         )
       elif dataset_name in ['PMC', 'PMC-conditions', 'PMC-condgen']:
