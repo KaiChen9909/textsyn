@@ -277,9 +277,10 @@ def main():
         torch_dtype=compute_dtype,
         low_cpu_mem_usage=True,
         attn_implementation="eager",
+        token=access_token,
     )
     tokenizer = AutoTokenizer.from_pretrained(
-        args.model_name_or_path, use_fast=False
+        args.model_name_or_path, use_fast=False, token=access_token
     )
 
     if args.dataset_name in [

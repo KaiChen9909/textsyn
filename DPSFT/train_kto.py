@@ -62,6 +62,10 @@ def parse_args():
   # KTO specific
   parser.add_argument('--beta', type=float, default=0.1,
                        help='KTO beta parameter (inverse temperature for KL penalty)')
+  parser.add_argument('--desirable_weight', type=float, default=1.0,
+                       help='Weight for desirable (chosen) loss. Set to n_undesirable/n_desirable to balance gradient contributions.')
+  parser.add_argument('--undesirable_weight', type=float, default=1.0,
+                       help='Weight for undesirable (rejected) loss.')
   parser.add_argument('--max_prompt_length', type=int, default=300)
   parser.add_argument('--max_completion_length', type=int, default=512)
 
@@ -210,6 +214,8 @@ def main():
       warmup_steps=args.warmup_steps,
       lr_scheduler_type=args.lr_scheduler_type,
       beta=args.beta,
+      desirable_weight=args.desirable_weight,
+      undesirable_weight=args.undesirable_weight,
       max_prompt_length=args.max_prompt_length,
       max_completion_length=args.max_completion_length,
       logging_steps=args.logging_steps,

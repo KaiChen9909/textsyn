@@ -3,15 +3,17 @@
 # ==========================================
 # SLURM Resource Configuration
 # ==========================================
-#SBATCH -J biorxiv_rl_filter
-#SBATCH -A dplab
-#SBATCH -p gpu
-#SBATCH --gres=gpu:a100:4
-#SBATCH -C a100_80gb
-#SBATCH -c 32
+#SBATCH --job-name=biorxiv_rl_filter
+#SBATCH --account=CIS260108-ai
+#SBATCH --partition=ai
+#SBATCH --nodes=1
+#SBATCH --gpus-per-node=4
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=32
 #SBATCH --mem=48G
-#SBATCH -t 27:00:00
-#SBATCH -o logs/%j_rl_filter_stdout.txt
+#SBATCH --time=27:00:00
+#SBATCH --output=logs/%j_rl_filter_stdout.txt
+#SBATCH --exclude=h014
 
 # ==========================================
 # Environment Setup
@@ -229,6 +231,8 @@ accelerate launch \
     --per_device_train_batch_size ${KTO_BS} \
     --gradient_accumulation_steps ${KTO_GRAD_ACCUM} \
     --beta ${KTO_BETA} \
+    --desirable_weight 3.0 \
+    --undesirable_weight 1.0 \
     --lr_scheduler_type cosine \
     --gradient_checkpointing \
     --seed 42 \

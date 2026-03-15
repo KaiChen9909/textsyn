@@ -3,15 +3,16 @@
 # ==========================================
 # SLURM 资源配置 (针对 2 块 H100)
 # ==========================================
-#SBATCH -J biorxiv_train
-#SBATCH -A dplab
-#SBATCH -p gpu
-#SBATCH --gres=gpu:a100:4
-#SBATCH -C a100_80gb
-#SBATCH -c 32
+#SBATCH --job-name=biorxiv_train
+#SBATCH --account=CIS260108-ai
+#SBATCH --partition=ai
+#SBATCH --nodes=1
+#SBATCH --gpus-per-node=4
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=32
 #SBATCH --mem=48G
-#SBATCH -t 27:00:00
-#SBATCH -o logs/%j_train_stdout.txt
+#SBATCH --time=27:00:00
+#SBATCH --output=logs/%j_train_stdout.txt
 
 # ==========================================
 # 环境准备
