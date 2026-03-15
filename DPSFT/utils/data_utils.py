@@ -390,7 +390,7 @@ def get_prompt_dict(prompt_template):
         ),
     }
   # --- PMC dataset ---
-  elif prompt_template in ('pmc_generation'):
+  elif prompt_template == 'pmc_generation':
     instruction = (
         'Please generate a clinical note presenting a thorough summary'
         ' encompassing the patient’s visit, medical history, symptoms,'
@@ -402,7 +402,7 @@ def get_prompt_dict(prompt_template):
             instruction=instruction
         ),
     }
-  elif prompt_template in ('pmc_condgen_generation'):
+  elif prompt_template == 'pmc_condgen_generation':
     instruction = (
         'Please generate a detailed clinical note based solely on the below'
         ' JSON summary, covering the patient’s visit, medical history,'
@@ -414,7 +414,7 @@ def get_prompt_dict(prompt_template):
             instruction=instruction
         ),
     }
-  elif prompt_template in ('pmc_condgen_topic_generation'):
+  elif prompt_template == 'pmc_condgen_topic_generation':
     instruction = (
         'Please generate a detailed clinical note based solely on the below'
         ' keywords, covering the patient’s visit, medical history,'

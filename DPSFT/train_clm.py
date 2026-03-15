@@ -240,6 +240,7 @@ def main():
       or "pubmed" in args.dataset_name
       or "enron" in args.dataset_name
       or "PMC" in args.dataset_name
+      or "pmc" in args.dataset_name
       or "biorxiv" in args.dataset_name
       or "openreview" in args.dataset_name
   ), "dataset/task not supported"
@@ -255,10 +256,7 @@ def main():
 
   os.makedirs(args.output_dir, exist_ok=True)
 
-  # Login to huggingface to get access to llama2
   access_token = args.access_token
-  if not access_token:
-    os.system("huggingface-cli login --token " + access_token)
 
   compute_dtype = (
       torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
