@@ -226,6 +226,7 @@ def main():
       gradient_checkpointing=args.gradient_checkpointing,
       gradient_checkpointing_kwargs={'use_reentrant': False},
       ddp_find_unused_parameters=False,
+      ddp_backend='nccl',
       report_to='wandb',
       run_name=args.output_dir.split('/')[-1],
   )
